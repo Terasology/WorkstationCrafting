@@ -1,0 +1,66 @@
+{
+    "BlockDropGrammar": {
+        "itemDrops": ["10*WorkstationCrafting:WoodPlank"]
+    },
+    "InteractionTarget": {},
+    "InteractionScreen": {
+        "screen": "WorkstationCrafting:CraftInStation"
+    },
+    "Workstation": {
+        "supportedProcessTypes": {
+            "WorkstationCrafting:BasicWoodcrafting": false,
+            "WorkstationCrafting:StandardWoodcrafting": false,
+            "Crafting:UpgradeCraftingWorkstation": false
+        }
+    },
+    "WorkstationInventory": {
+        "slotAssignments": {
+            "INPUT": {
+                "slotStart": 3,
+                "slotCount": 6
+            },
+            "TOOL": {
+                "slotStart": 1,
+                "slotCount": 2
+            },
+            "UPGRADE": {
+                "slotStart": 0,
+                "slotCount": 1
+            },
+            "OUTPUT": {
+                "slotStart": 9,
+                "slotCount": 1
+            }
+        }
+    },
+    "CraftingStation": {
+        "type": "WorkstationCrafting:StandardWoodcrafting",
+        "workstationUITexture": "WorkstationCrafting:StandardWoodworking"
+    },
+    "Inventory": {
+        "privateToOwner": false,
+        "itemSlots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    "Health": {
+        "currentHealth": 5,
+        "maxHealth": 5,
+        "regenRate": 1,
+        "waitBeforeRegen": 2,
+        "destroyEntityOnNoHealth": true
+    },
+    "ActAsBlock": {
+        "block": "WorkstationCrafting:StandardWoodStation"
+    },
+    "DropBlockInventory": {}
+}

@@ -1,0 +1,20 @@
+{
+    "hardness": 12,
+
+    "shape": "WorkstationCrafting:ClayHearth",
+
+    "rotation": "horizontal",
+
+    "displayName": "Clay Hearth",
+
+    "categories": ["stone"],
+
+    "entity": {
+        "prefab": "WorkstationCrafting:ClayHearth"
+    },
+
+    "tiles": {
+        "center": "WorkstationCrafting:ClayHearth",
+        "bottom": "WorkstationCrafting:ClayHearth"
+    }
+}

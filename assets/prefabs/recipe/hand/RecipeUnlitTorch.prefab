@@ -1,0 +1,8 @@
+{
+    "CraftInHandRecipe": {
+        "recipeId": "WorkstationCrafting:UnlitTorch",
+        "itemResult": "WorkstationCrafting:UnlitTorch",
+        "recipeComponents": ["1*WorkstationCrafting:stick"],
+        "recipeTools": ["1*WorkstationCrafting:resin"]
+    }
+}

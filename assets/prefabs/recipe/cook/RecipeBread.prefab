@@ -1,0 +1,15 @@
+{
+    "ProcessDefinition": {
+        "processType": "WorkstationCrafting:Cooking"
+    },
+    "CraftingStationRecipe": {
+        "recipeId": "Hot food|WorkstationCrafting:Bread",
+
+        "recipeComponents": ["1*WorkstationCrafting:flour","1*WorkstationCrafting:salt"],
+        "recipeFluids": ["0.5*Fluid:Water"],
+        "requiredTemperature": 200,
+        "processingDuration": 20000,
+
+        "itemResult": "1*WorkstationCrafting:Bread"
+    }
+}

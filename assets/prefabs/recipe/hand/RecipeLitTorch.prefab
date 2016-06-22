@@ -1,0 +1,8 @@
+{
+    "CraftInHandRecipe": {
+        "recipeId": "WorkstationCrafting:LitTorch",
+        "blockResult": "WorkstationCrafting:LitTorch",
+        "recipeComponents": ["1*WorkstationCrafting:unlitTorch"],
+        "recipeActivators": ["1*WorkstationCrafting:flint"]
+    }
+}

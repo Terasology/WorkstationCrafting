@@ -1,0 +1,13 @@
+{
+    "ProcessDefinition": {
+        "processType": "WorkstationCrafting:StandardWoodcrafting"
+    },
+    "CraftingStationRecipe": {
+        "recipeId": "Materials|WorkstationCrafting:Stick",
+
+        "recipeComponents": ["1*WorkstationCrafting:wood"],
+        "recipeTools": ["1*axe"],
+
+        "itemResult": "6*WorkstationCrafting:Stick"
+    }
+}

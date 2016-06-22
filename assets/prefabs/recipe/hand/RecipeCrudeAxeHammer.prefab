@@ -1,0 +1,7 @@
+{
+    "CraftInHandRecipe": {
+        "recipeId": "WorkstationCrafting:CrudeAxeHammer",
+        "itemResult": "WorkstationCrafting:CrudeAxeHammer",
+        "recipeComponents": ["1*WorkstationCrafting:axeHammerHead", "1*WorkstationCrafting:twig", "1*WorkstationCrafting:stick"]
+    }
+}

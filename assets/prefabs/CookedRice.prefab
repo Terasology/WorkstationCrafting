@@ -1,0 +1,17 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:items#CookedRice",
+        "stackId": "WorkstationCrafting:cookedRice",
+        "consumedOnUse": true
+    },
+    "DisplayName": {
+        "name": "Cooked Rice"
+    },
+    "Food": {
+        "filling": 2
+    },
+    "Drink": {
+        "filling": 1
+    }
+}

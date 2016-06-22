@@ -1,0 +1,20 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:items#Stick",
+        "stackId": "WorkstationCrafting:items#Stick"
+    },
+    "DisplayName": {
+        "name": "Stick"
+    },
+    "CraftInHandIngredient": {
+        "componentType": "WorkstationCrafting:stick"
+    },
+    "CraftingStationIngredient": {
+        "type": "WorkstationCrafting:stick"
+    },
+    "HeatFuel": {
+        "heatProvided": 300,
+        "consumeTime": 8000
+    }
+}

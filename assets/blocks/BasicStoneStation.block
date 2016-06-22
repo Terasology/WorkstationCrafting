@@ -1,0 +1,16 @@
+{
+    "shape": "WorkstationCrafting:Table",
+
+    "hardness": 16,
+
+    "displayName": "Basic Stone Station",
+
+    "categories": ["stone"],
+
+    "tiles": {
+        "top": "WorkstationCrafting:WoodenTableTopWithHammer",
+        "bottom": "WorkstationCrafting:WoodenTableBottom",
+        "sides": "WorkstationCrafting:WoodenTableSides",
+        "center": "WorkstationCrafting:WoodenTableSides"
+    }
+}

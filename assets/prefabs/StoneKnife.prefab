@@ -1,0 +1,19 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:items#StoneKnife"
+    },
+    "DisplayName": {
+        "name": "Stone Knife"
+    },
+    "Durability": {
+        "durability": 100,
+        "maxDurability": 100
+    },
+    "CraftingStationTool": {
+        "type": ["knife"]
+    },
+    "CraftInHandIngredient": {
+        "componentType": "WorkstationCrafting:knife"
+    }
+}

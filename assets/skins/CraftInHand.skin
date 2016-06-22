@@ -1,0 +1,15 @@
+{
+    "inherit": "default",
+    "elements": {
+        "ScrollableArea": {
+            "background": "WorkstationCrafting:CraftInHandBackground",
+            "background-scale-mode": "scale_fill",
+            "margin": {
+                "top": 40,
+                "bottom": 40,
+                "left": 45,
+                "right": 45
+            }
+        }
+    }
+}

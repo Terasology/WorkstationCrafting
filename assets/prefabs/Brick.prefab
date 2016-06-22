@@ -1,0 +1,13 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:items#Brick",
+        "stackId": "WorkstationCrafting:items#Brick"
+    },
+    "DisplayName": {
+        "name": "Brick"
+    },
+    "CraftingStationIngredient": {
+        "type": "WorkstationCrafting:brick"
+    }
+}

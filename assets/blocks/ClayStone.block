@@ -1,0 +1,6 @@
+{
+    "basedOn": "core:soil",
+    "entity": {
+        "prefab": "WorkstationCrafting:ClayStone"
+    }
+}

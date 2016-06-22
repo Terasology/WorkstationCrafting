@@ -1,0 +1,7 @@
+{
+    "CraftInHandRecipe": {
+        "recipeId": "WorkstationCrafting:ClayHearth",
+        "blockResult": "WorkstationCrafting:ClayHearth",
+        "recipeComponents": ["9*WorkstationCrafting:clay"]
+    }
+}

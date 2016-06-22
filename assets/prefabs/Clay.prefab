@@ -1,0 +1,21 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:items#Clay",
+        "stackId": "WorkstationCrafting:items#Clay"
+    },
+    "DisplayName": {
+        "name": "Clay"
+    },
+    "CraftingStationIngredient": {
+        "type": "WorkstationCrafting:clay"
+    },
+    "CraftInHandIngredient": {
+        "componentType": "WorkstationCrafting:clay"
+    },
+    "HeatProcessed": {
+        "heatRequired": 500,
+        "processingTime": 3000,
+        "itemResult": "1*WorkstationCrafting:Brick"
+    }
+}

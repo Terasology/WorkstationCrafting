@@ -1,0 +1,7 @@
+{
+    "CraftInHandRecipe": {
+        "recipeId": "WorkstationCrafting:ToolStone",
+        "itemResult": "WorkstationCrafting:ToolStone",
+        "recipeComponents": ["2*WorkstationCrafting:stone"]
+    }
+}

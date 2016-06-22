@@ -1,0 +1,13 @@
+{
+    "ProcessDefinition": {
+        "processType": "WorkstationCrafting:StandardWoodcrafting"
+    },
+    "CraftingStationRecipe": {
+        "recipeId": "Building|WorkstationCrafting:WoodenTable",
+
+        "recipeComponents": ["4*WorkstationCrafting:plank", "4*WorkstationCrafting:stick"],
+        "recipeTools": ["1*axe", "1*hammer"],
+
+        "blockResult": "1*WorkstationCrafting:WoodenTable"
+    }
+}

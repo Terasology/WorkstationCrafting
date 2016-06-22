@@ -1,0 +1,20 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:items#StoneHammer",
+        "damageType": "WorkstationCrafting:hammerDamage"
+    },
+    "DisplayName": {
+        "name": "Stone Hammer"
+    },
+    "Durability": {
+        "durability": 100,
+        "maxDurability": 100
+    },
+    "CraftInHandIngredient": {
+        "componentType": "WorkstationCrafting:hammer"
+    },
+    "CraftingStationTool": {
+        "type": ["hammer"]
+    }
+}

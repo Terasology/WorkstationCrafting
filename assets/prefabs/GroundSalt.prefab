@@ -1,0 +1,13 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:items#GroundSalt",
+        "stackId": "WorkstationCrafting:groundSalt"
+    },
+    "DisplayName": {
+        "name": "Ground Salt"
+    },
+    "CraftingStationIngredient": {
+        "type": "WorkstationCrafting:salt"
+    }
+}

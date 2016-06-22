@@ -1,0 +1,17 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:items#StoneAxe",
+        "damageType": "axeDamage"
+    },
+    "DisplayName" : {
+        "name" : "Stone Axe"
+    },
+    "Durability": {
+        "durability": 100,
+        "maxDurability": 100
+    },
+    "CraftingStationTool": {
+        "type": ["axe"]
+    }
+}

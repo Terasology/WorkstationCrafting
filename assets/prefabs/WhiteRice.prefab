@@ -1,0 +1,13 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:items#Rice",
+        "stackId": "WorkstationCrafting:whiteRice"
+    },
+    "DisplayName": {
+        "name": "Grains of White Rice"
+    },
+    "CraftingStationIngredient": {
+        "type": "WorkstationCrafting:whiteRice"
+    }
+}

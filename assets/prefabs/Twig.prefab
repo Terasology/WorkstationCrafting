@@ -1,0 +1,20 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:items#Twig",
+        "stackId": "WorkstationCrafting:items#Twig"
+    },
+    "DisplayName": {
+        "name": "Twig"
+    },
+    "CraftInHandIngredient": {
+        "componentType": "WorkstationCrafting:twig"
+    },
+    "CraftingStationIngredient": {
+        "type": "WorkstationCrafting:twig"
+    },
+    "HeatFuel": {
+        "heatProvided": 200,
+        "consumeTime": 5000
+    }
+}

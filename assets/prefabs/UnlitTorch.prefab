@@ -1,0 +1,13 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:items#UnlitTorch",
+        "stackId": "WorkstationCrafting:items#UnlitTorch"
+    },
+    "DisplayName": {
+        "name": "Unlit Torch"
+    },
+    "CraftInHandIngredient": {
+        "componentType": "WorkstationCrafting:unlitTorch"
+    }
+}

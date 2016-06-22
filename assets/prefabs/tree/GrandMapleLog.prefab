@@ -1,0 +1,15 @@
+{
+    "CraftingStationMaterial": {
+        "stationType": "WorkstationCrafting:BasicWoodcrafting"
+    },
+    "CraftingStationIngredient": {
+        "type": "WorkstationCrafting:wood"
+    },
+    "TreeType": {
+        "treeType": "Grand Maple"
+    },
+    "HeatFuel": {
+        "heatProvided": 600,
+        "consumeTime": 20000
+    }
+}

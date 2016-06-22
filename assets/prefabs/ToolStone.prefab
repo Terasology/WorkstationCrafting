@@ -1,0 +1,16 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:items#ToolStone"
+    },
+    "DisplayName": {
+        "name": "Tool Stone"
+    },
+    "Durability": {
+        "durability": 20,
+        "maxDurability": 20
+    },
+    "CraftInHandIngredient": {
+        "componentType": "WorkstationCrafting:toolStone"
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "ProcessDefinition": {
+        "processType": "WorkstationCrafting:StandardWoodcrafting"
+    },
+    "CraftingStationRecipe": {
+        "recipeId": "Storage|WorkstationCrafting:TwigBasket",
+
+        "recipeComponents": ["9*WorkstationCrafting:twig"],
+        "recipeTools": [],
+
+        "blockResult": "1*WorkstationCrafting:TwigBasket"
+    }
+}

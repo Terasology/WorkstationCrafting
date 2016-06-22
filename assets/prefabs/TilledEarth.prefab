@@ -1,0 +1,8 @@
+{
+    "BlockDropGrammar": {
+        "itemDrops": ["0.5|WorkstationCrafting:stone", "0.1|WorkstationCrafting:flint"]
+    },
+    "FarmSoil": {
+        "growChanceMultiplier": 1
+    }
+}

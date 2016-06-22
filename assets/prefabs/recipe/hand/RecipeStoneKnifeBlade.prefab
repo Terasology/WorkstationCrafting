@@ -1,0 +1,8 @@
+{
+    "CraftInHandRecipe": {
+        "recipeId": "WorkstationCrafting:StoneKnifeBlade",
+        "itemResult": "WorkstationCrafting:StoneKnifeBlade",
+        "recipeComponents": ["1*WorkstationCrafting:flint"],
+        "recipeTools": ["1*WorkstationCrafting:toolStone"]
+    }
+}

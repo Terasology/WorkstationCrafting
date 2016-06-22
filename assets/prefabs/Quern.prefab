@@ -1,0 +1,44 @@
+{
+    "BlockDropGrammar": {
+        "itemDrops": ["4*WorkstationCrafting:Stone", "2*WorkstationCrafting:Stick"]
+    },
+    "InteractionTarget": {},
+    "InteractionScreen": {
+        "screen": "WorkstationCrafting:Quern"
+    },
+    "Workstation": {
+        "supportedProcessTypes": {
+            "WorkstationCrafting:Milling": false
+        }
+    },
+    "WorkstationInventory": {
+        "slotAssignments": {
+            "INPUT": {
+                "slotStart": 0,
+                "slotCount": 1
+            },
+            "OUTPUT": {
+                "slotStart": 1,
+                "slotCount": 1
+            }
+        }
+    },
+    "Inventory": {
+        "privateToOwner": false,
+        "itemSlots": [
+            0,
+            0
+        ]
+    },
+    "Health": {
+        "currentHealth": 5,
+        "maxHealth": 5,
+        "regenRate": 1,
+        "waitBeforeRegen": 2,
+        "destroyEntityOnNoHealth": true
+    },
+    "ActAsBlock": {
+        "block": "WorkstationCrafting:StandardWoodStation"
+    },
+    "DropBlockInventory": {}
+}

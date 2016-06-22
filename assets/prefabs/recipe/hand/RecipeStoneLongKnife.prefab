@@ -1,0 +1,7 @@
+{
+    "CraftInHandRecipe": {
+        "recipeId": "WorkstationCrafting:StoneLongKnife",
+        "itemResult": "WorkstationCrafting:StoneLongKnife",
+        "recipeComponents": ["1*WorkstationCrafting:stoneLongKnifeBlade", "2*WorkstationCrafting:twig", "2*WorkstationCrafting:stick"]
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:items#Resin"
+    },
+    "DisplayName": {
+        "name": "Resin"
+    },
+    "Durability": {
+        "durability": 20,
+        "maxDurability": 20
+    },
+    "CraftInHandIngredient": {
+        "componentType": "WorkstationCrafting:resin"
+    }
+}

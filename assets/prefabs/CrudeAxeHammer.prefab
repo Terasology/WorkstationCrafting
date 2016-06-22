@@ -1,0 +1,17 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:items#crudeAxeHammer",
+        "damageType": "axeHammerDamage"
+    },
+    "DisplayName": {
+        "name": "Crude Axe-Hammer"
+    },
+    "Durability": {
+        "durability": 20,
+        "maxDurability": 20
+    },
+    "CraftingStationTool": {
+        "type": ["axe", "hammer"]
+    }
+}

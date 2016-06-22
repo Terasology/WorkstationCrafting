@@ -1,0 +1,13 @@
+{
+    "ProcessDefinition": {
+        "processType": "WorkstationCrafting:BasicStonecrafting"
+    },
+    "CraftingStationRecipe": {
+        "recipeId": "Tools|WorkstationCrafting:Quern",
+
+        "recipeComponents": ["6*WorkstationCrafting:stone", "2*WorkstationCrafting:stick"],
+        "recipeTools": ["1*hammer"],
+
+        "blockResult": "1*WorkstationCrafting:quern"
+    }
+}

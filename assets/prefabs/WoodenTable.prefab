@@ -1,0 +1,5 @@
+{
+    "CraftingStationMaterial": {
+        "stationType": "WorkstationCrafting:BasicStonecrafting"
+    }
+}

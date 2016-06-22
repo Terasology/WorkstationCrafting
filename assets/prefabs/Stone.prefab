@@ -1,0 +1,16 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:items#Stone",
+        "stackId": "WorkstationCrafting:items#Stone"
+    },
+    "DisplayName": {
+        "name": "Stone"
+    },
+    "CraftInHandIngredient": {
+        "componentType": "WorkstationCrafting:stone"
+    },
+    "CraftingStationIngredient": {
+        "type": "WorkstationCrafting:stone"
+    }
+}

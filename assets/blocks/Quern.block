@@ -1,0 +1,19 @@
+{
+    "shape": "WorkstationCrafting:Quern",
+
+    "rotation": "horizontal",
+
+    "categories": ["stone"],
+
+    "displayName": "Quern",
+
+    "entity": {
+        "prefab": "WorkstationCrafting:Quern"
+    },
+
+    "tiles": {
+        "center": "WorkstationCrafting:Quern"
+    },
+
+    "translucent": true
+}

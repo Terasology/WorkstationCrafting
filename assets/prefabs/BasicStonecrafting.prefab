@@ -1,0 +1,64 @@
+{
+    "BlockDropGrammar": {
+        "blockDrops": ["2*WorkstationCrafting:WoodenTable"]
+    },
+    "InteractionTarget": {},
+    "InteractionScreen": {
+        "screen": "WorkstationCrafting:CraftInStation"
+    },
+    "Workstation": {
+        "supportedProcessTypes": {
+            "WorkstationCrafting:BasicStonecrafting": false,
+            "Crafting:UpgradeCraftingWorkstation": false
+        }
+    },
+    "WorkstationInventory": {
+        "slotAssignments": {
+            "INPUT": {
+                "slotStart": 2,
+                "slotCount": 6
+            },
+            "TOOL": {
+                "slotStart": 1,
+                "slotCount": 1
+            },
+            "UPGRADE": {
+                "slotStart": 0,
+                "slotCount": 1
+            },
+            "OUTPUT": {
+                "slotStart": 8,
+                "slotCount": 1
+            }
+        }
+    },
+    "CraftingStation": {
+        "type": "WorkstationCrafting:BasicStonecrafting",
+        "workstationUITexture": "WorkstationCrafting:BasicStoneworking"
+    },
+    "Inventory": {
+        "privateToOwner": false,
+        "itemSlots": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    "Health": {
+        "currentHealth": 5,
+        "maxHealth": 5,
+        "regenRate": 1,
+        "waitBeforeRegen": 2,
+        "destroyEntityOnNoHealth": true
+    },
+    "ActAsBlock": {
+        "block": "WorkstationCrafting:BasicStoneStation"
+    },
+    "DropBlockInventory": {}
+}

@@ -1,0 +1,8 @@
+{
+    "CraftInHandRecipe": {
+        "recipeId": "WorkstationCrafting:AxeHammerHead",
+        "itemResult": "WorkstationCrafting:AxeHammerHead",
+        "recipeComponents": ["1*WorkstationCrafting:stone"],
+        "recipeTools": ["1*WorkstationCrafting:toolStone"]
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "ProcessDefinition": {
+        "processType": "WorkstationCrafting:StandardWoodcrafting"
+    },
+    "CraftingStationRecipe": {
+        "recipeId": "Building|WorkstationCrafting:WoodenBucket",
+
+        "recipeComponents": ["2*WorkstationCrafting:plank", "1*WorkstationCrafting:twig"],
+        "recipeTools": ["1*axe", "1*hammer"],
+
+        "itemResult": "1*WorkstationCrafting:WoodenBucket"
+    }
+}

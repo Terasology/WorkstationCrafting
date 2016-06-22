@@ -1,0 +1,19 @@
+{
+    "shape": "WorkstationCrafting:Table",
+    "categories": ["wood"],
+
+    "displayName": "Wooden Table",
+
+    "entity": {
+        "prefab": "WorkstationCrafting:WoodenTable"
+    },
+
+    "tiles": {
+        "top": "WorkstationCrafting:WoodenTableTop",
+        "bottom": "WorkstationCrafting:WoodenTableBottom",
+        "sides": "WorkstationCrafting:WoodenTableSides",
+        "center": "WorkstationCrafting:WoodenTableSides"
+    },
+
+    "translucent": true
+}

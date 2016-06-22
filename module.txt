@@ -1,0 +1,26 @@
+{
+    "id" : "WorkstationCrafting",
+    "version" : "0.1.0-SNAPSHOT",
+    "author" : "XTariq, Marcin Sciesinski <marcins78@gmail.com>",
+    "displayName" : "Workstation Crafting",
+    "description" : "An extended version of crafting to allow for more advanced methods and items.",
+    "dependencies" : [
+            {
+                "id" : "MultiBlock",
+                "minVersion" : "0.1.0"
+            },
+            {
+                "id" : "Workstation",
+                "minVersion" : "1.0.0"
+            },
+            {
+                "id" : "Fluid",
+                "minVersion" : "0.1.0"
+            },
+            {
+                "id" : "StructuralResources",
+                "minVersion" : "0.2.0"
+            }
+    ],
+    "serverSideOnly" : false
+}

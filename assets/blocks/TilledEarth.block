@@ -1,0 +1,11 @@
+{
+    "basedOn": "core:soil",
+    "entity": {
+        "prefab": "WorkstationCrafting:TilledEarth"
+    },
+
+    "tiles" : {
+        "sides": "Core:Dirt",
+        "bottom": "Core:Dirt"
+    }
+}

@@ -1,0 +1,16 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:items#AxeHammerHead",
+        "stackId": "WorkstationCrafting:items#AxeHammerHead"
+    },
+    "DisplayName": {
+        "name": "Axe-Hammer Head"
+    },
+    "CraftInHandIngredient": {
+        "componentType": "WorkstationCrafting:axeHammerHead"
+    },
+    "CraftingStationIngredient": {
+        "type": "WorkstationCrafting:axeHammerHead"
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "CraftInHandRecipe": {
+        "recipeId": "WorkstationCrafting:CrudeHoe",
+        "itemResult": "WorkstationCrafting:CrudeHoe",
+        "recipeComponents": ["1*WorkstationCrafting:twig", "2*WorkstationCrafting:stick"],
+        "recipeTools": ["1*WorkstationCrafting:toolStone"]
+    }
+}

@@ -1,0 +1,12 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:items#StoneKnifeBlade"
+    },
+    "DisplayName": {
+        "name": "Stone Knife Blade"
+    },
+    "CraftInHandIngredient": {
+        "componentType": "WorkstationCrafting:stoneKnifeBlade"
+    }
+}

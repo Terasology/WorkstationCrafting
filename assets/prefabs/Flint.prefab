@@ -1,0 +1,13 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:items#Flint",
+        "stackId": "WorkstationCrafting:flint"
+    },
+    "DisplayName": {
+        "name": "Flint"
+    },
+    "CraftInHandIngredient": {
+        "componentType": "WorkstationCrafting:flint"
+    }
+}
