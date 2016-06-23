@@ -45,7 +45,8 @@ public class ResetStartingInventorySystem extends BaseComponentSystem {
     //@ReceiveEvent()
     public void resetStartingInventory(OnPlayerSpawnedEvent event, EntityRef character) {
         for (int i = 0; i < manager.getNumSlots(character); i++) {
-            manager.removeItem(character, EntityRef.NULL, manager.getItemInSlot(character, i), true);
+            // TODO: Temporarily removed.
+            //manager.removeItem(character, EntityRef.NULL, manager.getItemInSlot(character, i), true);
         }
     }
 }

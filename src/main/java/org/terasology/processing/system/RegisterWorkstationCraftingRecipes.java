@@ -47,9 +47,6 @@ import org.terasology.workstation.system.WorkstationRegistry;
 import org.terasology.world.block.BlockManager;
 import org.terasology.world.block.BlockUri;
 
-/**
- * @author Marcin Sciesinski <marcins78@gmail.com>
- */
 @RegisterSystem
 public class RegisterWorkstationCraftingRecipes extends BaseComponentSystem {
     @In
@@ -70,8 +67,6 @@ public class RegisterWorkstationCraftingRecipes extends BaseComponentSystem {
 
         workstationRegistry.registerProcessFactory(WorkstationCrafting.BASIC_STONECRAFTING_PROCESS_TYPE, new CraftingWorkstationProcessFactory());
         workstationRegistry.registerProcessFactory(WorkstationCrafting.ADVANCED_STONECRAFTING_PROCESS_TYPE, new CraftingWorkstationProcessFactory());
-
-        workstationRegistry.registerProcessFactory(WorkstationCrafting.COOKING_PROCESS_TYPE, new CraftingWorkstationProcessFactory());
 
         addWorkstationFormingRecipes();
 
@@ -105,13 +100,6 @@ public class RegisterWorkstationCraftingRecipes extends BaseComponentSystem {
                         new StationTypeFilter("WorkstationCrafting:BasicStonecrafting"), new Basic3DSizeFilter(2, 1, 1, 1),
                         "WorkstationCrafting:BasicStonecrafting",
                         new UniformBlockReplacementCallback<Void>(blockManager.getBlock("WorkstationCrafting:BasicStoneStation"))));
-
-        LayeredMultiBlockFormItemRecipe cookingStationRecipe = new LayeredMultiBlockFormItemRecipe(
-                new ToolTypeEntityFilter("hammer"), new Basic2DSizeFilter(2, 1), new AnyActivityFilter(),
-                "WorkstationCrafting:CookingStation", null);
-        cookingStationRecipe.addLayer(1, 1, new BlockUriEntityFilter(new BlockUri("Core:Brick")));
-        cookingStationRecipe.addLayer(1, 1, new BlockUriEntityFilter(new BlockUri(new ResourceUrn("Core:CobbleStone"), new ResourceUrn(("Engine:EighthBlock")))));
-        multiBlockFormRecipeRegistry.addMultiBlockFormItemRecipe(cookingStationRecipe);
     }
 
     private void addStandardWoodWorkstationBlockShapeRecipes() {
