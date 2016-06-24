@@ -2,7 +2,7 @@
     "parent": "engine:iconItem",
     "Item": {
         "icon": "WorkstationCrafting:PortableBasicWoodcraftingStation",
-        "stackId": "WorkstationCrafting:portableBasicWoodcrafting"
+        "stackId": "WorkstationCrafting:portableBasicWoodcrafting",
         "maxStackSize": 1
     },
     "DisplayName": {
