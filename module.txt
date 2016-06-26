@@ -20,6 +20,10 @@
             {
                 "id" : "StructuralResources",
                 "minVersion" : "0.2.0"
+            },
+            {
+                "id" : "Fences",
+                "minVersion" : "0.1.0"
             }
     ],
     "serverSideOnly" : false
