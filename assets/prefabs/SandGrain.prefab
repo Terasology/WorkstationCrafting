@@ -1,0 +1,16 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:SandGrain",
+        "stackId": "WorkstationCrafting:sandGrain"
+    },
+    "DisplayName": {
+        "name": "Sand Grains"
+    },
+    "CraftInHandIngredient": {
+        "componentType": "WorkstationCrafting:sand"
+    },
+    "CraftingStationIngredient": {
+        "type": "WorkstationCrafting:sand"
+    }
+}

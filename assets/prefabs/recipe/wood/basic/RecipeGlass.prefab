@@ -1,0 +1,13 @@
+{
+    "ProcessDefinition": {
+        "processType": "WorkstationCrafting:BasicWoodcrafting"
+    },
+    "CraftingStationRecipe": {
+        "recipeId": "Materials|WorkstationCrafting:Glass",
+
+        "recipeComponents": ["1*WorkstationCrafting:sand"],
+        "recipeTools": ["1*hammer"],
+
+        "itemResult": "1*WorkstationCrafting:Glass"
+    }
+}

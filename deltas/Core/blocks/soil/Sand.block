@@ -1,0 +1,7 @@
+{
+    "hardness": 2,
+    "mass": 32,
+    "entity": {
+        "prefab": "WorkstationCrafting:Sand"
+    }
+}

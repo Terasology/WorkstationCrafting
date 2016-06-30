@@ -1,0 +1,16 @@
+{
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:GlassShard",
+        "stackId": "WorkstationCrafting:glass"
+    },
+    "DisplayName": {
+        "name": "Glass Shard"
+    },
+    "CraftInHandIngredient": {
+        "componentType": "WorkstationCrafting:glass"
+    },
+    "CraftingStationIngredient": {
+        "type": "WorkstationCrafting:glass"
+    }
+}
