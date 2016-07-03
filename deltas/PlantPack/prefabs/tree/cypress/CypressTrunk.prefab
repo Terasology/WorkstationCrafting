@@ -1,0 +1,6 @@
+{
+    "BlockDropGrammar": {
+        "blockDrops": ["1-2*WorkstationCrafting:CypressLog"],
+        "itemDrops": ["0.1|WorkstationCrafting:Resin"]
+    }
+}

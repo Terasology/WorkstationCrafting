@@ -22,7 +22,23 @@
                 "minVersion" : "0.2.0"
             },
             {
+                "id" : "GrowingFlora",
+                "minVersion" : "0.1.0"
+            },
+            {
+                "id" : "PlantPack",
+                "minVersion" : "0.1.0"
+            },
+            {
                 "id" : "Fences",
+                "minVersion" : "0.1.0"
+            },
+            {
+                "id" : "AnotherWorld",
+                "minVersion" : "0.2.0"
+            },
+            {
+                "id" : "AnotherWorldPlants",
                 "minVersion" : "0.1.0"
             }
     ],
