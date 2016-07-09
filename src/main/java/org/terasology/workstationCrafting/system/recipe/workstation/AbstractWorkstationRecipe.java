@@ -34,6 +34,7 @@ import java.util.List;
 
 public abstract class AbstractWorkstationRecipe implements CraftingStationRecipe {
     private List<IngredientCraftBehaviour<EntityRef>> ingredientBehaviours = new ArrayList<>();
+    private List<IngredientCraftBehaviour<EntityRef>> optionalIngredientBehaviours = new ArrayList<>();
     private List<IngredientCraftBehaviour<EntityRef>> toolBehaviours = new ArrayList<>();
     private List<IngredientCraftBehaviour<String>> fluidBehaviours = new ArrayList<>();
 
@@ -46,6 +47,11 @@ public abstract class AbstractWorkstationRecipe implements CraftingStationRecipe
 
     public void addIngredientBehaviour(IngredientCraftBehaviour<EntityRef> behaviour) {
         ingredientBehaviours.add(behaviour);
+        allBehaviours.add(behaviour);
+    }
+
+    public void addOptionalIngredientBehaviour(IngredientCraftBehaviour<EntityRef> behaviour) {
+        optionalIngredientBehaviours.add(behaviour);
         allBehaviours.add(behaviour);
     }
 
@@ -78,6 +84,13 @@ public abstract class AbstractWorkstationRecipe implements CraftingStationRecipe
                 return true;
             }
         }
+        /*
+        for (IngredientCraftBehaviour<EntityRef> ingredientBehaviour : optionalIngredientBehaviours) {
+            if (ingredientBehaviour.isValidAnyAmount(item)) {
+                return true;
+            }
+        }
+        */
         return false;
     }
 

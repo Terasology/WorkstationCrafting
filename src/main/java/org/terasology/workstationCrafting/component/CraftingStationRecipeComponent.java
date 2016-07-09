@@ -22,6 +22,7 @@ import java.util.List;
 public class CraftingStationRecipeComponent implements Component {
     public String recipeId;
     public List<String> recipeComponents;
+    public List<String> optionalRecipeComponents;
     public List<String> recipeTools;
     public List<String> recipeFluids;
 

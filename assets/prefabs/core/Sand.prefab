@@ -1,6 +1,6 @@
 {
     "BlockDropGrammar": {
-        "itemDrops": ["1|WorkstationCrafting:sandGrain"],
+        "itemDrops": ["2|WorkstationCrafting:sandGrain"],
         "droppedWithTool": {
             "soil": {
                 blockDrops: ["1|Core:Sand"]

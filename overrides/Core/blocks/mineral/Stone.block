@@ -1,0 +1,9 @@
+{
+    "mass": 100,
+    "hardness": 8,
+    "categories": ["stone"],
+    "entity": {
+        "prefab": "WorkstationCrafting:StoneBlock"
+    },
+    "sounds": "Core:stone"
+}

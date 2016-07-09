@@ -29,6 +29,11 @@ public class DefaultWorkstationRecipe extends AbstractWorkstationRecipe {
         addIngredientBehaviour(behaviour);
     }
 
+    public void addOptionalIngredient(String type, int count) {
+        final ConsumeItemCraftBehaviour behaviour = new ConsumeItemCraftBehaviour(new CraftingStationIngredientPredicate(type), count, new InventorySlotTypeResolver("INPUT"));
+        addOptionalIngredientBehaviour(behaviour);
+    }
+
     public void addRequiredTool(String toolType, int durability) {
         final ReduceDurabilityCraftBehaviour behaviour = new ReduceDurabilityCraftBehaviour(
                 new CraftingStationToolPredicate(toolType), durability, new InventorySlotTypeResolver("TOOL"));

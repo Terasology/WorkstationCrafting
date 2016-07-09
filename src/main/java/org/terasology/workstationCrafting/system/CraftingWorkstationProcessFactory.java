@@ -46,6 +46,14 @@ public class CraftingWorkstationProcessFactory implements WorkstationProcessFact
                 workstationRecipe.addIngredient(type, count);
             }
         }
+        if (recipe.optionalRecipeComponents != null) {
+            for (String recipeComponent : recipe.optionalRecipeComponents) {
+                String[] split = recipeComponent.split("\\*", 2);
+                int count = Integer.parseInt(split[0]);
+                String type = split[1];
+                workstationRecipe.addOptionalIngredient(type, count);
+            }
+        }
         if (recipe.recipeTools != null) {
             for (String recipeTool : recipe.recipeTools) {
                 String[] split = recipeTool.split("\\*", 2);
