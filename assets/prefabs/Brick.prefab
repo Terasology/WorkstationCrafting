@@ -9,5 +9,10 @@
     },
     "CraftingStationIngredient": {
         "type": "WorkstationCrafting:brick"
+    },
+    "ItemHelp": {
+        "paragraphText": [
+          "A brick made from heating up clay that can be used for building structures."
+        ]
     }
 }

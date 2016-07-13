@@ -9,5 +9,27 @@
         "recipeTools": ["1*axe", "1*hammer"],
 
         "itemResult": "1*WorkstationCrafting:WoodenBucket"
+    },
+    "ProcessingTime": {
+        "duration": 1000
+    },
+    "ProcessDefinition": {
+        "processType": "WorkstationCrafting:StandardWoodcrafting"
+    },
+    "RequirementInput": {
+        "requirements": [
+            "axe", "hammer"
+        ]
+    },
+    "InventoryInput": {
+        "itemCounts": {
+            "WorkstationCrafting:plank": 2,
+            "WorkstationCrafting:twig": 1
+        }
+    },
+    "InventoryOutput": {
+        "itemCounts": {
+            "WorkstationCrafting:WoodenBucket": 1
+        }
     }
 }

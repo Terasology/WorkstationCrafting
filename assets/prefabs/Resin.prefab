@@ -12,5 +12,10 @@
     },
     "CraftInHandIngredient": {
         "componentType": "WorkstationCrafting:resin"
+    },
+    "ItemHelp": {
+        "paragraphText": [
+          "A sticky organic substance usable for sticking crude stuff together."
+        ]
     }
 }

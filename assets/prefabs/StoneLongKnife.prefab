@@ -15,5 +15,10 @@
     },
     "CraftInHandIngredient": {
         "componentType": "WorkstationCrafting:knife"
+    },
+    "ItemHelp": {
+        "paragraphText": [
+          "A long knife that can be used for cutting things"
+        ]
     }
 }

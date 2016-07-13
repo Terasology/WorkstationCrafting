@@ -8,5 +8,10 @@
     },
     "CraftInHandIngredient": {
         "componentType": "WorkstationCrafting:stoneLongKnifeBlade"
+    },
+    "ItemHelp": {
+        "paragraphText": [
+          "The blade of a stone long knife. Required for making the long knife."
+        ]
     }
 }

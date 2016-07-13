@@ -12,5 +12,10 @@
     },
     "CraftingStationIngredient": {
         "type": "WorkstationCrafting:stone"
+    },
+    "ItemHelp": {
+        "paragraphText": [
+          "A common stone found on the ground."
+        ]
     }
 }

@@ -9,5 +9,26 @@
         "recipeTools": ["1*axe"],
 
         "itemResult": "6*WorkstationCrafting:Stick"
+    },
+    "ProcessingTime": {
+        "duration": 1000
+    },
+    "ProcessDefinition": {
+        "processType": "WorkstationCrafting:StandardWoodcrafting"
+    },
+    "RequirementInput": {
+        "requirements": [
+            "axe"
+        ]
+    },
+    "InventoryInput": {
+        "itemCounts": {
+            "WorkstationCrafting:wood": 1
+        }
+    },
+    "InventoryOutput": {
+        "itemCounts": {
+            "WorkstationCrafting:Stick": 6
+        }
     }
 }

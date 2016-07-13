@@ -12,5 +12,10 @@
     },
     "CraftingStationIngredient": {
         "type": "WorkstationCrafting:axeHammerHead"
+    },
+    "ItemHelp": {
+        "paragraphText": [
+          "This crude axe-hammer head can be attached to some sticks to be used as a makeshift axe-hammer."
+        ]
     }
 }

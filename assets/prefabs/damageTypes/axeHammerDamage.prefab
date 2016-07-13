@@ -3,6 +3,7 @@
     "blockDamageModifier": {
         "materialDamageMultiplier" : {
             "stone": 1,
+            "rock": 1,
             "mineral": 1,
             "wood": 1
         }

@@ -9,5 +9,26 @@
         "recipeTools": ["1*hammer"],
 
         "itemResult": "1*WorkstationCrafting:Glass"
+    },
+    "ProcessingTime": {
+        "duration": 1000
+    },
+    "ProcessDefinition": {
+        "processType": "WorkstationCrafting:BasicWoodcrafting"
+    },
+    "RequirementInput": {
+        "requirements": [
+            "hammer"
+        ]
+    },
+    "InventoryInput": {
+        "itemCounts": {
+            "WorkstationCrafting:sand": 1
+        }
+    },
+    "InventoryOutput": {
+        "blockCounts": {
+            "WorkstationCrafting:Glass": 1
+        }
     }
 }

@@ -9,5 +9,27 @@
         "recipeTools": ["1*hammer"],
 
         "blockResult": "1*WorkstationCrafting:quern"
+    },
+    "ProcessingTime": {
+        "duration": 1000
+    },
+    "ProcessDefinition": {
+        "processType": "WorkstationCrafting:BasicStonecrafting"
+    },
+    "RequirementInput": {
+        "requirements": [
+            "hammer"
+        ]
+    },
+    "InventoryInput": {
+        "itemCounts": {
+            "WorkstationCrafting:stone": 6,
+            "WorkstationCrafting:stick": 2
+        }
+    },
+    "InventoryOutput": {
+        "blockCounts": {
+            "WorkstationCrafting:quern": 1
+        }
     }
 }

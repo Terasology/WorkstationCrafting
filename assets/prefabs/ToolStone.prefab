@@ -12,5 +12,10 @@
     },
     "CraftInHandIngredient": {
         "componentType": "WorkstationCrafting:toolStone"
+    },
+    "ItemHelp": {
+        "paragraphText": [
+          "This crude stone can be used for crafting several other crude items and tools."
+        ]
     }
 }

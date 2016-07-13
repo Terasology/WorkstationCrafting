@@ -15,5 +15,10 @@
         ]
     },
     "AccessInventoryAction": {},
-    "DropBlockInventory": {}
+    "DropBlockInventory": {},
+    "ItemHelp": {
+        "paragraphText": [
+          "A basket made out of twigs that can store 10 items."
+        ]
+    }
 }

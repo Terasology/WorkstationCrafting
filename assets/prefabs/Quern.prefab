@@ -40,5 +40,10 @@
     "ActAsBlock": {
         "block": "WorkstationCrafting:StandardWoodStation"
     },
-    "DropBlockInventory": {}
+    "DropBlockInventory": {},
+    "ItemHelp": {
+        "paragraphText": [
+          "A simple hand mill for grinding grain."
+        ]
+    }
 }

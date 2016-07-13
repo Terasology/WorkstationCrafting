@@ -12,5 +12,10 @@
     },
     "CraftingStationIngredient": {
         "type": "WorkstationCrafting:sand"
+    },
+    "ItemHelp": {
+        "paragraphText": [
+          "Several grains of sand. Can be processed into glass."
+        ]
     }
 }

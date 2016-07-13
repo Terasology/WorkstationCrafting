@@ -17,5 +17,10 @@
         "heatRequired": 500,
         "processingTime": 3000,
         "itemResult": "1*WorkstationCrafting:Brick"
+    },
+    "ItemHelp": {
+        "paragraphText": [
+          "A fine-grained natural rock or soil that combines one or more clay minerals with traces of metal oxides and organic matter."
+        ]
     }
 }

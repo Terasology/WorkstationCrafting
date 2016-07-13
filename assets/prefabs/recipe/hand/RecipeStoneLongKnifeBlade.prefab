@@ -4,5 +4,24 @@
         "itemResult": "WorkstationCrafting:StoneLongKnifeBlade",
         "recipeComponents": ["2*WorkstationCrafting:flint"],
         "recipeTools": ["1*WorkstationCrafting:toolStone"]
+    },
+    "Parent": "CrudeAssemblingBaseProcessPart",
+    "ProcessDefinition": {
+        "processType": "ManualLabor:CrudeAssembling"
+    },
+    "RequirementInput": {
+        "requirements": [
+            "ToolStone"
+        ]
+    },
+    "InventoryInput": {
+        "itemCounts": {
+            "WorkstationCrafting:flint": 2
+        }
+    },
+    "InventoryOutput": {
+        "itemCounts": {
+            "WorkstationCrafting:StoneLongKnifeBlade": 1
+        }
     }
 }

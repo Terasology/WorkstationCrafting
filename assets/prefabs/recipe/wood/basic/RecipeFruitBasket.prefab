@@ -9,5 +9,27 @@
         "recipeTools": ["1*axe"],
 
         "itemResult": "1*WorkstationCrafting:FruitBasket"
+    },
+    "ProcessingTime": {
+        "duration": 1000
+    },
+    "ProcessDefinition": {
+        "processType": "WorkstationCrafting:BasicWoodcrafting"
+    },
+    "RequirementInput": {
+        "requirements": [
+            "axe"
+        ]
+    },
+    "InventoryInput": {
+        "itemCounts": {
+            "WorkstationCrafting:twig": 7,
+            "WorkstationCrafting:stick": 2
+        }
+    },
+    "InventoryOutput": {
+        "itemCounts": {
+            "WorkstationCrafting:FruitBasket": 1
+        }
     }
 }

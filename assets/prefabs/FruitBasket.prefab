@@ -19,5 +19,10 @@
             0
         ]
     },
-    "AccessInventoryAction": {}
+    "AccessInventoryAction": {},
+    "ItemHelp": {
+        "paragraphText": [
+          "A basket for holding 8 kinds of fruit."
+        ]
+    }
 }

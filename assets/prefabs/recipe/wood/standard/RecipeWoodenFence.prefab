@@ -9,5 +9,26 @@
         "recipeTools": ["1*axe", "1*hammer"],
 
         "blockResult": "8*Fences:Fence"
+    },
+    "ProcessingTime": {
+        "duration": 1000
+    },
+    "ProcessDefinition": {
+        "processType": "WorkstationCrafting:StandardWoodcrafting"
+    },
+    "RequirementInput": {
+        "requirements": [
+            "axe", "hammer"
+        ]
+    },
+    "InventoryInput": {
+        "itemCounts": {
+            "WorkstationCrafting:plank": 4
+        }
+    },
+    "InventoryOutput": {
+        "blockCounts": {
+            "Fences:Fence": 8
+        }
     }
 }

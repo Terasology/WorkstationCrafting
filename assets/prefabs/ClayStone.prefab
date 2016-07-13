@@ -1,5 +1,10 @@
 {
     "BlockDropGrammar": {
         "itemDrops": ["2-3*WorkstationCrafting:Clay"]
+    },
+    "ItemHelp": {
+        "paragraphText": [
+          "A rock containing pieces of clay."
+        ]
     }
 }

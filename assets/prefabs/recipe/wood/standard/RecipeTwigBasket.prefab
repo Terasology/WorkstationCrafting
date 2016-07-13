@@ -9,5 +9,21 @@
         "recipeTools": [],
 
         "blockResult": "1*WorkstationCrafting:TwigBasket"
+    },
+    "ProcessingTime": {
+        "duration": 1000
+    },
+    "ProcessDefinition": {
+        "processType": "WorkstationCrafting:StandardWoodcrafting"
+    },
+    "InventoryInput": {
+        "itemCounts": {
+            "WorkstationCrafting:twig": 9
+        }
+    },
+    "InventoryOutput": {
+        "blockCounts": {
+            "WorkstationCrafting:TwigBasket": 1
+        }
     }
 }

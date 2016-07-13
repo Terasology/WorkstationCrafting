@@ -9,5 +9,10 @@
     },
     "CraftInHandIngredient": {
         "componentType": "WorkstationCrafting:unlitTorch"
+    },
+    "ItemHelp": {
+        "paragraphText": [
+          "A stick with some flammable substance attached on the other end. Can be ignited using flint or a lighter."
+        ]
     }
 }

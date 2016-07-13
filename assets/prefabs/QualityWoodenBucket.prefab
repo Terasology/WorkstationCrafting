@@ -14,5 +14,10 @@
         "fluidSizePerc": [0.625, 0.4375],
         "textureWithHole": "WorkstationCrafting:QualityWoodenBucket",
         "emptyTexture": "WorkstationCrafting:QualityWoodenBucketEmpty"
+    },
+    "ItemHelp": {
+        "paragraphText": [
+          "A bucket made out of quality wood that can hold up to 10 liters of fluid."
+        ]
     }
 }

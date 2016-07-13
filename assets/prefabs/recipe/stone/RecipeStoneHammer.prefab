@@ -9,5 +9,28 @@
         "recipeTools": ["1*hammer"],
 
         "itemResult": "1*WorkstationCrafting:StoneHammer"
+    },
+    "ProcessingTime": {
+        "duration": 1000
+    },
+    "ProcessDefinition": {
+        "processType": "WorkstationCrafting:BasicStonecrafting"
+    },
+    "RequirementInput": {
+        "requirements": [
+            "hammer"
+        ]
+    },
+    "InventoryInput": {
+        "itemCounts": {
+            "WorkstationCrafting:stone": 1,
+            "WorkstationCrafting:twig": 1,
+            "WorkstationCrafting:stick": 1
+        }
+    },
+    "InventoryOutput": {
+        "itemCounts": {
+            "WorkstationCrafting:StoneHammer": 1
+        }
     }
 }

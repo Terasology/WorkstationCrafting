@@ -3,5 +3,10 @@
         "durability": 60,
         "maxDurability": 60
     },
-    "OverTimeDurabilityReduce": {}
+    "OverTimeDurabilityReduce": {},
+    "ItemHelp": {
+        "paragraphText": [
+          "A stick with a fire lit on the other end. Illuminates the nearby world around you."
+        ]
+    }
 }

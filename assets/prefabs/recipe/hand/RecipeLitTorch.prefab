@@ -4,5 +4,24 @@
         "blockResult": "WorkstationCrafting:LitTorch",
         "recipeComponents": ["1*WorkstationCrafting:unlitTorch"],
         "recipeActivators": ["1*WorkstationCrafting:flint"]
+    },
+    "Parent": "CrudeAssemblingBaseProcessPart",
+    "ProcessDefinition": {
+        "processType": "ManualLabor:CrudeAssembling"
+    },
+    "RequirementInput": {
+        "requirements": [
+            "flint"
+        ]
+    },
+    "InventoryInput": {
+        "itemCounts": {
+            "WorkstationCrafting:UnlitTorch": 1
+        }
+    },
+    "InventoryOutput": {
+        "blockCounts": {
+            "WorkstationCrafting:LitTorch": 1
+        }
     }
 }

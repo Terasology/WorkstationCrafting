@@ -8,5 +8,10 @@
     },
     "CraftInHandIngredient": {
         "componentType": "WorkstationCrafting:stoneKnifeBlade"
+    },
+    "ItemHelp": {
+        "paragraphText": [
+          "The blade of a stone knife. Required for making the knife."
+        ]
     }
 }

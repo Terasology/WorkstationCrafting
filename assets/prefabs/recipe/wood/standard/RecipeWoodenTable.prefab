@@ -9,5 +9,27 @@
         "recipeTools": ["1*axe", "1*hammer"],
 
         "blockResult": "1*WorkstationCrafting:WoodenTable"
+    },
+    "ProcessingTime": {
+        "duration": 1000
+    },
+    "ProcessDefinition": {
+        "processType": "WorkstationCrafting:StandardWoodcrafting"
+    },
+    "RequirementInput": {
+        "requirements": [
+            "axe", "hammer"
+        ]
+    },
+    "InventoryInput": {
+        "itemCounts": {
+            "WorkstationCrafting:plank": 4,
+            "WorkstationCrafting:stick": 4
+        }
+    },
+    "InventoryOutput": {
+        "blockCounts": {
+            "WorkstationCrafting:WoodenTable": 1
+        }
     }
 }

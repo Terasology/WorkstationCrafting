@@ -57,5 +57,10 @@
     "ActAsBlock": {
         "block": "WorkstationCrafting:BasicWoodStation"
     },
-    "DropBlockInventory": {}
+    "DropBlockInventory": {},
+    "ItemHelp": {
+        "paragraphText": [
+          "A two-block station that allows the user to craft basic-level wood items."
+        ]
+    }
 }

@@ -49,5 +49,10 @@
         "waitBeforeRegen": 2,
         "destroyEntityOnNoHealth": true
     },
-    "DropBlockInventory": {}
+    "DropBlockInventory": {},
+    "ItemHelp": {
+        "paragraphText": [
+          "A hearth constructed out of clay."
+        ]
+    }
 }

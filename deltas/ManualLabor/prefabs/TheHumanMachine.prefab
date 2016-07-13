@@ -1,0 +1,9 @@
+{
+  "MachineDefinition": {
+    "inputSlots": 2,
+    "requirementSlots": 1,
+    "outputSlots": 1,
+    "actionTitle": "Assemble",
+    "requirementSlotsTitle": "Tool"
+  }
+}

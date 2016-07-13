@@ -13,5 +13,10 @@
     },
     "CraftingStationTool": {
         "type": ["axe", "hammer"]
+    },
+    "ItemHelp": {
+        "paragraphText": [
+          "The crude axe-hammmer can be used as an axe or hammer. However, it's not very durable."
+        ]
     }
 }

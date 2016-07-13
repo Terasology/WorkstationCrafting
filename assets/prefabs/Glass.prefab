@@ -12,5 +12,10 @@
     },
     "CraftingStationIngredient": {
         "type": "WorkstationCrafting:glass"
+    },
+    "ItemHelp": {
+        "paragraphText": [
+          "A transparent solid that is used in the construction of many items."
+        ]
     }
 }

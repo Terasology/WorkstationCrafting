@@ -10,5 +10,10 @@
         "durability": 20,
         "maxDurability": 20
     },
-    "Hoe": {}
+    "Hoe": {},
+    "ItemHelp": {
+        "paragraphText": [
+          "A makeshift hoe that can be used for crude tilling."
+        ]
+    }
 }
