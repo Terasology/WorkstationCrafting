@@ -15,7 +15,7 @@
  */
 package org.terasology.processing.system;
 
-import org.terasology.durability.ReduceDurabilityEvent;
+import org.terasology.durability.events.ReduceDurabilityEvent;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.entitySystem.event.ReceiveEvent;
 import org.terasology.entitySystem.systems.BaseComponentSystem;

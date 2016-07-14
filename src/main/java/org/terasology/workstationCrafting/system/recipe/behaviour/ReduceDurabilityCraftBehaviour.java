@@ -19,17 +19,14 @@ import com.google.common.base.Predicate;
 import org.terasology.workstationCrafting.system.recipe.render.CraftIngredientRenderer;
 import org.terasology.workstationCrafting.system.recipe.render.FixedFunction;
 import org.terasology.workstationCrafting.system.recipe.render.ItemSlotIngredientRenderer;
-import org.terasology.durability.DurabilityComponent;
-import org.terasology.durability.ReduceDurabilityEvent;
+import org.terasology.durability.components.DurabilityComponent;
+import org.terasology.durability.events.ReduceDurabilityEvent;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.logic.inventory.InventoryUtils;
 
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * @author Marcin Sciesinski <marcins78@gmail.com>
- */
 public class ReduceDurabilityCraftBehaviour implements IngredientCraftBehaviour<EntityRef> {
     private Predicate<EntityRef> matcher;
     private int durabilityUsed;
