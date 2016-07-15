@@ -1,0 +1,14 @@
+{
+    "hardness": 12,
+
+    "displayName": "Novice Woodworking Station",
+
+    "categories": ["wood"],
+
+    "tiles": {
+        "top": "WorkstationCrafting:StandardWoodStationTop",
+        "bottom": "WorkstationCrafting:StandardWoodStationBottom",
+        "sides": "WorkstationCrafting:StandardWoodStationSides"
+    }
+
+}

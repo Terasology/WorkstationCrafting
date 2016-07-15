@@ -49,6 +49,9 @@ public class StationAvailableRecipesWidget extends CoreWidget {
 
     private ColumnLayout layout;
 
+    private static final float WAIT_TIME_PER_TICK = 15f;
+    private float counter = 0f;
+
     public StationAvailableRecipesWidget() {
         layout = new ColumnLayout();
         layout.setColumns(1);
@@ -61,27 +64,37 @@ public class StationAvailableRecipesWidget extends CoreWidget {
         reloadRecipes();
     }
 
+    public void updateNextTick() {
+        counter = WAIT_TIME_PER_TICK - 0.001f;
+    }
+
     @Override
     public void update(float delta) {
-        // TODO: Naive approach by comparing all the possible recipes to those currently displayed
-        WorkstationComponent workstation = station.getComponent(WorkstationComponent.class);
-        Multimap<String, List<String>> recipes = HashMultimap.create();
-        for (WorkstationProcess workstationProcess : registry.getWorkstationProcesses(workstation.supportedProcessTypes.keySet())) {
-            if (workstationProcess instanceof CraftingWorkstationProcess) {
-                CraftingStationRecipe craftingStationRecipe = ((CraftingWorkstationProcess) workstationProcess).getCraftingWorkstationRecipe();
-                String recipeId = workstationProcess.getId();
-                List<? extends CraftingStationRecipe.CraftingStationResult> results = craftingStationRecipe.getMatchingRecipeResultsForDisplay(station);
-                if (results != null) {
-                    for (CraftingStationRecipe.CraftingStationResult result : results) {
-                        List<String> parameters = result.getResultParameters();
-                        recipes.put(recipeId, parameters);
+        counter += delta;
+
+        if (counter > WAIT_TIME_PER_TICK) {
+            // TODO: Naive approach by comparing all the possible recipes to those currently displayed
+            WorkstationComponent workstation = station.getComponent(WorkstationComponent.class);
+            Multimap<String, List<String>> recipes = HashMultimap.create();
+            for (WorkstationProcess workstationProcess : registry.getWorkstationProcesses(workstation.supportedProcessTypes.keySet())) {
+                if (workstationProcess instanceof CraftingWorkstationProcess) {
+                    CraftingStationRecipe craftingStationRecipe = ((CraftingWorkstationProcess) workstationProcess).getCraftingWorkstationRecipe();
+                    String recipeId = workstationProcess.getId();
+                    List<? extends CraftingStationRecipe.CraftingStationResult> results = craftingStationRecipe.getMatchingRecipeResultsForDisplay(station);
+                    if (results != null) {
+                        for (CraftingStationRecipe.CraftingStationResult result : results) {
+                            List<String> parameters = result.getResultParameters();
+                            recipes.put(recipeId, parameters);
+                        }
                     }
                 }
             }
-        }
 
-        if (!openCategories.equals(displayedOpenCategories) || !recipes.equals(availableRecipes)) {
-            reloadRecipes();
+            if (!openCategories.equals(displayedOpenCategories) || !recipes.equals(availableRecipes)) {
+                reloadRecipes();
+            }
+
+            counter = 0;
         }
 
         layout.update(delta);
@@ -242,7 +255,8 @@ public class StationAvailableRecipesWidget extends CoreWidget {
             } else {
                 openCategories.add(category);
             }
-        }
 
+            updateNextTick();
+        }
     }
 }

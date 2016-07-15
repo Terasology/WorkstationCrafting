@@ -34,6 +34,7 @@ import org.terasology.workstation.event.WorkstationProcessRequest;
 import org.terasology.workstation.process.WorkstationProcess;
 import org.terasology.workstation.system.WorkstationRegistry;
 
+import java.util.Collection;
 import java.util.Collections;
 
 /**
@@ -121,6 +122,10 @@ public class CraftingStationWindow extends BaseInteractionScreen {
 
     }
 
+    public void updateAvailableRecipes() {
+        stationRecipes.updateNextTick();
+    }
+
     private boolean isSame(String recipe1, String recipe2) {
         if (recipe1 == null && recipe2 == null) {
             return true;
@@ -131,13 +136,23 @@ public class CraftingStationWindow extends BaseInteractionScreen {
         return recipe1.equals(recipe2);
     }
 
+    // Get the matching upgrade recipe.
     private String getMatchingUpgradeRecipe(WorkstationRegistry craftingRegistry) {
         for (WorkstationProcess workstationProcess : craftingRegistry.getWorkstationProcesses(Collections.singleton(CraftingStationUpgradeRecipeComponent.PROCESS_TYPE))) {
             if (workstationProcess instanceof CraftingWorkstationUpgradeProcess) {
-                UpgradeRecipe upgradeRecipe = ((CraftingWorkstationUpgradeProcess) workstationProcess).getUpgradeRecipe();
-                final UpgradeRecipe.UpgradeResult upgradeResult = upgradeRecipe.getMatchingUpgradeResult(station);
-                if (upgradeResult != null) {
-                    return workstationProcess.getId();
+                CraftingWorkstationUpgradeProcess upgradeProcess = (CraftingWorkstationUpgradeProcess) workstationProcess;
+                String t = station.getParentPrefab().getName();
+
+                // Before checking if the workstation has the necessary items in the upgrade slot, check to see if this
+                // upgrade process actually pertains to this workstation type.
+                if (upgradeProcess.getWorkstationType().equalsIgnoreCase(station.getParentPrefab().getName()))
+                {
+                    UpgradeRecipe upgradeRecipe = upgradeProcess.getUpgradeRecipe();
+
+                    final UpgradeRecipe.UpgradeResult upgradeResult = upgradeRecipe.getMatchingUpgradeResult(station);
+                    if (upgradeResult != null) {
+                        return workstationProcess.getId();
+                    }
                 }
             }
         }

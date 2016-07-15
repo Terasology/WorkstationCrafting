@@ -48,6 +48,10 @@ public class CraftingWorkstationUpgradeProcess implements WorkstationProcess, Va
         return "Upgrade:" + workstationType + "-" + targetWorkstationType;
     }
 
+    public String getWorkstationType() {
+        return workstationType;
+    }
+
     public UpgradeRecipe getUpgradeRecipe() {
         return upgradeRecipe;
     }

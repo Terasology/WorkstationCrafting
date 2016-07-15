@@ -35,7 +35,7 @@
         }
     },
     "CraftingStation": {
-        "type": "WorkstationCrafting:StandardWoodcrafting",
+        "type": "WorkstationCrafting:NoviceWoodcrafting",
         "workstationUITexture": "WorkstationCrafting:StandardWoodworking"
     },
     "Inventory": {
@@ -54,14 +54,14 @@
         ]
     },
     "Health": {
-        "currentHealth": 20,
-        "maxHealth": 20,
+        "currentHealth": 15,
+        "maxHealth": 15,
         "regenRate": 1,
         "waitBeforeRegen": 2,
         "destroyEntityOnNoHealth": true
     },
     "ActAsBlock": {
-        "block": "WorkstationCrafting:StandardWoodStation"
+        "block": "WorkstationCrafting:NoviceWoodStation"
     },
     "DropBlockInventory": {}
 }

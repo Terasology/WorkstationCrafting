@@ -133,6 +133,7 @@ public class SimpleUpgradeRecipe implements UpgradeRecipe {
             }
 
             final EntityRef newStation = entityManager.create(resultStationPrefab);
+
             InventoryComponent oldStationInventory = station.getComponent(InventoryComponent.class);
             InventoryComponent newStationInventory = newStation.getComponent(InventoryComponent.class);
 
