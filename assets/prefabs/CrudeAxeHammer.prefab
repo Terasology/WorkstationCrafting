@@ -11,6 +11,11 @@
         "durability": 20,
         "maxDurability": 20
     },
+    "ProcessRequirementsProvider": {
+        "requirements": [
+            "Axe", "Hammer"
+        ]
+    },
     "CraftingStationTool": {
         "type": ["axe", "hammer"]
     },

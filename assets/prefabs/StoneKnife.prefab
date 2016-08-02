@@ -10,6 +10,11 @@
         "durability": 100,
         "maxDurability": 100
     },
+    "ProcessRequirementsProvider": {
+        "requirements": [
+            "Knife"
+        ]
+    },
     "CraftingStationTool": {
         "type": ["knife"]
     },

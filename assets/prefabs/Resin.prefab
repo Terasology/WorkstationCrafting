@@ -10,6 +10,11 @@
         "durability": 20,
         "maxDurability": 20
     },
+    "ProcessRequirementsProvider": {
+        "requirements": [
+            "Resin"
+        ]
+    },
     "CraftInHandIngredient": {
         "componentType": "WorkstationCrafting:resin"
     },

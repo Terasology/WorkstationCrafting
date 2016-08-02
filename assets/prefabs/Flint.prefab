@@ -7,6 +7,11 @@
     "DisplayName": {
         "name": "Flint"
     },
+    "ProcessRequirementsProvider": {
+        "requirements": [
+            "Flint"
+        ]
+    },
     "CraftInHandIngredient": {
         "componentType": "WorkstationCrafting:flint"
     },

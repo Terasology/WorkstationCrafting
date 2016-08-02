@@ -11,6 +11,11 @@
         "durability": 100,
         "maxDurability": 100
     },
+    "ProcessRequirementsProvider": {
+        "requirements": [
+            "Hammer"
+        ]
+    },
     "CraftInHandIngredient": {
         "componentType": "WorkstationCrafting:hammer"
     },
