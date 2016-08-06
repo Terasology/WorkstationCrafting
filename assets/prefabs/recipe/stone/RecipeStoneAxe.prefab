@@ -1,6 +1,6 @@
 {
     "ProcessDefinition": {
-        "processType": "WorkstationCrafting:BasicStonecrafting"
+        "processType": "WorkstationCrafting:BasicStonecraftingProcess"
     },
     "CraftingStationRecipe": {
         "recipeId": "Tools|WorkstationCrafting:StoneAxe",
@@ -12,9 +12,6 @@
     },
     "ProcessingTime": {
         "duration": 1000
-    },
-    "ProcessDefinition": {
-        "processType": "WorkstationCrafting:BasicStonecrafting"
     },
     "RequirementInput": {
         "requirements": [

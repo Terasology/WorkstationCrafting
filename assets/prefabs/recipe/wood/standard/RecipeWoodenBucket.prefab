@@ -1,6 +1,6 @@
 {
     "ProcessDefinition": {
-        "processType": "WorkstationCrafting:StandardWoodcrafting"
+        "processType": "WorkstationCrafting:StandardWoodcraftingProcess"
     },
     "CraftingStationRecipe": {
         "recipeId": "Building|WorkstationCrafting:WoodenBucket",
@@ -12,9 +12,6 @@
     },
     "ProcessingTime": {
         "duration": 1000
-    },
-    "ProcessDefinition": {
-        "processType": "WorkstationCrafting:StandardWoodcrafting"
     },
     "RequirementInput": {
         "requirements": [

@@ -63,9 +63,15 @@ public class RegisterWorkstationCraftingRecipes extends BaseComponentSystem {
     @Override
     public void initialise() {
         workstationRegistry.registerProcessFactory(WorkstationCrafting.BASIC_WOODCRAFTING_PROCESS_TYPE, new CraftingWorkstationProcessFactory());
+        workstationRegistry.registerProcessFactory(WorkstationCrafting.BASIC_WOODCRAFTING_PROCESS, new CraftingWorkstationProcessFactory());
+        workstationRegistry.registerProcessFactory(WorkstationCrafting.NOVICE_WOODCRAFTING_PROCESS_TYPE, new CraftingWorkstationProcessFactory());
+        workstationRegistry.registerProcessFactory(WorkstationCrafting.NOVICE_WOODCRAFTING_PROCESS, new CraftingWorkstationProcessFactory());
         workstationRegistry.registerProcessFactory(WorkstationCrafting.ADVANCED_WOODCRAFTING_PROCESS_TYPE, new CraftingWorkstationProcessFactory());
+        workstationRegistry.registerProcessFactory(WorkstationCrafting.ADVANCED_WOODCRAFTING_PROCESS, new CraftingWorkstationProcessFactory());
 
         workstationRegistry.registerProcessFactory(WorkstationCrafting.BASIC_STONECRAFTING_PROCESS_TYPE, new CraftingWorkstationProcessFactory());
+        workstationRegistry.registerProcessFactory(WorkstationCrafting.BASIC_STONECRAFTING_PROCESS, new CraftingWorkstationProcessFactory());
+        workstationRegistry.registerProcessFactory(WorkstationCrafting.NOVICE_STONECRAFTING_PROCESS_TYPE, new CraftingWorkstationProcessFactory());
         workstationRegistry.registerProcessFactory(WorkstationCrafting.ADVANCED_STONECRAFTING_PROCESS_TYPE, new CraftingWorkstationProcessFactory());
 
         addWorkstationFormingRecipes();

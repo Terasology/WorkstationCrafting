@@ -1,6 +1,6 @@
 {
     "ProcessDefinition": {
-        "processType": "WorkstationCrafting:BasicWoodcrafting"
+        "processType": "WorkstationCrafting:BasicWoodcraftingProcess"
     },
     "CraftingStationRecipe": {
         "recipeId": "Storage|WorkstationCrafting:FruitBasket",
@@ -12,9 +12,6 @@
     },
     "ProcessingTime": {
         "duration": 1000
-    },
-    "ProcessDefinition": {
-        "processType": "WorkstationCrafting:BasicWoodcrafting"
     },
     "RequirementInput": {
         "requirements": [

@@ -20,9 +20,16 @@ package org.terasology.processing;
  */
 public final class WorkstationCrafting {
     public static final String BASIC_WOODCRAFTING_PROCESS_TYPE = "WorkstationCrafting:BasicWoodcrafting";
+    public static final String BASIC_WOODCRAFTING_PROCESS = "WorkstationCrafting:BasicWoodcraftingProcess";
+    public static final String NOVICE_WOODCRAFTING_PROCESS_TYPE = "WorkstationCrafting:NoviceWoodcrafting";
+    public static final String NOVICE_WOODCRAFTING_PROCESS = "WorkstationCrafting:NoviceWoodcraftingProcess";
     public static final String ADVANCED_WOODCRAFTING_PROCESS_TYPE = "WorkstationCrafting:StandardWoodcrafting";
+    public static final String ADVANCED_WOODCRAFTING_PROCESS = "WorkstationCrafting:StandardWoodcraftingProcess";
 
     public static final String BASIC_STONECRAFTING_PROCESS_TYPE = "WorkstationCrafting:BasicStonecrafting";
+    public static final String BASIC_STONECRAFTING_PROCESS = "WorkstationCrafting:BasicStonecraftingProcess";
+
+    public static final String NOVICE_STONECRAFTING_PROCESS_TYPE = "WorkstationCrafting:NoviceStonecrafting";
     public static final String ADVANCED_STONECRAFTING_PROCESS_TYPE = "WorkstationCrafting:StandardStonecrafting";
 
     public static final String COOKING_PROCESS_TYPE = "WorkstationCrafting:Cooking";
