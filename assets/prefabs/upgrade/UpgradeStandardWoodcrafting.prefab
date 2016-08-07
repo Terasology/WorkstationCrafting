@@ -3,9 +3,9 @@
         "processType": "Crafting:UpgradeCraftingWorkstation"
     },
     "CraftingStationUpgradeRecipe": {
-        "stationType": "WorkstationCrafting:NoviceWoodcrafting",
-        "targetStationType": "WorkstationCrafting:StandrdWoodcrafting",
-        "targetStationPrefab": "WorkstationCrafting:StandrdWoodcrafting",
+        "stationType": "WorkstationCrafting:NoviceWoodcraftingStation",
+        "targetStationType": "WorkstationCrafting:StandrdWoodcraftingStation",
+        "targetStationPrefab": "WorkstationCrafting:StandrdWoodcraftingStation",
 
         "recipeComponents": ["20*WorkstationCrafting:plank"],
 

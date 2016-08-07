@@ -1,6 +1,6 @@
 {
     "CraftingStationMaterial": {
-        "stationType": "WorkstationCrafting:BasicWoodcrafting"
+        "stationType": "WorkstationCrafting:BasicWoodcraftingStation"
     },
     "CraftingStationIngredient": {
         "type": "WorkstationCrafting:wood"

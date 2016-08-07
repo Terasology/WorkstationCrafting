@@ -1,6 +1,9 @@
 {
+    "DisplayName": {
+        "name": "Basic Stonecrafting Station"
+    },
     "BlockDropGrammar": {
-        "itemDrops": ["10*WorkstationCrafting:WoodPlank"]
+        "blockDrops": ["2*WorkstationCrafting:WoodenTable"]
     },
     "InteractionTarget": {},
     "InteractionScreen": {
@@ -8,35 +11,33 @@
     },
     "Workstation": {
         "supportedProcessTypes": {
-            "WorkstationCrafting:BasicWoodcraftingProcess": false,
-            "WorkstationCrafting:NoviceWoodcraftingProcess": false,
-            "WorkstationCrafting:StandardWoodcraftingProcess": false,
+            "WorkstationCrafting:BasicStonecraftingProcess": false,
             "Crafting:UpgradeCraftingWorkstation": false
         }
     },
     "WorkstationInventory": {
         "slotAssignments": {
             "INPUT": {
-                "slotStart": 3,
+                "slotStart": 2,
                 "slotCount": 6
             },
             "TOOL": {
                 "slotStart": 1,
-                "slotCount": 2
+                "slotCount": 1
             },
             "UPGRADE": {
                 "slotStart": 0,
                 "slotCount": 1
             },
             "OUTPUT": {
-                "slotStart": 9,
+                "slotStart": 8,
                 "slotCount": 1
             }
         }
     },
     "CraftingStation": {
-        "type": "WorkstationCrafting:StandardWoodcrafting",
-        "workstationUITexture": "WorkstationCrafting:StandardWoodworking"
+        "type": "WorkstationCrafting:BasicStonecraftingStation",
+        "workstationUITexture": "WorkstationCrafting:BasicStoneworking"
     },
     "Inventory": {
         "privateToOwner": false,
@@ -49,19 +50,23 @@
             0,
             0,
             0,
-            0,
             0
         ]
     },
     "Health": {
-        "currentHealth": 20,
-        "maxHealth": 20,
+        "currentHealth": 5,
+        "maxHealth": 5,
         "regenRate": 1,
         "waitBeforeRegen": 2,
         "destroyEntityOnNoHealth": true
     },
     "ActAsBlock": {
-        "block": "WorkstationCrafting:StandardWoodStation"
+        "block": "WorkstationCrafting:BasicStoneStation"
     },
-    "DropBlockInventory": {}
+    "DropBlockInventory": {},
+    "ItemHelp": {
+        "paragraphText": [
+          "A two-block station that allows the user to craft basic-level stone items."
+        ]
+    }
 }

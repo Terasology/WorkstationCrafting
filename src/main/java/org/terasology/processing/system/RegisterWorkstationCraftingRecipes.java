@@ -98,13 +98,13 @@ public class RegisterWorkstationCraftingRecipes extends BaseComponentSystem {
     private void addWorkstationFormingRecipes() {
         multiBlockFormRecipeRegistry.addMultiBlockFormItemRecipe(
                 new UniformMultiBlockFormItemRecipe(new ToolTypeEntityFilter("axe"), new UseOnTopFilter(),
-                        new StationTypeFilter("WorkstationCrafting:BasicWoodcrafting"), new Basic3DSizeFilter(2, 1, 1, 1),
-                        "WorkstationCrafting:BasicWoodcrafting",
+                        new StationTypeFilter("WorkstationCrafting:BasicWoodcraftingStation"), new Basic3DSizeFilter(2, 1, 1, 1),
+                        "WorkstationCrafting:BasicWoodcraftingStation",
                         new UniformBlockReplacementCallback<Void>(blockManager.getBlock("WorkstationCrafting:BasicWoodStation"))));
         multiBlockFormRecipeRegistry.addMultiBlockFormItemRecipe(
                 new UniformMultiBlockFormItemRecipe(new ToolTypeEntityFilter("hammer"), new UseOnTopFilter(),
-                        new StationTypeFilter("WorkstationCrafting:BasicStonecrafting"), new Basic3DSizeFilter(2, 1, 1, 1),
-                        "WorkstationCrafting:BasicStonecrafting",
+                        new StationTypeFilter("WorkstationCrafting:BasicStonecraftingStation"), new Basic3DSizeFilter(2, 1, 1, 1),
+                        "WorkstationCrafting:BasicStonecraftingStation",
                         new UniformBlockReplacementCallback<Void>(blockManager.getBlock("WorkstationCrafting:BasicStoneStation"))));
     }
 

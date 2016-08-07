@@ -1,4 +1,7 @@
 {
+    "DisplayName": {
+        "name": "Standard Woodcrafting Station"
+    },
     "BlockDropGrammar": {
         "itemDrops": ["10*WorkstationCrafting:WoodPlank"]
     },
@@ -35,7 +38,7 @@
         }
     },
     "CraftingStation": {
-        "type": "WorkstationCrafting:NoviceWoodcrafting",
+        "type": "WorkstationCrafting:StandardWoodcraftingStation",
         "workstationUITexture": "WorkstationCrafting:StandardWoodworking"
     },
     "Inventory": {
@@ -54,14 +57,14 @@
         ]
     },
     "Health": {
-        "currentHealth": 15,
-        "maxHealth": 15,
+        "currentHealth": 20,
+        "maxHealth": 20,
         "regenRate": 1,
         "waitBeforeRegen": 2,
         "destroyEntityOnNoHealth": true
     },
     "ActAsBlock": {
-        "block": "WorkstationCrafting:NoviceWoodStation"
+        "block": "WorkstationCrafting:StandardWoodStation"
     },
     "DropBlockInventory": {}
 }

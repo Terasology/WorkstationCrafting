@@ -1,6 +1,9 @@
 {
+    "DisplayName": {
+        "name": "Standard Woodcrafting Station"
+    },
     "BlockDropGrammar": {
-        "itemDrops": ["10*WorkstationCrafting:WoodPlank"]
+        "itemDrops": ["15*WorkstationCrafting:WoodPlank"]
     },
     "InteractionTarget": {},
     "InteractionScreen": {
@@ -35,7 +38,7 @@
         }
     },
     "CraftingStation": {
-        "type": "WorkstationCrafting:StandardWoodcrafting",
+        "type": "WorkstationCrafting:StandrdWoodcraftingStation",
         "workstationUITexture": "WorkstationCrafting:StandardWoodworking"
     },
     "Inventory": {

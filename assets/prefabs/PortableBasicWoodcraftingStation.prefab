@@ -1,6 +1,15 @@
 {
+    "parent": "engine:iconItem",
+    "Item": {
+        "icon": "WorkstationCrafting:PortableBasicWoodcraftingStation",
+        "stackId": "WorkstationCrafting:portableBasicWoodcrafting",
+        "maxStackSize": 1
+    },
+    "DisplayName": {
+        "name": "Portable Basic Wood Station"
+    },
     "BlockDropGrammar": {
-        "itemDrops": ["10*WorkstationCrafting:Brick"]
+        "itemDrops": ["4*WorkstationCrafting:WoodPlank"]
     },
     "InteractionTarget": {},
     "InteractionScreen": {
@@ -8,8 +17,7 @@
     },
     "Workstation": {
         "supportedProcessTypes": {
-            "WorkstationCrafting:BasicStonecraftingProcess": false,
-            "WorkstationCrafting:StandardStonecrafting": false,
+            "WorkstationCrafting:BasicWoodcraftingProcess": false,
             "Crafting:UpgradeCraftingWorkstation": false
         }
     },
@@ -17,7 +25,7 @@
         "slotAssignments": {
             "INPUT": {
                 "slotStart": 2,
-                "slotCount": 9
+                "slotCount": 3
             },
             "TOOL": {
                 "slotStart": 1,
@@ -28,24 +36,18 @@
                 "slotCount": 1
             },
             "OUTPUT": {
-                "slotStart": 11,
+                "slotStart": 5,
                 "slotCount": 1
             }
         }
     },
     "CraftingStation": {
-        "type": "WorkstationCrafting:StandardStonecrafting",
-        "workstationUITexture": "WorkstationCrafting:StandardStoneworking"
+        "type": "WorkstationCrafting:BasicWoodcraftingStation",
+        "workstationUITexture": "WorkstationCrafting:BasicWoodworking"
     },
     "Inventory": {
         "privateToOwner": false,
         "itemSlots": [
-            0,
-            0,
-            0,
-            0,
-            0,
-            0,
             0,
             0,
             0,
@@ -62,7 +64,12 @@
         "destroyEntityOnNoHealth": true
     },
     "ActAsBlock": {
-        "block": "WorkstationCrafting:StandardStoneStation"
+        "block": "WorkstationCrafting:BasicWoodStation"
     },
-    "DropBlockInventory": {}
+    "DropBlockInventory": {},
+    "ItemHelp": {
+        "paragraphText": [
+          "A portable woodworking station which allows the user to craft basic-level wood items."
+        ]
+    }
 }

@@ -1,6 +1,9 @@
 {
+    "DisplayName": {
+        "name": "Standard Stonecrafting Station"
+    },
     "BlockDropGrammar": {
-        "itemDrops": ["4*WorkstationCrafting:WoodPlank"]
+        "itemDrops": ["10*WorkstationCrafting:Brick"]
     },
     "InteractionTarget": {},
     "InteractionScreen": {
@@ -8,7 +11,8 @@
     },
     "Workstation": {
         "supportedProcessTypes": {
-            "WorkstationCrafting:BasicWoodcraftingProcess": false,
+            "WorkstationCrafting:BasicStonecraftingProcess": false,
+            "WorkstationCrafting:StandardStonecrafting": false,
             "Crafting:UpgradeCraftingWorkstation": false
         }
     },
@@ -16,7 +20,7 @@
         "slotAssignments": {
             "INPUT": {
                 "slotStart": 2,
-                "slotCount": 3
+                "slotCount": 9
             },
             "TOOL": {
                 "slotStart": 1,
@@ -27,14 +31,14 @@
                 "slotCount": 1
             },
             "OUTPUT": {
-                "slotStart": 5,
+                "slotStart": 11,
                 "slotCount": 1
             }
         }
     },
     "CraftingStation": {
-        "type": "WorkstationCrafting:BasicWoodcrafting",
-        "workstationUITexture": "WorkstationCrafting:BasicWoodworking"
+        "type": "WorkstationCrafting:StandardStonecraftingStation",
+        "workstationUITexture": "WorkstationCrafting:StandardStoneworking"
     },
     "Inventory": {
         "privateToOwner": false,
@@ -44,23 +48,24 @@
             0,
             0,
             0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
             0
         ]
     },
     "Health": {
-        "currentHealth": 5,
-        "maxHealth": 5,
+        "currentHealth": 20,
+        "maxHealth": 20,
         "regenRate": 1,
         "waitBeforeRegen": 2,
         "destroyEntityOnNoHealth": true
     },
     "ActAsBlock": {
-        "block": "WorkstationCrafting:BasicWoodStation"
+        "block": "WorkstationCrafting:StandardStoneStation"
     },
-    "DropBlockInventory": {},
-    "ItemHelp": {
-        "paragraphText": [
-          "A two-block station that allows the user to craft basic-level wood items."
-        ]
-    }
+    "DropBlockInventory": {}
 }

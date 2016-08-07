@@ -1,12 +1,6 @@
 {
-    "parent": "engine:iconItem",
-    "Item": {
-        "icon": "WorkstationCrafting:PortableBasicWoodcraftingStation",
-        "stackId": "WorkstationCrafting:portableBasicWoodcrafting",
-        "maxStackSize": 1
-    },
     "DisplayName": {
-        "name": "Portable Basic Wood Station"
+        "name": "Basic Woodcrafting Station"
     },
     "BlockDropGrammar": {
         "itemDrops": ["4*WorkstationCrafting:WoodPlank"]
@@ -42,7 +36,7 @@
         }
     },
     "CraftingStation": {
-        "type": "WorkstationCrafting:BasicWoodcrafting",
+        "type": "WorkstationCrafting:BasicWoodcraftingStation",
         "workstationUITexture": "WorkstationCrafting:BasicWoodworking"
     },
     "Inventory": {
@@ -69,7 +63,7 @@
     "DropBlockInventory": {},
     "ItemHelp": {
         "paragraphText": [
-          "A portable woodworking station which allows the user to craft basic-level wood items."
+          "A two-block station that allows the user to craft basic-level wood items."
         ]
     }
 }

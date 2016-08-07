@@ -1,6 +1,6 @@
 {
     "CraftingStationMaterial": {
-        "stationType": "WorkstationCrafting:BasicStonecrafting"
+        "stationType": "WorkstationCrafting:BasicStonecraftingStation"
     },
     "ItemHelp": {
         "paragraphText": [
