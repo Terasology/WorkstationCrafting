@@ -15,6 +15,8 @@
  */
 package org.terasology.workstationCrafting.system;
 
+import org.terasology.entitySystem.entity.EntityManager;
+import org.terasology.registry.In;
 import org.terasology.workstationCrafting.component.CraftingStationRecipeComponent;
 import org.terasology.workstationCrafting.system.recipe.render.result.BlockRecipeResultFactory;
 import org.terasology.workstationCrafting.system.recipe.render.result.ItemRecipeResultFactory;
@@ -31,6 +33,9 @@ import org.terasology.world.block.BlockManager;
  * @author Marcin Sciesinski <marcins78@gmail.com>
  */
 public class CraftingWorkstationProcessFactory implements WorkstationProcessFactory {
+    @In
+    private EntityManager entityManager;
+
     @Override
     public WorkstationProcess createProcess(Prefab prefab) {
         ProcessDefinitionComponent process = prefab.getComponent(ProcessDefinitionComponent.class);
@@ -93,6 +98,6 @@ public class CraftingWorkstationProcessFactory implements WorkstationProcessFact
             workstationRecipe.setRequiredHeat(recipe.requiredTemperature);
         }
 
-        return new CraftingWorkstationProcess(process.processType, recipe.recipeId, workstationRecipe);
+        return new CraftingWorkstationProcess(process.processType, recipe.recipeId, workstationRecipe, prefab, entityManager);
     }
 }

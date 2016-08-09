@@ -1,4 +1,5 @@
 {
+    "Parent": "NoviceWoodcraftingBaseProcessPart",
     "ProcessDefinition": {
         "processType": "WorkstationCrafting:NoviceWoodcraftingProcess"
     },
@@ -20,7 +21,7 @@
     },
     "InventoryInput": {
         "itemCounts": {
-            "WorkstationCrafting:wood": 1
+            "WorkstationCrafting:WoodLog": 1
         }
     },
     "InventoryOutput": {

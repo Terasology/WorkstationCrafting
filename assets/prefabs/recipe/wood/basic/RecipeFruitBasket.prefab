@@ -1,4 +1,5 @@
 {
+    "Parent": "BasicWoodcraftingBaseProcessPart",
     "ProcessDefinition": {
         "processType": "WorkstationCrafting:BasicWoodcraftingProcess"
     },

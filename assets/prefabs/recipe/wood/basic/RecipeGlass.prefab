@@ -1,4 +1,5 @@
 {
+    "Parent": "BasicWoodcraftingBaseProcessPart",
     "ProcessDefinition": {
         "processType": "WorkstationCrafting:BasicWoodcraftingProcess"
     },
@@ -20,7 +21,7 @@
     },
     "InventoryInput": {
         "itemCounts": {
-            "WorkstationCrafting:sand": 1
+            "WorkstationCrafting:SandGrain": 1
         }
     },
     "InventoryOutput": {

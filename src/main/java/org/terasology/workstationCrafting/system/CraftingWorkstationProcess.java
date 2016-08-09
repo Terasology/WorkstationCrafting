@@ -15,6 +15,16 @@
  */
 package org.terasology.workstationCrafting.system;
 
+import com.google.common.collect.Lists;
+import org.terasology.entitySystem.entity.EntityBuilder;
+import org.terasology.entitySystem.entity.EntityManager;
+import org.terasology.entitySystem.prefab.Prefab;
+import org.terasology.protobuf.EntityData;
+import org.terasology.registry.In;
+import org.terasology.workstation.process.DescribeProcess;
+import org.terasology.workstation.process.ProcessPartDescription;
+import org.terasology.workstation.processPart.metadata.ProcessEntityGetInputDescriptionEvent;
+import org.terasology.workstation.processPart.metadata.ProcessEntityGetOutputDescriptionEvent;
 import org.terasology.workstationCrafting.component.CraftingProcessComponent;
 import org.terasology.workstationCrafting.event.CraftingWorkstationProcessRequest;
 import org.terasology.workstationCrafting.system.recipe.workstation.CraftingStationRecipe;
@@ -28,17 +38,30 @@ import org.terasology.workstation.process.WorkstationProcess;
 import org.terasology.workstation.process.fluid.ValidateFluidInventoryItem;
 import org.terasology.workstation.system.ValidateInventoryItem;
 
+import java.util.Collection;
 import java.util.List;
 
-public class CraftingWorkstationProcess implements WorkstationProcess, ValidateInventoryItem, ValidateFluidInventoryItem {
+public class CraftingWorkstationProcess implements WorkstationProcess, ValidateInventoryItem, ValidateFluidInventoryItem, DescribeProcess {
     private String processType;
     private String craftingRecipeId;
     private CraftingStationRecipe recipe;
+    private Prefab prefab;
+
+    private EntityManager entityManager;
 
     public CraftingWorkstationProcess(String processType, String craftingRecipeId, CraftingStationRecipe recipe) {
         this.processType = processType;
         this.craftingRecipeId = craftingRecipeId;
         this.recipe = recipe;
+    }
+
+    public CraftingWorkstationProcess(String processType, String craftingRecipeId, CraftingStationRecipe recipe,
+                                      Prefab prefab, EntityManager entityManager) {
+        this.processType = processType;
+        this.craftingRecipeId = craftingRecipeId;
+        this.recipe = recipe;
+        this.prefab = prefab;
+        this.entityManager = entityManager;
     }
 
     @Override
@@ -120,5 +143,48 @@ public class CraftingWorkstationProcess implements WorkstationProcess, ValidateI
             return;
         }
         resultItem.destroy();
+    }
+
+    @Override
+    public EntityRef createProcessEntity() {
+        return createProcessEntity(true);
+    }
+
+    private EntityRef createProcessEntity(boolean persistant) {
+        if (entityManager == null) {
+            return EntityRef.NULL;
+        }
+
+        EntityBuilder builder = entityManager.newBuilder(prefab);
+        builder.setPersistent(persistant);
+        return builder.build();
+    }
+
+    @Override
+    public Collection<ProcessPartDescription> getOutputDescriptions() {
+        ProcessEntityGetOutputDescriptionEvent event = new ProcessEntityGetOutputDescriptionEvent();
+        EntityRef tempProcessEntity = createProcessEntity(false);
+
+        if (!tempProcessEntity.equals(EntityRef.NULL)) {
+            tempProcessEntity.send(event);
+            tempProcessEntity.destroy();
+            return Lists.newLinkedList(event.getOutputDescriptions());
+        }
+
+        return Lists.newLinkedList();
+    }
+
+    @Override
+    public Collection<ProcessPartDescription> getInputDescriptions() {
+        ProcessEntityGetInputDescriptionEvent event = new ProcessEntityGetInputDescriptionEvent();
+        EntityRef tempProcessEntity = createProcessEntity(false);
+
+        if (!tempProcessEntity.equals(EntityRef.NULL)) {
+            tempProcessEntity.send(event);
+            tempProcessEntity.destroy();
+            return Lists.newLinkedList(event.getInputDescriptions());
+        }
+
+        return Lists.newLinkedList();
     }
 }

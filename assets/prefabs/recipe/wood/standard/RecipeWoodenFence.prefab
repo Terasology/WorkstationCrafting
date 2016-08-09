@@ -20,7 +20,7 @@
     },
     "InventoryInput": {
         "itemCounts": {
-            "WorkstationCrafting:plank": 4
+            "WorkstationCrafting:WoodPlank": 4
         }
     },
     "InventoryOutput": {

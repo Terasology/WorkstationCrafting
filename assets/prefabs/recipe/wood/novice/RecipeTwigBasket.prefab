@@ -1,4 +1,5 @@
 {
+    "Parent": "NoviceWoodcraftingBaseProcessPart",
     "ProcessDefinition": {
         "processType": "WorkstationCrafting:NoviceWoodcraftingProcess"
     },
@@ -9,9 +10,6 @@
         "recipeTools": [],
 
         "blockResult": "1*WorkstationCrafting:TwigBasket"
-    },
-    "ProcessingTime": {
-        "duration": 1000
     },
     "InventoryInput": {
         "itemCounts": {

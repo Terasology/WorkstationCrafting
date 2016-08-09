@@ -12,6 +12,7 @@
     "Workstation": {
         "supportedProcessTypes": {
             "WorkstationCrafting:BasicStonecraftingProcess": false,
+            "ManualLabor:BasicStonecraftingProcess": false,
             "Crafting:UpgradeCraftingWorkstation": false
         }
     },
@@ -66,7 +67,7 @@
     "DropBlockInventory": {},
     "ItemHelp": {
         "paragraphText": [
-          "A two-block station that allows the user to craft basic-level stone items."
+          "A two-block station that allows the user to craft basic-level stone items. Place two wooden tables next to each other, and hit them with a hammer to create this station."
         ]
     }
 }
