@@ -46,6 +46,8 @@ public class ModifyBlockDestruction extends BaseComponentSystem {
         exceptions.add(new BlockUri("WorkstationCrafting:ClayStone"));
     }
 
+    // TODO: Temporarily removed until this entire class is moved onto NeoTTA.
+    /*
     @ReceiveEvent
     public void preventPlayerFromDestroyingBasicBlocksByHand(BeforeDamagedEvent event, EntityRef blockEntity) {
         BlockComponent blockComponent = blockEntity.getComponent(BlockComponent.class);
@@ -79,4 +81,5 @@ public class ModifyBlockDestruction extends BaseComponentSystem {
         }
         return true;
     }
+    */
 }
