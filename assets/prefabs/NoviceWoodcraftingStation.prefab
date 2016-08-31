@@ -66,5 +66,13 @@
     "ActAsBlock": {
         "block": "WorkstationCrafting:NoviceWoodStation"
     },
-    "DropBlockInventory": {}
+    "DropBlockInventory": {},
+    "ItemHelp": {
+        "category": "WorkstationCrafting",
+        "paragraphText": [
+          "A two-block station that allows the user to craft up to novice-level wood items.",
+          "This is the upgraded form of the Basic Woodcrafting Station.",
+          "This station can be upgraded with 20 wood planks and an axe."
+        ]
+    }
 }

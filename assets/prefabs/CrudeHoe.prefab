@@ -17,6 +17,7 @@
     },
     "Hoe": {},
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "A makeshift hoe that can be used for crude tilling."
         ]

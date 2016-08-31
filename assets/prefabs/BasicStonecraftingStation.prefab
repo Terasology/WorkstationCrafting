@@ -66,8 +66,10 @@
     },
     "DropBlockInventory": {},
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
-          "A two-block station that allows the user to craft basic-level stone items. Place two wooden tables next to each other, and hit them with a hammer to create this station."
+            "A two-block station that allows the user to craft basic-level stone items. Place two wooden tables next to each other, and hit them with a hammer to create this station.",
+            "This station can be upgraded with 10 bricks and a hammer."
         ]
     }
 }

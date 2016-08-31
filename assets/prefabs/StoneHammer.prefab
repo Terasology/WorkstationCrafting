@@ -23,6 +23,7 @@
         "type": ["hammer"]
     },
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "A hammer made out of stone. Can be used for smashing and smelting items."
         ]

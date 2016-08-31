@@ -19,6 +19,7 @@
         "componentType": "WorkstationCrafting:toolStone"
     },
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "This crude stone can be used for crafting several other crude items and tools."
         ]

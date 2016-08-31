@@ -16,6 +16,7 @@
         "componentType": "WorkstationCrafting:flint"
     },
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "A hard sedimentary rock that can be used for making tools and starting fires."
         ]

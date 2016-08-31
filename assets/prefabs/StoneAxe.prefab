@@ -20,6 +20,7 @@
         "type": ["axe"]
     },
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "An axe made out of stone. Can be used for chopping."
         ]

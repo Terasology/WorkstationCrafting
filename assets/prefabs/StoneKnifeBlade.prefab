@@ -10,6 +10,7 @@
         "componentType": "WorkstationCrafting:stoneKnifeBlade"
     },
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "The blade of a stone knife. Required for making the knife."
         ]

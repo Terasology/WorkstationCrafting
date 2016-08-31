@@ -16,6 +16,7 @@
         "emptyTexture": "WorkstationCrafting:items#WoodenBucketEmpty"
     },
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "A bucket made out of regular wood that can hold up to 10 liters of fluid."
         ]

@@ -19,6 +19,7 @@
         "componentType": "WorkstationCrafting:resin"
     },
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "A sticky organic substance usable for sticking crude stuff together."
         ]

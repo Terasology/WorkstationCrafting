@@ -21,6 +21,7 @@
     },
     "AccessInventoryAction": {},
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "A basket for holding 8 kinds of fruit."
         ]

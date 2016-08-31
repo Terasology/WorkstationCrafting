@@ -11,6 +11,7 @@
         "type": "WorkstationCrafting:plank"
     },
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "A plank made by sawing logs. One of the building blocks of many wood furniture and structures."
         ]

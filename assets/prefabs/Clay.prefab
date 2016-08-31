@@ -19,6 +19,7 @@
         "itemResult": "1*WorkstationCrafting:Brick"
     },
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "A fine-grained natural rock or soil that combines one or more clay minerals with traces of metal oxides and organic matter."
         ]

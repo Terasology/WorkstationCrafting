@@ -14,6 +14,7 @@
         "type": "WorkstationCrafting:glass"
     },
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "A transparent solid that is used in the construction of many items."
         ]

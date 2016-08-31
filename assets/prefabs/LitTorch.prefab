@@ -5,6 +5,7 @@
     },
     "OverTimeDurabilityReduce": {},
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "A stick with a fire lit on the other end. Illuminates the nearby world around you."
         ]

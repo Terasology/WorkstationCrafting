@@ -42,6 +42,7 @@
     },
     "DropBlockInventory": {},
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "A simple hand mill for grinding grain."
         ]

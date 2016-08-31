@@ -51,6 +51,7 @@
     },
     "DropBlockInventory": {},
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "A hearth constructed out of clay."
         ]

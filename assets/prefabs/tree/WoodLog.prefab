@@ -16,6 +16,7 @@
         "consumeTime": 20000
     },
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "A log of wood cut from a tree. Note that this is a stand-in for any regular wood log."
         ]

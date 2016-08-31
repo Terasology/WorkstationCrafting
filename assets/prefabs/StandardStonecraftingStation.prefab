@@ -67,5 +67,12 @@
     "ActAsBlock": {
         "block": "WorkstationCrafting:StandardStoneStation"
     },
-    "DropBlockInventory": {}
+    "DropBlockInventory": {},
+    "ItemHelp": {
+        "category": "WorkstationCrafting",
+        "paragraphText": [
+          "A two-block station that allows the user to craft up to standard-level stone items.",
+          "This is the upgraded form of the Novice Stonecrafting Station."
+        ]
+    }
 }

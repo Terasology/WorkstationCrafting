@@ -22,6 +22,7 @@
         "componentType": "WorkstationCrafting:knife"
     },
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "A small knife that can be used for cutting things."
         ]

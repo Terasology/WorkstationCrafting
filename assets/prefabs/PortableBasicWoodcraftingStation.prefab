@@ -68,6 +68,7 @@
     },
     "DropBlockInventory": {},
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "A portable woodworking station which allows the user to craft basic-level wood items."
         ]

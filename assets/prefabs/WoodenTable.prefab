@@ -3,6 +3,7 @@
         "stationType": "WorkstationCrafting:BasicStonecraftingStation"
     },
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "A table constructed from wood. Necessary for several crafting stations."
         ]

@@ -18,6 +18,7 @@
         "consumeTime": 5000
     },
     "ItemHelp": {
+        "category": "WorkstationCrafting",
         "paragraphText": [
           "A twig retrieved from a tree branch. Used for several crude items as well as fuel for fire."
         ]
