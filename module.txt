@@ -7,11 +7,11 @@
     "dependencies" : [
             {
                 "id": "Durability",
-                "minVersion": "0.1.0"
+                "minVersion": "1.0.0"
             },
             {
                 "id": "InGameHelp",
-                "minVersion": "0.1.0"
+                "minVersion": "1.0.0"
             },
             {
                 "id": "WorkstationInGameHelp",
@@ -27,7 +27,7 @@
             },
             {
                 "id" : "MultiBlock",
-                "minVersion" : "0.1.0"
+                "minVersion" : "1.0.0"
             },
             {
                 "id" : "Workstation",
@@ -35,11 +35,11 @@
             },
             {
                 "id" : "Fluid",
-                "minVersion" : "0.1.0"
+                "minVersion" : "1.0.0"
             },
             {
                 "id" : "StructuralResources",
-                "minVersion" : "0.2.0"
+                "minVersion" : "1.0.0"
             },
             {
                 "id" : "GrowingFlora",
@@ -47,7 +47,7 @@
             },
             {
                 "id" : "PlantPack",
-                "minVersion" : "0.1.0"
+                "minVersion" : "1.0.0"
             },
             {
                 "id" : "Fences",
