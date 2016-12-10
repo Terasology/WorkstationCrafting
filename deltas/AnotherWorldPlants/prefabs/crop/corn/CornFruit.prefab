@@ -1,9 +1,0 @@
-{
-    "CraftingStationIngredient": {
-        "type": "PlantPack:corn"
-    },
-    "MillProcessed": {
-        "millLength": 6000,
-        "itemResult": "1*WorkstationCrafting:CornFlour"
-    }
-}

@@ -1,6 +1,6 @@
 {
     "id" : "WorkstationCrafting",
-    "version" : "0.1.0-SNAPSHOT",
+    "version" : "0.2.0-SNAPSHOT",
     "author" : "XTariq, Marcin Sciesinski <marcins78@gmail.com>",
     "displayName" : "Workstation Crafting",
     "description" : "An extended version of crafting to allow for more advanced methods and items.",
@@ -18,14 +18,6 @@
                 "minVersion": "1.0.0"
             },
             {
-                "id" : "ManualLabor",
-                "minVersion" : "1.0.1"
-            },
-            {
-                "id": "Machines",
-                "minVersion": "1.0.0"
-            },
-            {
                 "id" : "MultiBlock",
                 "minVersion" : "1.0.0"
             },
@@ -36,30 +28,6 @@
             {
                 "id" : "Fluid",
                 "minVersion" : "1.0.0"
-            },
-            {
-                "id" : "StructuralResources",
-                "minVersion" : "1.0.0"
-            },
-            {
-                "id" : "GrowingFlora",
-                "minVersion" : "0.1.0"
-            },
-            {
-                "id" : "PlantPack",
-                "minVersion" : "1.0.0"
-            },
-            {
-                "id" : "Fences",
-                "minVersion" : "0.1.0"
-            },
-            {
-                "id" : "AnotherWorld",
-                "minVersion" : "0.2.0"
-            },
-            {
-                "id" : "AnotherWorldPlants",
-                "minVersion" : "0.1.0"
             }
     ],
     "serverSideOnly" : false

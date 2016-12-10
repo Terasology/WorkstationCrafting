@@ -1,6 +1,0 @@
-{
-    "BlockDropGrammar": {
-        "blockDrops": ["1-2*WorkstationCrafting:SakuraLog"],
-        "itemDrops": ["0.1|WorkstationCrafting:Resin"]
-    }
-}

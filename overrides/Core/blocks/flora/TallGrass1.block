@@ -1,8 +1,0 @@
-{
-    "basedOn": "core:plant",
-    "colorSource": "foliage_lut",
-    "waving": true,
-    "entity": {
-        "prefab": "WorkstationCrafting:TallGrass"
-    }
-}

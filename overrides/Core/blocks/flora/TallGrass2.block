@@ -1,9 +1,0 @@
-{
-    "basedOn": "core:plant",
-    "colorSource": "foliage_lut",
-    "colorOffset": [0.7, 0.7, 0.7, 1.0],
-    "waving": true,
-    "entity": {
-        "prefab": "WorkstationCrafting:TallGrass"
-    }
-}
