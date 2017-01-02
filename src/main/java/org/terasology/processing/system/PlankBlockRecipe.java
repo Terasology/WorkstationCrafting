@@ -33,6 +33,9 @@ import org.terasology.world.block.BlockUri;
 
 import java.util.List;
 
+/**
+ * This class represents the recipe used to craft plank blocks.
+ */
 public class PlankBlockRecipe extends AbstractWorkstationRecipe {
     public PlankBlockRecipe(int ingredientCount, int toolDurability, String shape, int resultCount) {
         Predicate<EntityRef> plankPredicate = new CraftingStationIngredientPredicate("WorkstationCrafting:plank");

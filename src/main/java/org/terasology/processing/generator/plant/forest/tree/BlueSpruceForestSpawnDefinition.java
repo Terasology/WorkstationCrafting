@@ -25,6 +25,9 @@ import org.terasology.world.generator.plugin.RegisterPlugin;
 
 import java.util.Arrays;
 
+/**
+ * Defines properties of blue spruce forests pertaining to generation.
+ */
 @RegisterPlugin
 public class BlueSpruceForestSpawnDefinition extends GrowthBasedPlantSpawnDefinition {
     public BlueSpruceForestSpawnDefinition() {

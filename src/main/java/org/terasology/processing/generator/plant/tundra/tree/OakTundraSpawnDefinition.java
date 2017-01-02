@@ -25,6 +25,9 @@ import org.terasology.world.generator.plugin.RegisterPlugin;
 
 import java.util.Arrays;
 
+/**
+ * Defines properties of oak trees in tundra regions pertaining to generation.
+ */
 @RegisterPlugin
 public class OakTundraSpawnDefinition extends GrowthBasedPlantSpawnDefinition {
     public OakTundraSpawnDefinition() {

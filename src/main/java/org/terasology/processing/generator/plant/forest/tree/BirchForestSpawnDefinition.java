@@ -25,6 +25,9 @@ import org.terasology.world.generator.plugin.RegisterPlugin;
 
 import java.util.Arrays;
 
+/**
+ * Defines properties of birch forests pertaining to generation.
+ */
 @RegisterPlugin
 public class BirchForestSpawnDefinition extends GrowthBasedPlantSpawnDefinition {
     public BirchForestSpawnDefinition() {

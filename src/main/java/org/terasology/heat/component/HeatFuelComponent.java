@@ -18,8 +18,14 @@ package org.terasology.heat.component;
 import org.terasology.entitySystem.Component;
 import org.terasology.world.block.items.AddToBlockBasedItem;
 
+/**
+ * Indicates that an entity can be used as fuel to generate heat.
+ */
 @AddToBlockBasedItem
 public class HeatFuelComponent implements Component {
+    /** How much heat the fuel provides every update. */
     public float heatProvided;
+
+    /** The amount of time taken to completely consume the fuel. */
     public long consumeTime;
 }

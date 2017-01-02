@@ -25,6 +25,9 @@ import org.terasology.world.generator.plugin.RegisterPlugin;
 
 import java.util.Arrays;
 
+/**
+ * Defines properties of long-pine trees in tundra regions pertaining to generation.
+ */
 @RegisterPlugin
 public class LongPineTundraSpawnDefinition extends GrowthBasedPlantSpawnDefinition {
     public LongPineTundraSpawnDefinition() {

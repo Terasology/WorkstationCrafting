@@ -39,6 +39,9 @@ import org.terasology.world.block.regions.BlockRegionComponent;
 import java.util.Iterator;
 import java.util.Map;
 
+/**
+ * This system controls heat flow.
+ */
 @RegisterSystem(value = RegisterMode.AUTHORITY)
 public class HeatTriggeringSystem extends BaseComponentSystem implements UpdateSubscriberSystem {
     private static final float REMOVE_FUEL_THRESHOLD = 21f;
@@ -54,6 +57,11 @@ public class HeatTriggeringSystem extends BaseComponentSystem implements UpdateS
 
     private long lastChecked;
 
+    /**
+     * Controls all heat-related actions to be carried out during each update.
+     *
+     * @param delta The time (in seconds) since the last engine update
+     */
     @Override
     public void update(float delta) {
         long currentTime = time.getGameTimeInMs();
@@ -169,8 +177,9 @@ public class HeatTriggeringSystem extends BaseComponentSystem implements UpdateS
     /**
      * Store residual heat from removed producers into consumers.
      *
-     * @param event
-     * @param entity
+     * @param event    The event corresponding to the situation before the producer was removed
+     * @param entity   The heat producer being removed
+     * @param producer The heat producer component on the heat producer being removed
      */
     @ReceiveEvent
     public void beforeProducerRemoved(BeforeRemoveComponent event, EntityRef entity, HeatProducerComponent producer) {

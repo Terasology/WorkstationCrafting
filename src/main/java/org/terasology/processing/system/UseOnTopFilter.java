@@ -20,9 +20,15 @@ import org.terasology.logic.common.ActivateEvent;
 import org.terasology.math.Side;
 
 /**
- * @author Marcin Sciesinski <marcins78@gmail.com>
+ * A filter that returns true only when an event is passed where the concerned item is activated from the top.
  */
 public class UseOnTopFilter implements Predicate<ActivateEvent> {
+    /**
+     * Applies the filter to a given ActivateEvent.
+     *
+     * @param event The ActivateEvent to apply the filter to
+     * @return      True only if the activated item is activated from the top
+     */
     @Override
     public boolean apply(ActivateEvent event) {
         Side side = Side.inDirection(event.getHitNormal());

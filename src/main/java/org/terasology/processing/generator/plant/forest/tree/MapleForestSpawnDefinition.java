@@ -25,6 +25,9 @@ import org.terasology.world.generator.plugin.RegisterPlugin;
 
 import java.util.Arrays;
 
+/**
+ * Defines properties of maple forests pertaining to generation.
+ */
 @RegisterPlugin
 public class MapleForestSpawnDefinition extends GrowthBasedPlantSpawnDefinition {
     public MapleForestSpawnDefinition() {

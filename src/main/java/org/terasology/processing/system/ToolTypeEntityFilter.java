@@ -20,7 +20,7 @@ import org.terasology.workstationCrafting.component.CraftingStationToolComponent
 import org.terasology.entitySystem.entity.EntityRef;
 
 /**
- * @author Marcin Sciesinski <marcins78@gmail.com>
+ * An entity filter that returns true only when an item with a specific tool type is passed.
  */
 public class ToolTypeEntityFilter implements Predicate<EntityRef> {
     private String toolType;
@@ -29,6 +29,12 @@ public class ToolTypeEntityFilter implements Predicate<EntityRef> {
         this.toolType = toolType;
     }
 
+    /**
+     * Applies the entity filter to a given item.
+     *
+     * @param item The item to apply the filter to
+     * @return     Returns true if the given item is of a specific tool type
+     */
     @Override
     public boolean apply(EntityRef item) {
         CraftingStationToolComponent tool = item.getComponent(CraftingStationToolComponent.class);

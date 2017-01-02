@@ -25,6 +25,9 @@ import org.terasology.world.generator.plugin.RegisterPlugin;
 
 import java.util.Arrays;
 
+/**
+ * Defines properties of pine trees in tundra regions pertaining to generation.
+ */
 @RegisterPlugin
 public class PineTundraSpawnDefinition extends GrowthBasedPlantSpawnDefinition {
     public PineTundraSpawnDefinition() {

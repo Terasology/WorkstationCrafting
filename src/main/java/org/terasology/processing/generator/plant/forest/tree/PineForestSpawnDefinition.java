@@ -25,6 +25,9 @@ import org.terasology.world.generator.plugin.RegisterPlugin;
 
 import java.util.Arrays;
 
+/**
+ * Defines properties of pine forests pertaining to generation.
+ */
 @RegisterPlugin
 public class PineForestSpawnDefinition extends GrowthBasedPlantSpawnDefinition {
     public PineForestSpawnDefinition() {

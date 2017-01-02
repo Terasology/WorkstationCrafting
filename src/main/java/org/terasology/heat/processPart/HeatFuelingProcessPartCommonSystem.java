@@ -35,6 +35,9 @@ import org.terasology.workstation.processPart.ProcessEntityIsInvalidToStartEvent
 import org.terasology.workstation.processPart.ProcessEntityStartExecutionEvent;
 import org.terasology.workstation.processPart.inventory.ProcessEntityIsInvalidForInventoryItemEvent;
 
+/**
+ * Contains the common workings of fueling parts.
+ */
 @RegisterSystem
 public class HeatFuelingProcessPartCommonSystem extends BaseComponentSystem {
     @In
@@ -44,6 +47,13 @@ public class HeatFuelingProcessPartCommonSystem extends BaseComponentSystem {
 
     ///// Processing
 
+    /**
+     * Make sure that the fuel to be processed is valid.
+     *
+     * @param event                The event that indicates that the entity to process is invalid to start fueling
+     * @param processEntity        The fuel entity that is invalid
+     * @param heatFuelingComponent The heat fueling component liked with this event
+     */
     @ReceiveEvent
     public void validateToStartExecution(ProcessEntityIsInvalidToStartEvent event, EntityRef processEntity,
                                          HeatFuelingComponent heatFuelingComponent) {
@@ -60,6 +70,13 @@ public class HeatFuelingProcessPartCommonSystem extends BaseComponentSystem {
         event.consume();
     }
 
+    /**
+     * Start fueling process.
+     *
+     * @param event                The event sent to indicate that the fueling process is to be started
+     * @param processEntity        The fuel entity to process
+     * @param heatFuelingComponent The heat fueling component linked to this event
+     */
     @ReceiveEvent
     public void startExecution(ProcessEntityStartExecutionEvent event, EntityRef processEntity,
                                HeatFuelingComponent heatFuelingComponent) {
@@ -80,6 +97,15 @@ public class HeatFuelingProcessPartCommonSystem extends BaseComponentSystem {
         }
     }
 
+    /**
+     * Get the duration for which a fuel is being consumed. This method does not return the value, but rather adds the
+     * value to an event passed to the method.
+     *
+     * @param event                The event corresponding to a request sent to get the duration of fuel consumption
+     *                             The value of the duration will be added to this event by the method
+     * @param processEntity        The fuel entity being processed
+     * @param heatFuelingComponent The heat fueling component linked to this event
+     */
     @ReceiveEvent
     public void getDuration(ProcessEntityGetDurationEvent event, EntityRef processEntity,
                             HeatFuelingComponent heatFuelingComponent) {
@@ -90,6 +116,13 @@ public class HeatFuelingProcessPartCommonSystem extends BaseComponentSystem {
         }
     }
 
+    /**
+     * Finish the fueling process.
+     *
+     * @param event                The event sent to indicate that the execution is to be ended
+     * @param entityRef            The fuel entity which has been processed
+     * @param heatFuelingComponent The heat fueling component linked to this event
+     */
     @ReceiveEvent
     public void finishExecution(ProcessEntityFinishExecutionEvent event, EntityRef entityRef,
                                 HeatFuelingComponent heatFuelingComponent) {

@@ -25,6 +25,9 @@ import org.terasology.world.generator.plugin.RegisterPlugin;
 
 import java.util.Arrays;
 
+/**
+ * Defines properties of spruce trees in tundra regions pertaining to generation.
+ */
 @RegisterPlugin
 public class SpruceTundraSpawnDefinition extends GrowthBasedPlantSpawnDefinition {
     public SpruceTundraSpawnDefinition() {

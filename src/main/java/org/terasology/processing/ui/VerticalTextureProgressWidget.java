@@ -24,7 +24,7 @@ import org.terasology.rendering.nui.databinding.Binding;
 import org.terasology.rendering.nui.databinding.DefaultBinding;
 
 /**
- * @author Marcin Sciesinski <marcins78@gmail.com>
+ * A UI widget that represents a vertical progress bar.
  */
 public class VerticalTextureProgressWidget extends CoreWidget {
     @LayoutConfig
@@ -51,6 +51,11 @@ public class VerticalTextureProgressWidget extends CoreWidget {
         this.image.set(image);
     }
 
+    /**
+     * Defines how the widget is drawn on the canvas.
+     *
+     * @param canvas The canvas on which the widget resides
+     */
     @Override
     public void onDraw(Canvas canvas) {
         TextureRegion texture = getImage();
@@ -82,6 +87,13 @@ public class VerticalTextureProgressWidget extends CoreWidget {
         }
     }
 
+    /**
+     * Get the preferred content size of the widget.
+     *
+     * @param canvas   The canvas on which the widget resides
+     * @param sizeHint A size hint indicating a recommended size
+     * @return         The preferred content size of the widget
+     */
     @Override
     public Vector2i getPreferredContentSize(Canvas canvas, Vector2i sizeHint) {
         if (image.get() != null) {
@@ -90,46 +102,101 @@ public class VerticalTextureProgressWidget extends CoreWidget {
         return Vector2i.zero();
     }
 
+    /**
+     * Get the texture of the widget.
+     *
+     * @return The texture of the widget
+     */
     public TextureRegion getImage() {
         return image.get();
     }
 
+    /**
+     * Set the texture of the widget.
+     *
+     * @param image The new texture of the widget
+     */
     public void setImage(TextureRegion image) {
         this.image.set(image);
     }
 
+    /**
+     * Set the image binding of the widget.
+     *
+     * @param binding The new image binding of the widget
+     */
     public void bindTexture(Binding<TextureRegion> binding) {
         this.image = binding;
     }
 
+    /**
+     * Get the value currently displayed by the progress bar.
+     *
+     * @return The value currently displayed on the progress bar
+     */
     public float getValue() {
         return value.get();
     }
 
+    /**
+     * Set the value displayed by the progress bar.
+     *
+     * @param value The new value displayed by the progress bar
+     */
     public void setValue(float value) {
         this.value.set(value);
     }
 
+    /**
+     * Set the binding of the value displayed by the progress bar.
+     *
+     * @param binding The new binding of the value displayed by the progress bar.
+     */
     public void bindValue(Binding<Float> binding) {
         this.value = binding;
     }
 
+    /**
+     * Get the height currently displayed on the vertical progress bar.
+     *
+     * @return The height currently displayed on the vertical progress bar
+     */
     public Float getMark() {
         return mark.get();
     }
 
+    /**
+     * Set the height displayed on the vertical progress bar.
+     *
+     * @param markValue The new height to be displayed on the vertical progress bar
+     */
     public void setMark(Float markValue) {
         mark.set(markValue);
     }
 
+    /**
+     * Set the binding of the height displayed on the vertical progress bar.
+     *
+     * @param binding The new binding of the height to be displayed on the vertical progress bar
+     */
     public void bindMark(Binding<Float> binding) {
         this.mark = binding;
     }
 
+    /**
+     * Set the maximum Y coordinate of the widget on the canvas.
+     *
+     * @param maxY The new maximum Y coordinate of the widget on the canvas.
+     */
     public void setMaxY(int maxY) {
         this.maxY = maxY;
     }
 
+    /**
+     * Set the minimum Y coordinate of the widget on the canvas.
+     *
+     * @param minY The new minimum Y coordinate of the widget on the canvas.
+     */
     public void setMinY(int minY) {
         this.minY = minY;
     }

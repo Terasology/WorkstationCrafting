@@ -25,6 +25,9 @@ import org.terasology.world.generator.plugin.RegisterPlugin;
 
 import java.util.Arrays;
 
+/**
+ * Defines properties of sakura forests pertaining to generation.
+ */
 @RegisterPlugin
 public class SakuraForestSpawnDefinition extends GrowthBasedPlantSpawnDefinition {
     public SakuraForestSpawnDefinition() {

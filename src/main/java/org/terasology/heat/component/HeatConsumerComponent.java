@@ -25,19 +25,34 @@ import org.terasology.world.block.ForceBlockActive;
 import java.util.List;
 import java.util.Set;
 
+
+/**
+ * This component indicates that an entity can consume heat.
+ */
 @ForceBlockActive
 public class HeatConsumerComponent implements Component {
+    /** The directions of heat flow. */
     @Replicate
     public Set<Side> heatDirections;
+
+    /** The efficiency with which heat is consumed. Used to calculate the fraction of the supplied heat that is actually used. */
     @Replicate
     public float heatConsumptionEfficiency;
+
+    /** List of all residual heat effects on the entity. Residual heat is the heat left over after active heating. */
     @Replicate
     public List<ResidualHeat> residualHeat = Lists.newArrayList();
 
+    /**
+     * A class that represents a residual heat effect.
+     */
     @MappedContainer
     public static class ResidualHeat {
+        /** How long the residual heat stays. */
         @Replicate
         public long time;
+
+        /** How intense the residual heat is. */
         @Replicate
         public float baseHeat;
     }

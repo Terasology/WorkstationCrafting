@@ -32,13 +32,21 @@ import org.terasology.world.block.items.OnBlockItemPlaced;
 import org.terasology.world.block.items.OnBlockToItem;
 
 /**
- * @author Marcin Sciesinski <marcins78@gmail.com>
+ * This system defines the workings of torches in the game.
  */
 @RegisterSystem
 public class LitTorchSystem extends BaseComponentSystem {
     @In
     private BlockManager blockManager;
 
+    /**
+     * Defines what to do when an entity places a torch.
+     *
+     * @param event                             The event corresponding to the torch being placed
+     * @param item                              The entity reference of the torch
+     * @param overTimeDurabilityReduceComponent The component of the torch that defines how the durability of the torch decays over time
+     * @param itemDurability                    The durability of the torch
+     */
     @ReceiveEvent
     public void whenTorchPlaced(OnBlockItemPlaced event, EntityRef item,
                                 OverTimeDurabilityReduceComponent overTimeDurabilityReduceComponent,
@@ -49,6 +57,14 @@ public class LitTorchSystem extends BaseComponentSystem {
         blockEntity.saveComponent(durability);
     }
 
+    /**
+     * Defines what to do when a torch is removed.
+     *
+     * @param event                             The event corresponding to the torch being removed
+     * @param block                             The block from which the torch was removed
+     * @param overTimeDurabilityReduceComponent The component of the torch that defines how the durability of the torch decays over time
+     * @param blockDurability                   The durability of the torch
+     */
     @ReceiveEvent
     public void whenTorchRemoved(OnBlockToItem event, EntityRef block,
                                  OverTimeDurabilityReduceComponent overTimeDurabilityReduceComponent,
@@ -59,6 +75,14 @@ public class LitTorchSystem extends BaseComponentSystem {
         itemEntity.saveComponent(durability);
     }
 
+    /**
+     * Defines what to do when the durability of the torch expires.
+     *
+     * @param event                             The event corresponding to the torch expiring
+     * @param entity                            The entity reference of the torch
+     * @param overTimeDurabilityReduceComponent The component of the torch that defines how the durability of the torch decays over time
+     * @param block                             The block on which the torch was placed
+     */
     @ReceiveEvent
     public void whenTorchAsBlockExpires(DurabilityExhaustedEvent event, EntityRef entity,
                                         OverTimeDurabilityReduceComponent overTimeDurabilityReduceComponent,

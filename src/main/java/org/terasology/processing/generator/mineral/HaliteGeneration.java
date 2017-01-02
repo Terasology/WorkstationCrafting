@@ -24,7 +24,7 @@ import org.terasology.world.block.BlockManager;
 import org.terasology.world.generator.plugin.RegisterPlugin;
 
 /**
- * @author Marcin Sciesinski <marcins78@gmail.com>
+ * Defines an ore ("Halite") and the properties of the ore pertaining to generation.
  */
 @RegisterPlugin
 public class HaliteGeneration extends PocketStructureDefinition implements OreDefinition {

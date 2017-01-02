@@ -45,7 +45,7 @@ import org.terasology.world.liquid.LiquidType;
 import java.util.Arrays;
 
 /**
- * @author Marcin Sciesinski <marcins78@gmail.com>
+ * A world generator that generates a world suitable for playing with Workstation Crafting content mods.
  */
 @RegisterWorldGenerator(id = "workstationCrafting", displayName = "Workstation Crafting", description = "Generates the world for playing 'Workstation Crafting' content mods.")
 public class WorkstationCraftingWorldGenerator extends PluggableWorldGenerator {
@@ -55,6 +55,9 @@ public class WorkstationCraftingWorldGenerator extends PluggableWorldGenerator {
         super(uri);
     }
 
+    /**
+     * Setup variables required for world generation.
+     */
     @Override
     protected void setupGenerator() {
 
@@ -122,6 +125,11 @@ public class WorkstationCraftingWorldGenerator extends PluggableWorldGenerator {
         setupFlora(seaLevel);
     }
 
+    /**
+     * Get a world configurator to use for world generation.
+     *
+     * @return A new world configurator
+     */
     @Override
     public WorldConfigurator getConfigurator() {
         return new WorldConfiguratorAdapter();
@@ -142,7 +150,6 @@ public class WorkstationCraftingWorldGenerator extends PluggableWorldGenerator {
 
 
     }
-
 
     private void setupOreGenerator(Block stone) {
         Predicate<Block> replacedBlocks = new BlockCollectionPredicate(stone);

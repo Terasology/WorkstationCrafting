@@ -25,6 +25,9 @@ import org.terasology.world.generator.plugin.RegisterPlugin;
 
 import java.util.Arrays;
 
+/**
+ * Defines properties of broom forests pertaining to generation.
+ */
 @RegisterPlugin
 public class BroomForestSpawnDefinition extends GrowthBasedPlantSpawnDefinition {
     public BroomForestSpawnDefinition() {

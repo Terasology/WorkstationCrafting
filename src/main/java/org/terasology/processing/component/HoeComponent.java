@@ -18,7 +18,7 @@ package org.terasology.processing.component;
 import org.terasology.entitySystem.Component;
 
 /**
- * @author Marcin Sciesinski <marcins78@gmail.com>
+ * Indicates that an entity is capable of tilling soil.
  */
 public class HoeComponent implements Component {
 }

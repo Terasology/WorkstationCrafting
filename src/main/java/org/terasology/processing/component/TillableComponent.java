@@ -18,7 +18,7 @@ package org.terasology.processing.component;
 import org.terasology.entitySystem.Component;
 
 /**
- * @author Marcin Sciesinski <marcins78@gmail.com>
+ * Indicates that a block is tillable.
  */
 public class TillableComponent implements Component {
 }
