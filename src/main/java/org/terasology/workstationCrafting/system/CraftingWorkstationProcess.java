@@ -151,7 +151,7 @@ public class CraftingWorkstationProcess implements WorkstationProcess, ValidateI
     }
 
     private EntityRef createProcessEntity(boolean persistant) {
-        if (entityManager == null) {
+        if (entityManager == null || prefab == null) {
             return EntityRef.NULL;
         }
 
