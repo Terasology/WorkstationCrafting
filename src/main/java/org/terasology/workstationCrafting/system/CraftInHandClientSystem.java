@@ -15,7 +15,7 @@
  */
 package org.terasology.workstationCrafting.system;
 
-import org.terasology.workstationCrafting.event.CraftInHandButton;
+import org.terasology.workstationCrafting.event.NatureCraftingButton;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.entitySystem.event.ReceiveEvent;
 import org.terasology.entitySystem.systems.BaseComponentSystem;
@@ -37,7 +37,7 @@ public class CraftInHandClientSystem extends BaseComponentSystem {
     private CraftInHandRecipeRegistry recipeRegistry;
 
     @ReceiveEvent
-    public void craftRequested(CraftInHandButton event, EntityRef entity,
+    public void craftRequested(NatureCraftingButton event, EntityRef entity,
                                ClientComponent clientComponent) {
         if (!recipeRegistry.isCraftingInHandDisabled()) {
             if (event.getState() == ButtonState.DOWN) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 MovingBlocks
+ * Copyright 2017 MovingBlocks
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,10 +21,7 @@ import org.terasology.input.DefaultBinding;
 import org.terasology.input.InputType;
 import org.terasology.input.RegisterBindButton;
 
-/**
- * @author Marcin Sciesinski <marcins78@gmail.com>
- */
-@RegisterBindButton(id = "craftInHand", description = "Craft in hand", category = "interaction")
-@DefaultBinding(type = InputType.KEY, id = Keyboard.KEY_G)
-public class CraftInHandButton extends BindButtonEvent {
+@RegisterBindButton(id = "natureCrafting", description = "Nature (Hand) Crafting", category = "interaction")
+@DefaultBinding(type = InputType.KEY, id = Keyboard.KEY_N)
+public class NatureCraftingButton extends BindButtonEvent {
 }
