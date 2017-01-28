@@ -18,9 +18,6 @@ package org.terasology.workstationCrafting.event;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.entitySystem.event.Event;
 
-/**
- * @author Marcin Sciesinski <marcins78@gmail.com>
- */
 public class CraftingStationUpgraded implements Event {
     private EntityRef craftingStation;
 

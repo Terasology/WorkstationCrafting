@@ -21,10 +21,7 @@ import org.terasology.input.DefaultBinding;
 import org.terasology.input.InputType;
 import org.terasology.input.RegisterBindButton;
 
-/**
- * @author Marcin Sciesinski <marcins78@gmail.com>
- */
-@RegisterBindButton(id = "craftInHand", description = "Craft in hand", category = "interaction")
+@RegisterBindButton(id = "craftInHand (neoTTA)", description = "Craft in hand", category = "interaction")
 @DefaultBinding(type = InputType.KEY, id = Keyboard.KEY_G)
 public class CraftInHandButton extends BindButtonEvent {
 }

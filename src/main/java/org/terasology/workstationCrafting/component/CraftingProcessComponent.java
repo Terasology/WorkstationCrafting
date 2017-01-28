@@ -16,10 +16,13 @@
 package org.terasology.workstationCrafting.component;
 
 import org.terasology.entitySystem.Component;
+import org.terasology.network.Replicate;
 
 import java.util.List;
 
 public class CraftingProcessComponent implements Component {
+    @Replicate
     public List<String> parameters;
+    @Replicate
     public int count;
 }

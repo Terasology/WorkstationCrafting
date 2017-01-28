@@ -1,7 +1,7 @@
 {
     "id" : "WorkstationCrafting",
-    "version" : "0.1.0-SNAPSHOT",
-    "author" : "XTariq, Marcin Sciesinski <marcins78@gmail.com>",
+    "version" : "1.0.1-SNAPSHOT",
+    "author" : "XTariq, Marcin Sciesinski <marcins78@gmail.com>, Isaac (iojw)",
     "displayName" : "Workstation Crafting",
     "description" : "An extended version of crafting to allow for more advanced methods and items.",
     "dependencies" : [
