@@ -16,9 +16,8 @@
 package org.terasology.processing.component;
 
 import org.terasology.entitySystem.Component;
+import org.terasology.network.Replicate;
 
-/**
- * @author Marcin Sciesinski <marcins78@gmail.com>
- */
+@Replicate
 public class HoeComponent implements Component {
 }

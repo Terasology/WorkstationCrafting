@@ -16,6 +16,8 @@
 package org.terasology.heat.processPart;
 
 import org.terasology.entitySystem.Component;
+import org.terasology.network.Replicate;
 
+@Replicate
 public class HeatFuelingComponent implements Component {
 }

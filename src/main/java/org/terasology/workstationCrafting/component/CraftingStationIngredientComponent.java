@@ -16,12 +16,11 @@
 package org.terasology.workstationCrafting.component;
 
 import org.terasology.entitySystem.Component;
+import org.terasology.network.Replicate;
 import org.terasology.world.block.items.AddToBlockBasedItem;
 
-/**
- * @author Marcin Sciesinski <marcins78@gmail.com>
- */
 @AddToBlockBasedItem
 public class CraftingStationIngredientComponent implements Component {
+    @Replicate
     public String type;
 }

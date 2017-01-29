@@ -16,11 +16,15 @@
 package org.terasology.heat.component;
 
 import org.terasology.entitySystem.Component;
-
+import org.terasology.network.Replicate;
 
 public class HeatProcessedComponent implements Component {
+    @Replicate
     public float heatRequired;
+    @Replicate
     public long processingTime;
+    @Replicate
     public String blockResult;
+    @Replicate
     public String itemResult;
 }

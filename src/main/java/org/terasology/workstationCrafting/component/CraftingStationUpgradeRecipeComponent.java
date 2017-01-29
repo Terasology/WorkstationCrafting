@@ -19,9 +19,6 @@ import org.terasology.entitySystem.Component;
 
 import java.util.List;
 
-/**
- * @author Marcin Sciesinski <marcins78@gmail.com>
- */
 public class CraftingStationUpgradeRecipeComponent implements Component {
     public static final String PROCESS_TYPE = "Crafting:UpgradeCraftingWorkstation";
 

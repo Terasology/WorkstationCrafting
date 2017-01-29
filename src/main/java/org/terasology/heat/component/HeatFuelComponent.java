@@ -16,10 +16,13 @@
 package org.terasology.heat.component;
 
 import org.terasology.entitySystem.Component;
+import org.terasology.network.Replicate;
 import org.terasology.world.block.items.AddToBlockBasedItem;
 
 @AddToBlockBasedItem
 public class HeatFuelComponent implements Component {
+    @Replicate
     public float heatProvided;
+    @Replicate
     public long consumeTime;
 }
