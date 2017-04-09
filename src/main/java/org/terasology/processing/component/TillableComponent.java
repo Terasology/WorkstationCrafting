@@ -18,6 +18,9 @@ package org.terasology.processing.component;
 import org.terasology.entitySystem.Component;
 import org.terasology.network.Replicate;
 
+/**
+ * Indicates that a block is tillable.
+ */
 @Replicate
 public class TillableComponent implements Component {
 }

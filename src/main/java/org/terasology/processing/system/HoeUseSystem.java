@@ -32,7 +32,7 @@ import org.terasology.world.block.Block;
 import org.terasology.world.block.BlockManager;
 
 /**
- * @author Marcin Sciesinski <marcins78@gmail.com>
+ * This system defines how hoes work in the game.
  */
 @RegisterSystem(RegisterMode.AUTHORITY)
 public class HoeUseSystem extends BaseComponentSystem {
@@ -43,11 +43,21 @@ public class HoeUseSystem extends BaseComponentSystem {
 
     private Block tillEarthBlock;
 
+    /**
+     * Set up variables used by the system, namely the block corresponding to tilled earth.
+     */
     @Override
     public void preBegin() {
         tillEarthBlock = blockManager.getBlock("WorkstationCrafting:TilledEarth");
     }
 
+    /**
+     * Defines what happens when a hoe is used.
+     *
+     * @param event        The event corresponding to the hoe being used
+     * @param item         An entity reference to the hoe
+     * @param hoeComponent The hoe component on the hoe
+     */
     @ReceiveEvent
     public void hoeUsed(ActivateEvent event, EntityRef item, HoeComponent hoeComponent) {
         EntityRef target = event.getTarget();

@@ -16,15 +16,20 @@
 package org.terasology.heat.component;
 
 import org.terasology.entitySystem.Component;
-import org.terasology.network.Replicate;
 
+/**
+ * Indicates that an entity can be 'processed' using heat to be turned into another entity.
+ */
 public class HeatProcessedComponent implements Component {
-    @Replicate
+    /** The heat required to process the entity. */
     public float heatRequired;
-    @Replicate
+
+    /** The amount of time the entity has to be heated for to become completely processed. */
     public long processingTime;
-    @Replicate
+
+    /** The URI of the resultant block. */
     public String blockResult;
-    @Replicate
+
+    /** The URI of the resultant item. */
     public String itemResult;
 }

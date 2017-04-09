@@ -18,6 +18,9 @@ package org.terasology.processing.component;
 import org.terasology.entitySystem.Component;
 import org.terasology.network.Replicate;
 
+/**
+ * Indicates that an entity is capable of tilling soil.
+ */
 @Replicate
 public class HoeComponent implements Component {
 }

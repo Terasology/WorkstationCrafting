@@ -26,10 +26,20 @@ import org.terasology.rendering.nui.layers.ingame.inventory.InventoryGrid;
 import org.terasology.workstation.component.WorkstationInventoryComponent;
 import org.terasology.world.BlockEntityRegistry;
 
+/**
+ * A utility class containing methods used while setting up the workstation interaction screen.
+ */
 public final class WorkstationScreenUtils {
     private WorkstationScreenUtils() {
     }
 
+    /**
+     * Set up the inventory grid in the window.
+     *
+     * @param workstation   The workstation which is the interaction target of the screen
+     * @param inventoryGrid The inventory grid to set up
+     * @param type          The type of the workstation
+     */
     public static void setupInventoryGrid(EntityRef workstation, InventoryGrid inventoryGrid, String type) {
         WorkstationInventoryComponent workstationInventory = workstation.getComponent(WorkstationInventoryComponent.class);
         WorkstationInventoryComponent.SlotAssignment assignment = workstationInventory.slotAssignments.get(type);
@@ -39,6 +49,13 @@ public final class WorkstationScreenUtils {
         inventoryGrid.setMaxCellCount(assignment.slotCount);
     }
 
+    /**
+     * Set up the temperature widget of the window.
+     *
+     * @param workstation        The workstation which is the interaction target of the screen
+     * @param thermometerWidget  The thermometer widget to use to display temperature
+     * @param minimumTemperature The minumum temperature displayed by the widget
+     */
     public static void setupTemperatureWidget(final EntityRef workstation, ThermometerWidget thermometerWidget, float minimumTemperature) {
         thermometerWidget.bindMaxTemperature(
                 new Binding<Float>() {

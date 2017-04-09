@@ -28,6 +28,9 @@ import org.terasology.rendering.nui.*;
 import org.terasology.rendering.nui.databinding.Binding;
 import org.terasology.rendering.nui.databinding.DefaultBinding;
 
+/**
+ * A UI widget which represents a fluid holder.
+ */
 public class FluidHolderWidget extends CoreWidget {
     @LayoutConfig
     private Binding<TextureRegion> image = new DefaultBinding<>();
@@ -59,6 +62,13 @@ public class FluidHolderWidget extends CoreWidget {
         this.image.set(image);
     }
 
+    /**
+     * Get the preferred content size of the widget.
+     *
+     * @param canvas   The canvas on which the widget resides
+     * @param sizeHint A size hint which indicates a recommended size (passed by the engine)
+     * @return         The preferred content size of the widget
+     */
     @Override
     public Vector2i getPreferredContentSize(Canvas canvas, Vector2i sizeHint) {
         if (image.get() != null) {
@@ -67,6 +77,11 @@ public class FluidHolderWidget extends CoreWidget {
         return Vector2i.zero();
     }
 
+    /**
+     * Defines how the widget is drawn on the canvas.
+     *
+     * @param canvas The canvas on which the widget resides
+     */
     @Override
     public void onDraw(Canvas canvas) {
         TextureRegion texture = getImage();
@@ -104,38 +119,83 @@ public class FluidHolderWidget extends CoreWidget {
         canvas.addInteractionRegion(listener);
     }
 
+    /**
+     * Set the entity reference of this object.
+     *
+     * @param entity The new entity reference of this object
+     */
     public void setEntity(EntityRef entity) {
         this.entity = entity;
     }
 
+    /**
+     * Set the inventory slot number of this object.
+     *
+     * @param slotNo The new slot number of this object
+     */
     public void setSlotNo(int slotNo) {
         this.slotNo = slotNo;
     }
 
+    /**
+     * Get the texture of the widget.
+     *
+     * @return The texture of this widget
+     */
     public TextureRegion getImage() {
         return image.get();
     }
 
+    /**
+     * Set the texture of the widget.
+     *
+     * @param image The new texture of the widget
+     */
     public void setImage(TextureRegion image) {
         this.image.set(image);
     }
 
+    /**
+     * Set the image binding of the widget.
+     *
+     * @param binding The new image binding of the widget
+     */
     public void bindTexture(Binding<TextureRegion> binding) {
         this.image = binding;
     }
 
+    /**
+     * Set the minimum Y coordinate of the widget on the canvas.
+     *
+     * @param minY The new minimum Y coordinate of the widget on the canvas.
+     */
     public void setMinY(int minY) {
         this.minY = minY;
     }
 
+    /**
+     * Set the maximum Y coordinate of the widget on the canvas.
+     *
+     * @param maxY The new maximum Y coordinate of the widget on the canvas.
+     */
     public void setMaxY(int maxY) {
         this.maxY = maxY;
     }
 
+    /**
+     * Set the minimum X coordinate of the widget on the canvas.
+     *
+     * @param minX The new mini X coordinate of the widget on the canvas.
+     */
     public void setMinX(int minX) {
         this.minX = minX;
     }
 
+    /**
+     * Set the maximum X coordinate of the widget on the canvas.
+     *
+     * @param maxX The new maximum X coordinate of the widget on the canvas.
+     */
     public void setMaxX(int maxX) {
         this.maxX = maxX;
     }
