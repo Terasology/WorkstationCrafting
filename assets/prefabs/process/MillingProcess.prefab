@@ -1,6 +1,0 @@
-{
-    "ProcessDefinition": {
-        "processType": "WorkstationCrafting:Milling"
-    },
-    "MillProcessing": { }
-}

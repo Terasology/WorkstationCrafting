@@ -16,12 +16,12 @@
 package org.terasology.workstationCrafting.component;
 
 import org.terasology.entitySystem.Component;
+import org.terasology.network.Replicate;
 import org.terasology.rendering.assets.texture.Texture;
 
-/**
- * @author Marcin Sciesinski <marcins78@gmail.com>
- */
 public class CraftingStationComponent implements Component {
+    @Replicate
     public String type;
+    @Replicate
     public Texture workstationUITexture;
 }

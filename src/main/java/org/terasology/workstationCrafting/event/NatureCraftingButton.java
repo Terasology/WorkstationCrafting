@@ -1,5 +1,5 @@
 /*
- * Copyright 2012 Benjamin Glatzel <benjamin.glatzel@me.com>
+ * Copyright 2017 MovingBlocks
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,24 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-{
-    "hardness": 6,
-    "displayName": "Pine Log",
+package org.terasology.workstationCrafting.event;
 
-    "categories": ["wood"],
+import org.lwjgl.input.Keyboard;
+import org.terasology.input.BindButtonEvent;
+import org.terasology.input.DefaultBinding;
+import org.terasology.input.InputType;
+import org.terasology.input.RegisterBindButton;
 
-    "shape": "StructuralResources:Pillar",
-
-    "entity": {
-        "prefab": "WorkstationCrafting:PineLog"
-    },
-
-    "tile": "PlantPack:PineBark",
-
-    // Graphics
-    "tiles": {
-        "sides": "PlantPack:PineBark",
-        "topBottom": "PlantPack:PineTrunk",
-        "center": "PlantPack:PineBark"
-    }
+@RegisterBindButton(id = "natureCrafting", description = "Nature (Hand) Crafting", category = "interaction")
+@DefaultBinding(type = InputType.KEY, id = Keyboard.KEY_N)
+public class NatureCraftingButton extends BindButtonEvent {
 }

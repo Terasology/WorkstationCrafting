@@ -20,9 +20,6 @@ import org.terasology.network.ServerEvent;
 
 import java.util.List;
 
-/**
- * @author Marcin Sciesinski <marcins78@gmail.com>
- */
 @ServerEvent
 public class UserCraftInHandRequest implements Event {
     private String recipeId;

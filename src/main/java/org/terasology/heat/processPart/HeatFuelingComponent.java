@@ -16,9 +16,11 @@
 package org.terasology.heat.processPart;
 
 import org.terasology.entitySystem.Component;
+import org.terasology.network.Replicate;
 
 /**
  * Indicates that an entity is a fueling part for a workstation.
  */
+@Replicate
 public class HeatFuelingComponent implements Component {
 }

@@ -16,10 +16,12 @@
 package org.terasology.workstationCrafting.event;
 
 import org.terasology.entitySystem.entity.EntityRef;
+import org.terasology.network.ServerEvent;
 import org.terasology.workstation.event.WorkstationProcessRequest;
 
 import java.util.List;
 
+@ServerEvent
 public class CraftingWorkstationProcessRequest extends WorkstationProcessRequest {
     private List<String> parameters;
     private int count;

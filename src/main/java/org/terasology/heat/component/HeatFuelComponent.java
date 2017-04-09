@@ -16,6 +16,7 @@
 package org.terasology.heat.component;
 
 import org.terasology.entitySystem.Component;
+import org.terasology.network.Replicate;
 import org.terasology.world.block.items.AddToBlockBasedItem;
 
 /**
@@ -23,9 +24,10 @@ import org.terasology.world.block.items.AddToBlockBasedItem;
  */
 @AddToBlockBasedItem
 public class HeatFuelComponent implements Component {
-    /** How much heat the fuel provides every update. */
+    /** The amount of heat provided by the fuel every update. */
     public float heatProvided;
 
     /** The amount of time taken to completely consume the fuel. */
+    @Replicate
     public long consumeTime;
 }

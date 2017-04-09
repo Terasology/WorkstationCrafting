@@ -16,10 +16,9 @@
 package org.terasology.workstationCrafting.component;
 
 import org.terasology.entitySystem.Component;
+import org.terasology.network.Replicate;
 
-/**
- * @author Marcin Sciesinski <marcins78@gmail.com>
- */
 public class CraftInHandIngredientComponent implements Component {
+    @Replicate
     public String componentType;
 }
