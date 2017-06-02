@@ -10,8 +10,8 @@
                 "minVersion": "1.0.0"
             },
             {
-                "id": "InGameHelp",
-                "minVersion": "1.0.0"
+                "id": "InGameHelpAPI",
+                "minVersion": "0.1.0"
             },
             {
                 "id": "WorkstationInGameHelp",

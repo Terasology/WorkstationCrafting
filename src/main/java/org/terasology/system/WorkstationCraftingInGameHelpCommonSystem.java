@@ -18,13 +18,9 @@ package org.terasology.system;
 import org.terasology.entitySystem.systems.BaseComponentSystem;
 import org.terasology.entitySystem.systems.RegisterSystem;
 import org.terasology.entitySystem.systems.UpdateSubscriberSystem;
-import org.terasology.inGameHelp.event.OnAddNewCategoryEvent;
-import org.terasology.inGameHelp.systems.HelpCategory;
+import org.terasology.inGameHelpAPI.event.OnAddNewCategoryEvent;
 import org.terasology.logic.players.LocalPlayer;
 import org.terasology.registry.CoreRegistry;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @RegisterSystem
 public class WorkstationCraftingInGameHelpCommonSystem extends BaseComponentSystem implements UpdateSubscriberSystem {
@@ -38,6 +34,7 @@ public class WorkstationCraftingInGameHelpCommonSystem extends BaseComponentSyst
     @Override
     public void update(float delta) {
         if (!hasSent) {
+            // Create the category pertaining to this module and send it to other modules through OnAddNewCategoryEvent.
             CoreRegistry.get(LocalPlayer.class).getClientEntity().send(new OnAddNewCategoryEvent(new WorkstationCraftingCategory()));
             hasSent = true;
         }
