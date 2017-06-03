@@ -14,10 +14,6 @@
                 "minVersion": "0.1.0"
             },
             {
-                "id": "WorkstationInGameHelp",
-                "minVersion": "1.0.0"
-            },
-            {
                 "id" : "MultiBlock",
                 "minVersion" : "1.0.0"
             },
