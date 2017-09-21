@@ -19,8 +19,6 @@ import com.google.common.collect.Lists;
 import org.terasology.entitySystem.entity.EntityBuilder;
 import org.terasology.entitySystem.entity.EntityManager;
 import org.terasology.entitySystem.prefab.Prefab;
-import org.terasology.protobuf.EntityData;
-import org.terasology.registry.In;
 import org.terasology.workstation.process.DescribeProcess;
 import org.terasology.workstation.process.ProcessPartDescription;
 import org.terasology.workstation.processPart.metadata.ProcessEntityGetInputDescriptionEvent;
@@ -42,7 +40,13 @@ import java.util.Collection;
 import java.util.List;
 
 public class CraftingWorkstationProcess implements WorkstationProcess, ValidateInventoryItem, ValidateFluidInventoryItem, DescribeProcess {
+    /*
+    TODO: Technically, the processType and processLevel is already present in the prefab's ProcessDefinitionComponent.
+    If we wanted to, we could replace these two vars with a ref to that aforementioned component.
+    See ProcessPartWorkstationProcess.java in module Workstation for an example.
+    */
     private String processType;
+    private int processLevel;
     private String craftingRecipeId;
     private CraftingStationRecipe recipe;
     private Prefab prefab;
@@ -58,6 +62,17 @@ public class CraftingWorkstationProcess implements WorkstationProcess, ValidateI
     public CraftingWorkstationProcess(String processType, String craftingRecipeId, CraftingStationRecipe recipe,
                                       Prefab prefab, EntityManager entityManager) {
         this.processType = processType;
+        this.processLevel = 0;
+        this.craftingRecipeId = craftingRecipeId;
+        this.recipe = recipe;
+        this.prefab = prefab;
+        this.entityManager = entityManager;
+    }
+
+    public CraftingWorkstationProcess(String processType, int processLevel, String craftingRecipeId, CraftingStationRecipe recipe,
+                                      Prefab prefab, EntityManager entityManager) {
+        this.processType = processType;
+        this.processLevel = processLevel;
         this.craftingRecipeId = craftingRecipeId;
         this.recipe = recipe;
         this.prefab = prefab;
@@ -90,6 +105,11 @@ public class CraftingWorkstationProcess implements WorkstationProcess, ValidateI
     @Override
     public String getProcessType() {
         return processType;
+    }
+
+    @Override
+    public int getProcessLevel() {
+        return processLevel;
     }
 
     @Override

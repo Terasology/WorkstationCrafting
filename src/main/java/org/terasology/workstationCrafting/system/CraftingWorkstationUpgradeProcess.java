@@ -44,6 +44,11 @@ public class CraftingWorkstationUpgradeProcess implements WorkstationProcess, Va
     }
 
     @Override
+    public int getProcessLevel() {
+        return 0; // TODO: Replace in the future.
+    }
+
+    @Override
     public String getId() {
         return "Upgrade:" + workstationType + "-" + targetWorkstationType;
     }
@@ -51,6 +56,8 @@ public class CraftingWorkstationUpgradeProcess implements WorkstationProcess, Va
     public String getWorkstationType() {
         return workstationType;
     }
+
+
 
     public UpgradeRecipe getUpgradeRecipe() {
         return upgradeRecipe;

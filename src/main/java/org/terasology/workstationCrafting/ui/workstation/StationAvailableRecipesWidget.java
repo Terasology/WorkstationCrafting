@@ -16,6 +16,7 @@
 package org.terasology.workstationCrafting.ui.workstation;
 
 import com.google.common.collect.*;
+import org.terasology.workstation.component.WorkstationProcessType;
 import org.terasology.workstationCrafting.event.CraftingWorkstationProcessRequest;
 import org.terasology.workstationCrafting.system.CraftingWorkstationProcess;
 import org.terasology.workstationCrafting.system.recipe.workstation.CraftingStationRecipe;
@@ -76,7 +77,7 @@ public class StationAvailableRecipesWidget extends CoreWidget {
             // TODO: Naive approach by comparing all the possible recipes to those currently displayed
             WorkstationComponent workstation = station.getComponent(WorkstationComponent.class);
             Multimap<String, List<String>> recipes = HashMultimap.create();
-            for (WorkstationProcess workstationProcess : registry.getWorkstationProcesses(workstation.supportedProcessTypes.keySet())) {
+            for (WorkstationProcess workstationProcess : registry.getWorkstationProcessesByLevel(new ArrayList<WorkstationProcessType>(workstation.supportedProcessTypes.values()))) {
                 if (workstationProcess instanceof CraftingWorkstationProcess) {
                     CraftingStationRecipe craftingStationRecipe = ((CraftingWorkstationProcess) workstationProcess).getCraftingWorkstationRecipe();
                     String recipeId = workstationProcess.getId();
@@ -134,7 +135,7 @@ public class StationAvailableRecipesWidget extends CoreWidget {
                 Maps.newHashMap();
 
         WorkstationComponent workstation = station.getComponent(WorkstationComponent.class);
-        for (WorkstationProcess workstationProcess : registry.getWorkstationProcesses(workstation.supportedProcessTypes.keySet())) {
+        for (WorkstationProcess workstationProcess : registry.getWorkstationProcessesByLevel(new ArrayList<WorkstationProcessType>(workstation.supportedProcessTypes.values()))) {
             if (workstationProcess instanceof CraftingWorkstationProcess) {
                 String recipeId = workstationProcess.getId();
                 List<? extends CraftingStationRecipe.CraftingStationResult> results =

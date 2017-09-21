@@ -29,9 +29,6 @@ import org.terasology.workstation.process.WorkstationProcess;
 import org.terasology.workstation.system.WorkstationProcessFactory;
 import org.terasology.world.block.BlockManager;
 
-/**
- * @author Marcin Sciesinski <marcins78@gmail.com>
- */
 public class CraftingWorkstationProcessFactory implements WorkstationProcessFactory {
     @In
     private EntityManager entityManager;
@@ -98,6 +95,6 @@ public class CraftingWorkstationProcessFactory implements WorkstationProcessFact
             workstationRecipe.setRequiredHeat(recipe.requiredTemperature);
         }
 
-        return new CraftingWorkstationProcess(process.processType, recipe.recipeId, workstationRecipe, prefab, entityManager);
+        return new CraftingWorkstationProcess(process.processType, process.processLevel, recipe.recipeId, workstationRecipe, prefab, entityManager);
     }
 }
