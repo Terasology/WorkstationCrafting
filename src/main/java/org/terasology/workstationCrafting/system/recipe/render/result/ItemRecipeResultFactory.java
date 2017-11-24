@@ -15,6 +15,8 @@
  */
 package org.terasology.workstationCrafting.system.recipe.render.result;
 
+import org.terasology.inGameHelpAPI.components.ItemHelpComponent;
+import org.terasology.rendering.nui.widgets.TooltipLine;
 import org.terasology.workstationCrafting.system.recipe.render.RecipeResultFactory;
 import org.terasology.entitySystem.entity.EntityManager;
 import org.terasology.entitySystem.entity.EntityRef;
@@ -24,10 +26,12 @@ import org.terasology.logic.inventory.ItemComponent;
 import org.terasology.registry.CoreRegistry;
 import org.terasology.rendering.nui.layers.ingame.inventory.ItemIcon;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class ItemRecipeResultFactory implements RecipeResultFactory {
-    private Prefab prefab;
+    protected Prefab prefab;
     private int count;
 
     public ItemRecipeResultFactory(Prefab prefab, int count) {
@@ -59,14 +63,37 @@ public class ItemRecipeResultFactory implements RecipeResultFactory {
         return count;
     }
 
+    /**
+     * Setup the display (icon and description) of the recipe's resultant item.
+     *
+     * @param parameters    A list of parameters AKA inputs required for producing this recipe.
+     * @param itemIcon      The item's icon.
+     */
     @Override
     public void setupDisplay(List<String> parameters, ItemIcon itemIcon) {
-        ItemComponent i = prefab.getComponent(ItemComponent.class);
+        // Get the ItemComponent, and use it to set the item's icon.
+        ItemComponent item = prefab.getComponent(ItemComponent.class);
+        itemIcon.setIcon(item.icon);
 
-        itemIcon.setIcon(prefab.getComponent(ItemComponent.class).icon);
+        // Set the tooltip lines for this item. This include its name, category, and (short) description. That is, as
+        // long as it has a name.
         DisplayNameComponent displayName = prefab.getComponent(DisplayNameComponent.class);
         if (displayName != null) {
-            itemIcon.setTooltip(displayName.name);
+            ArrayList<TooltipLine> tooltipLines = new ArrayList<>(Arrays.asList(new TooltipLine(displayName.name)));
+
+            // If this prefab is registered into the InGameHelp system, get its category and add it into the tooltip.
+            if (prefab.hasComponent(ItemHelpComponent.class))
+            {
+                ItemHelpComponent itemHelp = prefab.getComponent(ItemHelpComponent.class);
+                tooltipLines.add(new TooltipLine(itemHelp.getCategory()));
+            }
+            // If this prefab has a description, add it into the tooltip.
+            if (!displayName.description.equals("")) {
+                tooltipLines.add(new TooltipLine(displayName.description));
+            }
+
+            // Set the item prefab's full tooltip or description.
+            itemIcon.setTooltipLines(tooltipLines);
         }
     }
 }

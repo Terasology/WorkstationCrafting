@@ -18,6 +18,21 @@
                         }
                     },
                     {
+                        "type" : "UILabel",
+                        "id": "ingredientsInventoryLabel",
+                        "text" : "Inputs",
+                        "layoutInfo": {
+                            "width": 184,
+                            "height": 250,
+                            "position-left": {
+                                "offset": 0
+                            },
+                            "position-top": {
+                                "offset": 70
+                            }
+                        }
+                    },
+                    {
                         "type": "ScrollableArea",
                         "content": {
                             "type": "InventoryGrid",
@@ -31,6 +46,21 @@
                             },
                             "position-top": {
                                 "offset": 90
+                            }
+                        }
+                    },
+                    {
+                        "type" : "UILabel",
+                        "id": "upgradesInventoryLabel",
+                        "text" : "Upgrades",
+                        "layoutInfo": {
+                            "width": 112,
+                            "height": 56,
+                            "position-left": {
+                                "offset": 47
+                            },
+                            "position-top": {
+                                "offset": 341
                             }
                         }
                     },
@@ -63,6 +93,21 @@
                         }
                     },
                     {
+                        "type" : "UILabel",
+                        "id": "toolsInventoryLabel",
+                        "text" : "Tools",
+                        "layoutInfo": {
+                            "width": 200,
+                            "height": 56,
+                            "position-left": {
+                                "offset": 177
+                            },
+                            "position-top": {
+                                "offset": 341
+                            }
+                        }
+                    },
+                    {
                         "type": "InventoryGrid",
                         "id": "toolsInventory",
                         "layoutInfo": {
@@ -73,6 +118,21 @@
                             },
                             "position-top": {
                                 "offset": 361
+                            }
+                        }
+                    },
+                    {
+                        "type" : "UILabel",
+                        "id": "recipesLabel",
+                        "text" : "Available Recipes",
+                        "layoutInfo": {
+                            "width": 200,
+                            "height": 56,
+                            "position-left": {
+                                "offset": 219
+                            },
+                            "position-top": {
+                                "offset": 70
                             }
                         }
                     },
@@ -90,6 +150,21 @@
                             },
                             "position-top": {
                                 "offset": 90
+                            }
+                        }
+                    },
+                    {
+                        "type" : "UILabel",
+                        "id": "resultInventoryLabel",
+                        "text" : "Output",
+                        "layoutInfo": {
+                            "width": 56,
+                            "height": 56,
+                            "position-left": {
+                                "offset": 569
+                            },
+                            "position-top": {
+                                "offset": 341
                             }
                         }
                     },
