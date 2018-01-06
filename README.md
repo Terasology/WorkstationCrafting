@@ -2,9 +2,14 @@ WorkstationCrafting
 ============
 
 This module adds a more detailed set of classes (compared to the Crafting module) that allow for more complicated and
-detailed crafting. This is intended to be extended by other modules.
+detailed crafting at Workstations. This is a direct extension to the `Workstation` module. This is intended to be
+extended by other modules, and contains NatureCrafting, the tier 0 or base material level for the `NeoThroughoutTheAges`
+(or NeoTTA) family of modules.
 
 Currently under reorganization.
+
+**Important Note:** If you wish to use the `extendedProcesses` branch of this module, make sure to switch to the
+`extendedProcesses` branch of `Workstation`. Otherwise, various features may break or act unstable.
 
 ===
 
