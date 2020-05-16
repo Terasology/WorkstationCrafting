@@ -32,9 +32,9 @@ public class ModifyBlockDestruction extends BaseComponentSystem {
 
     @Override
     public void initialise() {
-        exceptions.add(new BlockUri("CoreBlocks:Grass"));
-        exceptions.add(new BlockUri("CoreBlocks:Dirt"));
-        exceptions.add(new BlockUri("CoreBlocks:Sand"));
+        exceptions.add(new BlockUri("CoreAssets:Grass"));
+        exceptions.add(new BlockUri("CoreAssets:Dirt"));
+        exceptions.add(new BlockUri("CoreAssets:Sand"));
         exceptions.add(new BlockUri("WorkstationCrafting:ClayStone"));
     }
 
