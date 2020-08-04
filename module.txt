@@ -7,7 +7,7 @@
     "dependencies": [
         { "id": "CoreAssets", "minVersion": "2.0.0" },
         { "id": "Durability", "minVersion": "1.1.0" },
-        { "id": "Fluid", "minVersion": "2.2.0" },
+        { "id": "Fluid", "minVersion": "2.0.0" },
         { "id": "InGameHelpAPI", "minVersion": "1.0.0" },
         { "id": "Inventory", "minVersion": "1.1.0" },
         { "id": "MultiBlock", "minVersion": "1.1.0" },
