@@ -1,34 +1,21 @@
-/*
- * Copyright 2016 MovingBlocks
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+// Copyright 2020 The Terasology Foundation
+// SPDX-License-Identifier: Apache-2.0
 package org.terasology.workstationCrafting.ui;
 
+import org.terasology.math.JomlUtil;
 import org.terasology.workstationCrafting.system.recipe.render.CraftIngredientRenderer;
 import org.terasology.workstationCrafting.system.recipe.render.CraftProcessDisplay;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.input.Keyboard;
-import org.terasology.math.geom.Rect2i;
-import org.terasology.math.geom.Vector2i;
-import org.terasology.rendering.nui.Canvas;
-import org.terasology.rendering.nui.CoreWidget;
-import org.terasology.rendering.nui.UIWidget;
-import org.terasology.rendering.nui.databinding.Binding;
-import org.terasology.rendering.nui.events.NUIKeyEvent;
+import org.joml.Vector2i;
+import org.terasology.nui.Canvas;
+import org.terasology.nui.CoreWidget;
+import org.terasology.nui.UIWidget;
+import org.terasology.nui.databinding.Binding;
+import org.terasology.nui.events.NUIKeyEvent;
 import org.terasology.rendering.nui.layers.ingame.inventory.ItemIcon;
-import org.terasology.rendering.nui.widgets.ActivateEventListener;
-import org.terasology.rendering.nui.widgets.UIButton;
+import org.terasology.nui.widgets.ActivateEventListener;
+import org.terasology.nui.widgets.UIButton;
 
 /**
  * @author Marcin Sciesinski <marcins78@gmail.com>
@@ -104,15 +91,15 @@ public class CraftRecipeWidget extends CoreWidget {
 
         for (CraftIngredientRenderer craftIngredientRenderer : processDisplay.getIngredientRenderers(entity)) {
             Vector2i preferredSize = craftIngredientRenderer.getPreferredSize(canvas, multiplier);
-            craftIngredientRenderer.render(canvas, Rect2i.createFromMinAndSize(x, 0, preferredSize.x, size.y), multiplier);
+            craftIngredientRenderer.render(canvas, JomlUtil.rectangleiFromMinAndSize(x, 0, preferredSize.x, size.y), multiplier);
             x += preferredSize.x;
         }
 
         Vector2i resultSize = canvas.calculatePreferredSize(result);
         Vector2i buttonSize = canvas.calculatePreferredSize(button);
 
-        canvas.drawWidget(button, Rect2i.createFromMinAndSize(size.x - resultSize.x - buttonSize.x - 5, (size.y - buttonSize.y) / 2, buttonSize.x, buttonSize.y));
-        canvas.drawWidget(result, Rect2i.createFromMinAndSize(size.x - resultSize.x, 0, resultSize.x, resultSize.y));
+        canvas.drawWidget(button, JomlUtil.rectangleiFromMinAndSize(size.x - resultSize.x - buttonSize.x - 5, (size.y - buttonSize.y) / 2, buttonSize.x, buttonSize.y));
+        canvas.drawWidget(result, JomlUtil.rectangleiFromMinAndSize(size.x - resultSize.x, 0, resultSize.x, resultSize.y));
     }
 
 
