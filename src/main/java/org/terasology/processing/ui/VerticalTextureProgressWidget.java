@@ -1,27 +1,18 @@
-/*
- * Copyright 2016 MovingBlocks
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+// Copyright 2020 The Terasology Foundation
+// SPDX-License-Identifier: Apache-2.0
 package org.terasology.processing.ui;
 
+import org.terasology.math.JomlUtil;
 import org.terasology.math.TeraMath;
-import org.terasology.math.geom.Rect2i;
-import org.terasology.math.geom.Vector2i;
+import org.joml.Vector2i;
+import org.terasology.nui.Canvas;
+import org.terasology.nui.Color;
+import org.terasology.nui.CoreWidget;
+import org.terasology.nui.LayoutConfig;
+import org.terasology.nui.ScaleMode;
 import org.terasology.rendering.assets.texture.TextureRegion;
-import org.terasology.rendering.nui.*;
-import org.terasology.rendering.nui.databinding.Binding;
-import org.terasology.rendering.nui.databinding.DefaultBinding;
+import org.terasology.nui.databinding.Binding;
+import org.terasology.nui.databinding.DefaultBinding;
 
 /**
  * A UI widget that represents a vertical progress bar.
@@ -65,11 +56,11 @@ public class VerticalTextureProgressWidget extends CoreWidget {
             Vector2i size = canvas.size();
             if (minY < maxY) {
                 float yPerc = 1f * (minY + result * (maxY - minY)) / texture.getHeight();
-                canvas.drawTextureRaw(texture, Rect2i.createFromMinAndSize(0, 0, size.x, Math.round(yPerc * size.y)), ScaleMode.STRETCH,
+                canvas.drawTextureRaw(texture, JomlUtil.rectangleiFromMinAndSize(0, 0, size.x, Math.round(yPerc * size.y)), ScaleMode.STRETCH,
                         0f, 0f, 1f, yPerc);
             } else {
                 float yPerc = 1f * (minY - result * (minY - maxY)) / texture.getHeight();
-                canvas.drawTextureRaw(texture, Rect2i.createFromMinAndSize(0, Math.round(yPerc * size.y), size.x, Math.round((1 - yPerc) * size.y)), ScaleMode.STRETCH,
+                canvas.drawTextureRaw(texture, JomlUtil.rectangleiFromMinAndSize(0, Math.round(yPerc * size.y), size.x, Math.round((1 - yPerc) * size.y)), ScaleMode.STRETCH,
                         0, yPerc, 1, (1 - yPerc));
             }
 
@@ -99,7 +90,7 @@ public class VerticalTextureProgressWidget extends CoreWidget {
         if (image.get() != null) {
             return image.get().size();
         }
-        return Vector2i.zero();
+        return new Vector2i();
     }
 
     /**
