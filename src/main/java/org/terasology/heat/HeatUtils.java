@@ -1,31 +1,18 @@
-/*
- * Copyright 2016 MovingBlocks
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+// Copyright 2020 The Terasology Foundation
+// SPDX-License-Identifier: Apache-2.0
 package org.terasology.heat;
 
-import org.terasology.engine.Time;
-import org.terasology.entitySystem.entity.EntityRef;
+import org.terasology.engine.core.Time;
+import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.engine.math.Region3i;
+import org.terasology.engine.math.Side;
+import org.terasology.engine.registry.CoreRegistry;
+import org.terasology.engine.world.BlockEntityRegistry;
+import org.terasology.engine.world.block.BlockComponent;
+import org.terasology.engine.world.block.regions.BlockRegionComponent;
 import org.terasology.heat.component.HeatConsumerComponent;
 import org.terasology.heat.component.HeatProducerComponent;
-import org.terasology.math.Region3i;
-import org.terasology.math.Side;
 import org.terasology.math.geom.Vector3i;
-import org.terasology.registry.CoreRegistry;
-import org.terasology.world.BlockEntityRegistry;
-import org.terasology.world.block.BlockComponent;
-import org.terasology.world.block.regions.BlockRegionComponent;
 
 import java.util.Collections;
 import java.util.HashMap;
@@ -45,7 +32,7 @@ public final class HeatUtils {
      * Calculates the heat of a heat producer.
      *
      * @param producer The heat producer component of the producer
-     * @return         The heat produced by the producer
+     * @return The heat produced by the producer
      */
     public static float calculateHeatForProducer(HeatProducerComponent producer) {
         long gameTime = CoreRegistry.get(Time.class).getGameTimeInMs();
@@ -56,22 +43,24 @@ public final class HeatUtils {
     /**
      * Calculates the final heat of a system using the heat equation.
      *
-     * @param startingHeat           The initial heat of the system
-     * @param appliedHeat            The heat applied to the system
+     * @param startingHeat The initial heat of the system
+     * @param appliedHeat The heat applied to the system
      * @param heatTransferEfficiency The heat transfer efficiency of the process
-     * @param duration               The duration for which heat was applied
-     * @return                       The final heat of the system
+     * @param duration The duration for which heat was applied
+     * @return The final heat of the system
      */
-    public static float solveHeatEquation(float startingHeat, float appliedHeat, float heatTransferEfficiency, long duration) {
-        return startingHeat + (appliedHeat - startingHeat) * (1 - (float) Math.pow(Math.E, -duration * heatTransferEfficiency / HEAT_MAGIC_VALUE));
+    public static float solveHeatEquation(float startingHeat, float appliedHeat, float heatTransferEfficiency,
+                                          long duration) {
+        return startingHeat + (appliedHeat - startingHeat) * (1 - (float) Math.pow(Math.E,
+                -duration * heatTransferEfficiency / HEAT_MAGIC_VALUE));
     }
 
     /**
      * Calculate the heat of a heat producer at a given time.
      *
      * @param producer The heat producer component of the producer
-     * @param time     The time at which the heat of the producer is to be calculated
-     * @return         The heat of the producer at the given time
+     * @param time The time at which the heat of the producer is to be calculated
+     * @return The heat of the producer at the given time
      */
     private static float calculateHeatForProducerAtTime(HeatProducerComponent producer, long time) {
         float heat = 20;
@@ -79,12 +68,14 @@ public final class HeatUtils {
         for (HeatProducerComponent.FuelSourceConsume fuelSourceConsume : producer.fuelConsumed) {
             if (fuelSourceConsume.startTime < time) {
                 if (lastCalculated < fuelSourceConsume.startTime) {
-                    heat = solveHeatEquation(heat, 20, producer.temperatureLossRate, fuelSourceConsume.startTime - lastCalculated);
+                    heat = solveHeatEquation(heat, 20, producer.temperatureLossRate,
+                            fuelSourceConsume.startTime - lastCalculated);
                     lastCalculated = fuelSourceConsume.startTime;
                 }
                 long heatEndTime = Math.min(fuelSourceConsume.startTime + fuelSourceConsume.burnLength, time);
                 heat = Math.min(producer.maximumTemperature,
-                        solveHeatEquation(heat, fuelSourceConsume.heatProvided, producer.temperatureAbsorptionRate, heatEndTime - lastCalculated));
+                        solveHeatEquation(heat, fuelSourceConsume.heatProvided, producer.temperatureAbsorptionRate,
+                                heatEndTime - lastCalculated));
                 lastCalculated = heatEndTime;
             } else {
                 break;
@@ -101,9 +92,9 @@ public final class HeatUtils {
     /**
      * Calculate the heat of an entity.
      *
-     * @param entity              The entity whose heat is to be calculated
+     * @param entity The entity whose heat is to be calculated
      * @param blockEntityRegistry The block entity registry of the world
-     * @return                    The heat of the given entity
+     * @return The heat of the given entity
      */
     public static float calculateHeatForEntity(EntityRef entity, BlockEntityRegistry blockEntityRegistry) {
         HeatProducerComponent producer = entity.getComponent(HeatProducerComponent.class);
@@ -120,12 +111,13 @@ public final class HeatUtils {
     /**
      * Calculates the heat of a heat consumer.
      *
-     * @param entity              The entity whose heat is to be calculated
+     * @param entity The entity whose heat is to be calculated
      * @param blockEntityRegistry The block entity registry of the world
-     * @param heatConsumer        The heat consumer component of the consumer
-     * @return                    The heat of the heat consumer
+     * @param heatConsumer The heat consumer component of the consumer
+     * @return The heat of the heat consumer
      */
-    private static float calculateHeatForConsumer(EntityRef entity, BlockEntityRegistry blockEntityRegistry, HeatConsumerComponent heatConsumer) {
+    private static float calculateHeatForConsumer(EntityRef entity, BlockEntityRegistry blockEntityRegistry,
+                                                  HeatConsumerComponent heatConsumer) {
         float result = 20;
 
         for (Map.Entry<Vector3i, Side> heaterBlock : getPotentialHeatSourceBlocksForConsumer(entity).entrySet()) {
@@ -150,9 +142,9 @@ public final class HeatUtils {
     /**
      * Calculate the amount of residual heat in an entity at a given time.
      *
-     * @param gameTime     The time at which the residual heat is to be calculated
+     * @param gameTime The time at which the residual heat is to be calculated
      * @param residualHeat The residual heat object whose value is to be calculated
-     * @return             The amount of residual heat contained by the entity at the given time
+     * @return The amount of residual heat contained by the entity at the given time
      */
     public static double calculateResidualHeatValue(long gameTime, HeatConsumerComponent.ResidualHeat residualHeat) {
         float timeSinceHeatWasEstablished = (gameTime - residualHeat.time) / 1000f;
@@ -174,7 +166,7 @@ public final class HeatUtils {
      * can heat the consumer.
      *
      * @param consumer The heat consumer
-     * @return         A map containing the location and direction of potential heat sources near the consumer
+     * @return A map containing the location and direction of potential heat sources near the consumer
      */
     public static Map<Vector3i, Side> getPotentialHeatSourceBlocksForConsumer(EntityRef consumer) {
         HeatConsumerComponent consumerComp = consumer.getComponent(HeatConsumerComponent.class);
@@ -203,7 +195,7 @@ public final class HeatUtils {
      * Gets the position and direction of blocks that a heat producer could potentially heat.
      *
      * @param producer The heat producer
-     * @return         A map containing the location and direction of blocks that could potentially be heated by the producer
+     * @return A map containing the location and direction of blocks that could potentially be heated by the producer
      */
     public static Map<Vector3i, Side> getPotentialHeatedBlocksForProducer(EntityRef producer) {
         HeatProducerComponent producerComp = producer.getComponent(HeatProducerComponent.class);

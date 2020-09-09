@@ -3,16 +3,16 @@
 package org.terasology.workstationCrafting.system.recipe.workstation;
 
 import org.joml.Rectanglei;
-import org.terasology.workstationCrafting.system.recipe.render.CraftIngredientRenderer;
 import org.joml.Vector2i;
-import org.terasology.nui.asset.font.Font;
 import org.terasology.nui.Canvas;
 import org.terasology.nui.TextLineBuilder;
+import org.terasology.nui.asset.font.Font;
+import org.terasology.workstationCrafting.system.recipe.render.CraftIngredientRenderer;
 
 import java.util.List;
 
 public class HeatIngredientRenderer implements CraftIngredientRenderer {
-    private int requiredTemperature;
+    private final int requiredTemperature;
 
     public HeatIngredientRenderer(int requiredTemperature) {
         this.requiredTemperature = requiredTemperature;

@@ -2,16 +2,16 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.terasology.processing.ui;
 
-import org.terasology.entitySystem.entity.EntityRef;
+import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.engine.registry.CoreRegistry;
+import org.terasology.engine.world.BlockEntityRegistry;
 import org.terasology.heat.HeatUtils;
 import org.terasology.heat.component.HeatProducerComponent;
 import org.terasology.heat.ui.ThermometerWidget;
-import org.terasology.registry.CoreRegistry;
+import org.terasology.inventory.rendering.nui.layers.ingame.InventoryGrid;
 import org.terasology.nui.databinding.Binding;
 import org.terasology.nui.databinding.ReadOnlyBinding;
-import org.terasology.rendering.nui.layers.ingame.inventory.InventoryGrid;
 import org.terasology.workstation.component.WorkstationInventoryComponent;
-import org.terasology.world.BlockEntityRegistry;
 
 /**
  * A utility class containing methods used while setting up the workstation interaction screen.
@@ -23,12 +23,13 @@ public final class WorkstationScreenUtils {
     /**
      * Set up the inventory grid in the window.
      *
-     * @param workstation   The workstation which is the interaction target of the screen
+     * @param workstation The workstation which is the interaction target of the screen
      * @param inventoryGrid The inventory grid to set up
-     * @param type          The type of the workstation
+     * @param type The type of the workstation
      */
     public static void setupInventoryGrid(EntityRef workstation, InventoryGrid inventoryGrid, String type) {
-        WorkstationInventoryComponent workstationInventory = workstation.getComponent(WorkstationInventoryComponent.class);
+        WorkstationInventoryComponent workstationInventory =
+                workstation.getComponent(WorkstationInventoryComponent.class);
         WorkstationInventoryComponent.SlotAssignment assignment = workstationInventory.slotAssignments.get(type);
 
         inventoryGrid.setTargetEntity(workstation);
@@ -39,11 +40,12 @@ public final class WorkstationScreenUtils {
     /**
      * Set up the temperature widget of the window.
      *
-     * @param workstation        The workstation which is the interaction target of the screen
-     * @param thermometerWidget  The thermometer widget to use to display temperature
+     * @param workstation The workstation which is the interaction target of the screen
+     * @param thermometerWidget The thermometer widget to use to display temperature
      * @param minimumTemperature The minumum temperature displayed by the widget
      */
-    public static void setupTemperatureWidget(final EntityRef workstation, ThermometerWidget thermometerWidget, float minimumTemperature) {
+    public static void setupTemperatureWidget(final EntityRef workstation, ThermometerWidget thermometerWidget,
+                                              float minimumTemperature) {
         thermometerWidget.bindMaxTemperature(
                 new Binding<Float>() {
                     @Override
@@ -63,7 +65,8 @@ public final class WorkstationScreenUtils {
                 new Binding<Float>() {
                     @Override
                     public Float get() {
-                        return HeatUtils.calculateHeatForEntity(workstation, CoreRegistry.get(BlockEntityRegistry.class));
+                        return HeatUtils.calculateHeatForEntity(workstation,
+                                CoreRegistry.get(BlockEntityRegistry.class));
                     }
 
                     @Override
@@ -74,7 +77,8 @@ public final class WorkstationScreenUtils {
                 new ReadOnlyBinding<String>() {
                     @Override
                     public String get() {
-                        return Math.round(HeatUtils.calculateHeatForEntity(workstation, CoreRegistry.get(BlockEntityRegistry.class))) + "C";
+                        return Math.round(HeatUtils.calculateHeatForEntity(workstation,
+                                CoreRegistry.get(BlockEntityRegistry.class))) + "C";
                     }
                 });
     }

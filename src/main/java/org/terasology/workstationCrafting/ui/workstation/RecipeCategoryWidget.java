@@ -2,9 +2,8 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.terasology.workstationCrafting.ui.workstation;
 
-import org.terasology.input.MouseInput;
-import org.terasology.math.JomlUtil;
 import org.joml.Vector2i;
+import org.terasology.engine.math.JomlUtil;
 import org.terasology.nui.BaseInteractionListener;
 import org.terasology.nui.Canvas;
 import org.terasology.nui.CoreWidget;
@@ -12,6 +11,7 @@ import org.terasology.nui.InteractionListener;
 import org.terasology.nui.TextLineBuilder;
 import org.terasology.nui.asset.font.Font;
 import org.terasology.nui.events.NUIMouseClickEvent;
+import org.terasology.nui.input.MouseInput;
 
 import java.util.List;
 
@@ -19,13 +19,13 @@ import java.util.List;
  * @author Marcin Sciesinski <marcins78@gmail.com>
  */
 public class RecipeCategoryWidget extends CoreWidget {
-    private boolean opened;
-    private int leftIndent;
-    private String name;
-    private int count;
-    private CategoryToggleCallback callback;
+    private final boolean opened;
+    private final int leftIndent;
+    private final String name;
+    private final int count;
+    private final CategoryToggleCallback callback;
 
-    private InteractionListener interactionListener = new BaseInteractionListener() {
+    private final InteractionListener interactionListener = new BaseInteractionListener() {
         @Override
         public boolean onMouseClick(NUIMouseClickEvent event) {
             if (event.getMouseButton() == MouseInput.MOUSE_LEFT) {
@@ -36,7 +36,8 @@ public class RecipeCategoryWidget extends CoreWidget {
         }
     };
 
-    public RecipeCategoryWidget(boolean opened, int leftIndent, String name, int count, CategoryToggleCallback callback) {
+    public RecipeCategoryWidget(boolean opened, int leftIndent, String name, int count,
+                                CategoryToggleCallback callback) {
         this.opened = opened;
         this.leftIndent = leftIndent;
         this.name = name;

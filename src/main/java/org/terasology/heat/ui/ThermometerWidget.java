@@ -3,7 +3,7 @@
 package org.terasology.heat.ui;
 
 import org.joml.Vector2i;
-import org.terasology.math.JomlUtil;
+import org.terasology.engine.math.JomlUtil;
 import org.terasology.nui.BaseInteractionListener;
 import org.terasology.nui.Canvas;
 import org.terasology.nui.Color;
@@ -18,21 +18,20 @@ import org.terasology.nui.databinding.DefaultBinding;
  * A UI widget which acts as a thermometer.
  */
 public class ThermometerWidget extends CoreWidget {
+    private final InteractionListener listener = new BaseInteractionListener();
+    private final float minHeightPerc = 0.87f;
+    private final float maxHeightPerc = 0.03f;
     private Binding<Float> temperature = new DefaultBinding<>();
     private Binding<Float> markedTemperature = new DefaultBinding<>();
     private Binding<Float> maxTemperature = new DefaultBinding<>();
     private Binding<Float> minTemperature = new DefaultBinding<>();
-    private InteractionListener listener = new BaseInteractionListener();
-
-    private float minHeightPerc = 0.87f;
-    private float maxHeightPerc = 0.03f;
 
     /**
      * Get the preferred content size of the widget.
      *
-     * @param canvas   The canvas on which the widget resides
+     * @param canvas The canvas on which the widget resides
      * @param sizeHint A size hint passed to indicate a recommended size
-     * @return         The preferred content size
+     * @return The preferred content size
      */
     @Override
     public Vector2i getPreferredContentSize(Canvas canvas, Vector2i sizeHint) {
@@ -73,15 +72,6 @@ public class ThermometerWidget extends CoreWidget {
     }
 
     /**
-     * Set the value of the temperature of the thermometer.
-     *
-     * @param value The value of the temperature to set the thermometer to
-     */
-    public void setTemperature(float value) {
-        temperature.set(value);
-    }
-
-    /**
      * Set the temperature binding of the widget.
      *
      * @param temperatureToBind The temperature binding to set as the widget's temperature binding
@@ -100,11 +90,11 @@ public class ThermometerWidget extends CoreWidget {
     }
 
     /**
-     * Set the value of the marked temperature of the thermometer. This temperature is used to display the thermometer reading.
+     * Set the value of the temperature of the thermometer.
      *
-     * @param value The value to set as the marked temperature of the thermometer
+     * @param value The value of the temperature to set the thermometer to
      */
-    public void setMarkedTemperature(Float value) {
+    public void setTemperature(float value) {
         temperature.set(value);
     }
 
@@ -127,12 +117,13 @@ public class ThermometerWidget extends CoreWidget {
     }
 
     /**
-     * Set the value of the highest temperature that the thermometer can display.
+     * Set the value of the marked temperature of the thermometer. This temperature is used to display the thermometer
+     * reading.
      *
-     * @param value The new value of the maximum temperature that the thermometer can display
+     * @param value The value to set as the marked temperature of the thermometer
      */
-    public void setMaxTemperature(float value) {
-        maxTemperature.set(value);
+    public void setMarkedTemperature(Float value) {
+        temperature.set(value);
     }
 
     /**
@@ -154,12 +145,12 @@ public class ThermometerWidget extends CoreWidget {
     }
 
     /**
-     * Set the value of the lowest temperature that the thermometer can display.
+     * Set the value of the highest temperature that the thermometer can display.
      *
-     * @param value The new value of the minimum temperature that the thermometer can display
+     * @param value The new value of the maximum temperature that the thermometer can display
      */
-    public void setMinTemperature(float value) {
-        minTemperature.set(value);
+    public void setMaxTemperature(float value) {
+        maxTemperature.set(value);
     }
 
     /**
@@ -178,5 +169,14 @@ public class ThermometerWidget extends CoreWidget {
      */
     public float getMinTemperature() {
         return minTemperature.get();
+    }
+
+    /**
+     * Set the value of the lowest temperature that the thermometer can display.
+     *
+     * @param value The new value of the minimum temperature that the thermometer can display
+     */
+    public void setMinTemperature(float value) {
+        minTemperature.set(value);
     }
 }

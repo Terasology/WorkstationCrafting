@@ -1,38 +1,26 @@
-/*
- * Copyright 2016 MovingBlocks
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+// Copyright 2020 The Terasology Foundation
+// SPDX-License-Identifier: Apache-2.0
 package org.terasology.workstationCrafting.system.recipe.behaviour;
 
 import com.google.common.base.Predicate;
+import org.terasology.durability.components.DurabilityComponent;
+import org.terasology.durability.events.ReduceDurabilityEvent;
+import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.inventory.logic.InventoryUtils;
 import org.terasology.workstationCrafting.system.recipe.render.CraftIngredientRenderer;
 import org.terasology.workstationCrafting.system.recipe.render.FixedFunction;
 import org.terasology.workstationCrafting.system.recipe.render.ItemSlotIngredientRenderer;
-import org.terasology.durability.components.DurabilityComponent;
-import org.terasology.durability.events.ReduceDurabilityEvent;
-import org.terasology.entitySystem.entity.EntityRef;
-import org.terasology.logic.inventory.InventoryUtils;
 
 import java.util.LinkedList;
 import java.util.List;
 
 public class ReduceDurabilityCraftBehaviour implements IngredientCraftBehaviour<EntityRef> {
-    private Predicate<EntityRef> matcher;
-    private int durabilityUsed;
-    private InventorySlotResolver resolver;
+    private final Predicate<EntityRef> matcher;
+    private final int durabilityUsed;
+    private final InventorySlotResolver resolver;
 
-    public ReduceDurabilityCraftBehaviour(Predicate<EntityRef> matcher, int durabilityUsed, InventorySlotResolver resolver) {
+    public ReduceDurabilityCraftBehaviour(Predicate<EntityRef> matcher, int durabilityUsed,
+                                          InventorySlotResolver resolver) {
         this.matcher = matcher;
         this.durabilityUsed = durabilityUsed;
         this.resolver = resolver;
@@ -59,9 +47,7 @@ public class ReduceDurabilityCraftBehaviour implements IngredientCraftBehaviour<
         EntityRef ingredient = InventoryUtils.getItemAt(entity, slot);
         if (matcher.apply(ingredient)) {
             DurabilityComponent durability = ingredient.getComponent(DurabilityComponent.class);
-            if (durability != null && durability.durability >= durabilityUsed * multiplier) {
-                return true;
-            }
+            return durability != null && durability.durability >= durabilityUsed * multiplier;
         }
         return false;
     }

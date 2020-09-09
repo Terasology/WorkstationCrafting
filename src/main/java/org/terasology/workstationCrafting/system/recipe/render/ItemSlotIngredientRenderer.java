@@ -4,19 +4,19 @@ package org.terasology.workstationCrafting.system.recipe.render;
 
 import com.google.common.base.Function;
 import org.joml.Rectanglei;
-import org.terasology.entitySystem.entity.EntityRef;
-import org.terasology.logic.common.DisplayNameComponent;
-import org.terasology.logic.inventory.InventoryUtils;
-import org.terasology.logic.inventory.ItemComponent;
 import org.joml.Vector2i;
+import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.engine.logic.common.DisplayNameComponent;
+import org.terasology.engine.logic.inventory.ItemComponent;
+import org.terasology.engine.utilities.Assets;
+import org.terasology.engine.world.block.items.BlockItemComponent;
+import org.terasology.inventory.logic.InventoryUtils;
+import org.terasology.inventory.rendering.nui.layers.ingame.GetItemTooltip;
+import org.terasology.inventory.rendering.nui.layers.ingame.ItemIcon;
 import org.terasology.nui.Canvas;
-import org.terasology.rendering.nui.layers.ingame.inventory.GetItemTooltip;
-import org.terasology.rendering.nui.layers.ingame.inventory.ItemIcon;
-import org.terasology.utilities.Assets;
-import org.terasology.world.block.items.BlockItemComponent;
 
 public class ItemSlotIngredientRenderer implements CraftIngredientRenderer {
-    private ItemIcon itemIcon;
+    private final ItemIcon itemIcon;
     private Function<Integer, Integer> multiplierFunction;
 
     public ItemSlotIngredientRenderer() {

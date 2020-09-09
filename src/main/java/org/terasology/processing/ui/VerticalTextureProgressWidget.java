@@ -2,15 +2,15 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.terasology.processing.ui;
 
-import org.terasology.math.JomlUtil;
-import org.terasology.math.TeraMath;
 import org.joml.Vector2i;
+import org.terasology.engine.math.JomlUtil;
+import org.terasology.engine.rendering.assets.texture.TextureRegion;
+import org.terasology.math.TeraMath;
 import org.terasology.nui.Canvas;
 import org.terasology.nui.Color;
 import org.terasology.nui.CoreWidget;
 import org.terasology.nui.LayoutConfig;
 import org.terasology.nui.ScaleMode;
-import org.terasology.rendering.assets.texture.TextureRegion;
 import org.terasology.nui.databinding.Binding;
 import org.terasology.nui.databinding.DefaultBinding;
 
@@ -51,16 +51,18 @@ public class VerticalTextureProgressWidget extends CoreWidget {
     public void onDraw(Canvas canvas) {
         TextureRegion texture = getImage();
         if (texture != null) {
-            float result = (float) TeraMath.clamp(getValue());
+            float result = TeraMath.clamp(getValue());
 
             Vector2i size = canvas.size();
             if (minY < maxY) {
                 float yPerc = 1f * (minY + result * (maxY - minY)) / texture.getHeight();
-                canvas.drawTextureRaw(texture, JomlUtil.rectangleiFromMinAndSize(0, 0, size.x, Math.round(yPerc * size.y)), ScaleMode.STRETCH,
+                canvas.drawTextureRaw(texture, JomlUtil.rectangleiFromMinAndSize(0, 0, size.x,
+                        Math.round(yPerc * size.y)), ScaleMode.STRETCH,
                         0f, 0f, 1f, yPerc);
             } else {
                 float yPerc = 1f * (minY - result * (minY - maxY)) / texture.getHeight();
-                canvas.drawTextureRaw(texture, JomlUtil.rectangleiFromMinAndSize(0, Math.round(yPerc * size.y), size.x, Math.round((1 - yPerc) * size.y)), ScaleMode.STRETCH,
+                canvas.drawTextureRaw(texture, JomlUtil.rectangleiFromMinAndSize(0, Math.round(yPerc * size.y),
+                        size.x, Math.round((1 - yPerc) * size.y)), ScaleMode.STRETCH,
                         0, yPerc, 1, (1 - yPerc));
             }
 
@@ -81,9 +83,9 @@ public class VerticalTextureProgressWidget extends CoreWidget {
     /**
      * Get the preferred content size of the widget.
      *
-     * @param canvas   The canvas on which the widget resides
+     * @param canvas The canvas on which the widget resides
      * @param sizeHint A size hint indicating a recommended size
-     * @return         The preferred content size of the widget
+     * @return The preferred content size of the widget
      */
     @Override
     public Vector2i getPreferredContentSize(Canvas canvas, Vector2i sizeHint) {

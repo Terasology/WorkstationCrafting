@@ -4,19 +4,19 @@ package org.terasology.workstationCrafting.ui.hand;
 
 import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
+import org.joml.Vector2i;
+import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.engine.logic.players.LocalPlayer;
+import org.terasology.engine.registry.CoreRegistry;
+import org.terasology.nui.Canvas;
+import org.terasology.nui.CoreWidget;
+import org.terasology.nui.UIWidget;
+import org.terasology.nui.layouts.ColumnLayout;
 import org.terasology.workstationCrafting.event.UserCraftInHandRequest;
 import org.terasology.workstationCrafting.system.CraftInHandRecipeRegistry;
 import org.terasology.workstationCrafting.system.recipe.hand.CraftInHandRecipe;
 import org.terasology.workstationCrafting.ui.CraftRecipeWidget;
 import org.terasology.workstationCrafting.ui.CreationCallback;
-import org.terasology.entitySystem.entity.EntityRef;
-import org.terasology.logic.players.LocalPlayer;
-import org.joml.Vector2i;
-import org.terasology.registry.CoreRegistry;
-import org.terasology.nui.Canvas;
-import org.terasology.nui.CoreWidget;
-import org.terasology.nui.UIWidget;
-import org.terasology.nui.layouts.ColumnLayout;
 
 import java.util.Iterator;
 import java.util.List;
@@ -26,11 +26,11 @@ import java.util.Map;
  * @author Marcin Sciesinski <marcins78@gmail.com>
  */
 public class CraftInHandAvailableRecipesWidget extends CoreWidget {
-    private Multimap<String, List<String>> displayedRecipes = HashMultimap.create();
-    private CraftInHandRecipeRegistry registry;
-    private EntityRef character;
+    private final Multimap<String, List<String>> displayedRecipes = HashMultimap.create();
+    private final CraftInHandRecipeRegistry registry;
+    private final EntityRef character;
 
-    private ColumnLayout layout;
+    private final ColumnLayout layout;
 
     public CraftInHandAvailableRecipesWidget() {
         layout = new ColumnLayout();
@@ -46,7 +46,8 @@ public class CraftInHandAvailableRecipesWidget extends CoreWidget {
         Multimap<String, List<String>> recipes = HashMultimap.create();
         for (Map.Entry<String, CraftInHandRecipe> craftInHandRecipe : registry.getRecipes().entrySet()) {
             String recipeId = craftInHandRecipe.getKey();
-            List<CraftInHandRecipe.CraftInHandResult> results = craftInHandRecipe.getValue().getMatchingRecipeResults(character);
+            List<CraftInHandRecipe.CraftInHandResult> results =
+                    craftInHandRecipe.getValue().getMatchingRecipeResults(character);
             if (results != null) {
                 for (CraftInHandRecipe.CraftInHandResult result : results) {
                     List<String> parameters = result.getParameters();
@@ -84,7 +85,8 @@ public class CraftInHandAvailableRecipesWidget extends CoreWidget {
         displayedRecipes.clear();
         for (Map.Entry<String, CraftInHandRecipe> craftInHandRecipe : registry.getRecipes().entrySet()) {
             final String recipeId = craftInHandRecipe.getKey();
-            List<CraftInHandRecipe.CraftInHandResult> results = craftInHandRecipe.getValue().getMatchingRecipeResults(character);
+            List<CraftInHandRecipe.CraftInHandResult> results =
+                    craftInHandRecipe.getValue().getMatchingRecipeResults(character);
             if (results != null) {
                 for (CraftInHandRecipe.CraftInHandResult result : results) {
                     final List<String> parameters = result.getParameters();

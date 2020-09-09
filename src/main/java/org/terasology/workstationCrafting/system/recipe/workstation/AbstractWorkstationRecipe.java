@@ -1,44 +1,31 @@
-/*
- * Copyright 2016 MovingBlocks
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+// Copyright 2020 The Terasology Foundation
+// SPDX-License-Identifier: Apache-2.0
 package org.terasology.workstationCrafting.system.recipe.workstation;
 
+import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.engine.logic.inventory.ItemComponent;
+import org.terasology.engine.registry.CoreRegistry;
+import org.terasology.engine.world.BlockEntityRegistry;
+import org.terasology.heat.HeatUtils;
+import org.terasology.inventory.logic.InventoryUtils;
+import org.terasology.inventory.rendering.nui.layers.ingame.ItemIcon;
+import org.terasology.math.TeraMath;
+import org.terasology.workstation.process.WorkstationInventoryUtils;
 import org.terasology.workstationCrafting.system.recipe.behaviour.IngredientCraftBehaviour;
 import org.terasology.workstationCrafting.system.recipe.render.CraftIngredientRenderer;
 import org.terasology.workstationCrafting.system.recipe.render.RecipeResultFactory;
-import org.terasology.entitySystem.entity.EntityRef;
-import org.terasology.heat.HeatUtils;
-import org.terasology.logic.inventory.InventoryUtils;
-import org.terasology.logic.inventory.ItemComponent;
-import org.terasology.math.TeraMath;
-import org.terasology.registry.CoreRegistry;
-import org.terasology.rendering.nui.layers.ingame.inventory.ItemIcon;
-import org.terasology.workstation.process.WorkstationInventoryUtils;
-import org.terasology.world.BlockEntityRegistry;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
 public abstract class AbstractWorkstationRecipe implements CraftingStationRecipe {
-    private List<IngredientCraftBehaviour<EntityRef>> ingredientBehaviours = new ArrayList<>();
-    private List<IngredientCraftBehaviour<EntityRef>> optionalIngredientBehaviours = new ArrayList<>();
-    private List<IngredientCraftBehaviour<EntityRef>> toolBehaviours = new ArrayList<>();
-    private List<IngredientCraftBehaviour<String>> fluidBehaviours = new ArrayList<>();
+    private final List<IngredientCraftBehaviour<EntityRef>> ingredientBehaviours = new ArrayList<>();
+    private final List<IngredientCraftBehaviour<EntityRef>> optionalIngredientBehaviours = new ArrayList<>();
+    private final List<IngredientCraftBehaviour<EntityRef>> toolBehaviours = new ArrayList<>();
+    private final List<IngredientCraftBehaviour<String>> fluidBehaviours = new ArrayList<>();
 
-    private List<IngredientCraftBehaviour<?>> allBehaviours = new ArrayList<>();
+    private final List<IngredientCraftBehaviour<?>> allBehaviours = new ArrayList<>();
 
     private float requiredHeat;
     private long processingDuration;
@@ -135,7 +122,8 @@ public abstract class AbstractWorkstationRecipe implements CraftingStationRecipe
         return resultList;
     }
 
-    private boolean appendBehaviourMatches(EntityRef station, List<List<String>> listOfResults, IngredientCraftBehaviour<?> ingredientBehaviour) {
+    private boolean appendBehaviourMatches(EntityRef station, List<List<String>> listOfResults,
+                                           IngredientCraftBehaviour<?> ingredientBehaviour) {
         List<String> validToCraft = ingredientBehaviour.getValidToCraft(station, 1);
         if (validToCraft.size() == 0) {
             return false;
@@ -150,7 +138,8 @@ public abstract class AbstractWorkstationRecipe implements CraftingStationRecipe
 
         List<String> parameters = listOfResults.get(index);
         if (index + 1 < listOfResults.size()) {
-            List<List<String>> nextParameterCombinations = createParameterCombinationsFromIndex(listOfResults, index + 1);
+            List<List<String>> nextParameterCombinations = createParameterCombinationsFromIndex(listOfResults,
+                    index + 1);
 
             // Combination of each parameter for this index and all following
             for (String parameter : parameters) {
@@ -178,7 +167,7 @@ public abstract class AbstractWorkstationRecipe implements CraftingStationRecipe
     }
 
     private class Result implements CraftingStationResult {
-        private List<String> parameters;
+        private final List<String> parameters;
         private List<CraftIngredientRenderer> renderers;
 
         public Result(List<String> parameters) {
@@ -197,7 +186,8 @@ public abstract class AbstractWorkstationRecipe implements CraftingStationRecipe
         public int getMaxMultiplier(EntityRef entity) {
             int maxMultiplier = resultFactory.getMaxMultiplier(parameters);
             for (int i = 0; i < parameters.size(); i++) {
-                maxMultiplier = Math.min(maxMultiplier, allBehaviours.get(i).getMaxMultiplier(entity, parameters.get(i)));
+                maxMultiplier = Math.min(maxMultiplier, allBehaviours.get(i).getMaxMultiplier(entity,
+                        parameters.get(i)));
             }
             return maxMultiplier;
         }

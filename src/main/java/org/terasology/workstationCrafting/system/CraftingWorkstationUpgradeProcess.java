@@ -1,35 +1,22 @@
-/*
- * Copyright 2016 MovingBlocks
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+// Copyright 2020 The Terasology Foundation
+// SPDX-License-Identifier: Apache-2.0
 package org.terasology.workstationCrafting.system;
 
-import org.terasology.workstationCrafting.component.CraftingStationComponent;
-import org.terasology.workstationCrafting.component.CraftingStationUpgradeRecipeComponent;
-import org.terasology.workstationCrafting.event.CraftingStationUpgraded;
-import org.terasology.workstationCrafting.system.recipe.workstation.UpgradeRecipe;
-import org.terasology.entitySystem.entity.EntityRef;
+import org.terasology.engine.entitySystem.entity.EntityRef;
 import org.terasology.workstation.event.WorkstationProcessRequest;
 import org.terasology.workstation.process.InvalidProcessException;
 import org.terasology.workstation.process.WorkstationInventoryUtils;
 import org.terasology.workstation.process.WorkstationProcess;
 import org.terasology.workstation.system.ValidateInventoryItem;
+import org.terasology.workstationCrafting.component.CraftingStationComponent;
+import org.terasology.workstationCrafting.component.CraftingStationUpgradeRecipeComponent;
+import org.terasology.workstationCrafting.event.CraftingStationUpgraded;
+import org.terasology.workstationCrafting.system.recipe.workstation.UpgradeRecipe;
 
 public class CraftingWorkstationUpgradeProcess implements WorkstationProcess, ValidateInventoryItem {
-    private String workstationType;
-    private String targetWorkstationType;
-    private UpgradeRecipe upgradeRecipe;
+    private final String workstationType;
+    private final String targetWorkstationType;
+    private final UpgradeRecipe upgradeRecipe;
 
     public CraftingWorkstationUpgradeProcess(String workstationType, String targetWorkstationType,
                                              UpgradeRecipe upgradeRecipe) {
@@ -67,7 +54,8 @@ public class CraftingWorkstationUpgradeProcess implements WorkstationProcess, Va
     }
 
     @Override
-    public long startProcessingManual(EntityRef instigator, EntityRef workstation, WorkstationProcessRequest request, EntityRef processEntity) throws InvalidProcessException {
+    public long startProcessingManual(EntityRef instigator, EntityRef workstation, WorkstationProcessRequest request,
+                                      EntityRef processEntity) throws InvalidProcessException {
         final UpgradeRecipe.UpgradeResult upgrade = upgradeRecipe.getMatchingUpgradeResult(workstation);
         if (upgrade == null) {
             throw new InvalidProcessException();

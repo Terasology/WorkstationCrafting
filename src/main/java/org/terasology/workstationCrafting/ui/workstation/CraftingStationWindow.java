@@ -2,26 +2,25 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.terasology.workstationCrafting.ui.workstation;
 
+import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.engine.logic.players.LocalPlayer;
+import org.terasology.engine.registry.CoreRegistry;
+import org.terasology.engine.rendering.nui.BaseInteractionScreen;
+import org.terasology.engine.rendering.nui.NUIManager;
+import org.terasology.inventory.rendering.nui.layers.ingame.InventoryGrid;
+import org.terasology.nui.UIWidget;
+import org.terasology.nui.widgets.ActivateEventListener;
+import org.terasology.nui.widgets.UIButton;
+import org.terasology.nui.widgets.UIImage;
+import org.terasology.workstation.event.WorkstationProcessRequest;
+import org.terasology.workstation.process.WorkstationProcess;
+import org.terasology.workstation.system.WorkstationRegistry;
 import org.terasology.workstationCrafting.component.CraftingStationComponent;
 import org.terasology.workstationCrafting.component.CraftingStationUpgradeRecipeComponent;
 import org.terasology.workstationCrafting.system.CraftingWorkstationUpgradeProcess;
 import org.terasology.workstationCrafting.system.recipe.workstation.UpgradeRecipe;
-import org.terasology.entitySystem.entity.EntityRef;
-import org.terasology.logic.players.LocalPlayer;
-import org.terasology.registry.CoreRegistry;
-import org.terasology.rendering.nui.BaseInteractionScreen;
-import org.terasology.rendering.nui.NUIManager;
-import org.terasology.nui.UIWidget;
-import org.terasology.rendering.nui.layers.ingame.inventory.InventoryGrid;
-import org.terasology.nui.widgets.ActivateEventListener;
-import org.terasology.nui.widgets.UIButton;
-import org.terasology.nui.widgets.UIImage;
 import org.terasology.workstationCrafting.ui.WorkstationScreenUtils;
-import org.terasology.workstation.event.WorkstationProcessRequest;
-import org.terasology.workstation.process.WorkstationProcess;
-import org.terasology.workstation.system.WorkstationRegistry;
 
-import java.util.Collection;
 import java.util.Collections;
 
 /**
@@ -125,9 +124,11 @@ public class CraftingStationWindow extends BaseInteractionScreen {
 
     // Get the matching upgrade recipe.
     private String getMatchingUpgradeRecipe(WorkstationRegistry craftingRegistry) {
-        for (WorkstationProcess workstationProcess : craftingRegistry.getWorkstationProcesses(Collections.singleton(CraftingStationUpgradeRecipeComponent.PROCESS_TYPE))) {
+        for (WorkstationProcess workstationProcess :
+                craftingRegistry.getWorkstationProcesses(Collections.singleton(CraftingStationUpgradeRecipeComponent.PROCESS_TYPE))) {
             if (workstationProcess instanceof CraftingWorkstationUpgradeProcess) {
-                CraftingWorkstationUpgradeProcess upgradeProcess = (CraftingWorkstationUpgradeProcess) workstationProcess;
+                CraftingWorkstationUpgradeProcess upgradeProcess =
+                        (CraftingWorkstationUpgradeProcess) workstationProcess;
                 String t = station.getParentPrefab().getName();
 
                 // Before checking if the workstation has the necessary items in the upgrade slot, check to see if this

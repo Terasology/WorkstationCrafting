@@ -8,15 +8,10 @@ import com.google.common.collect.Maps;
 import com.google.common.collect.Multimap;
 import com.google.common.collect.Ordering;
 import com.google.common.collect.TreeMultimap;
-import org.terasology.workstationCrafting.event.CraftingWorkstationProcessRequest;
-import org.terasology.workstationCrafting.system.CraftingWorkstationProcess;
-import org.terasology.workstationCrafting.system.recipe.workstation.CraftingStationRecipe;
-import org.terasology.workstationCrafting.ui.CraftRecipeWidget;
-import org.terasology.workstationCrafting.ui.CreationCallback;
-import org.terasology.entitySystem.entity.EntityRef;
-import org.terasology.logic.players.LocalPlayer;
 import org.joml.Vector2i;
-import org.terasology.registry.CoreRegistry;
+import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.engine.logic.players.LocalPlayer;
+import org.terasology.engine.registry.CoreRegistry;
 import org.terasology.nui.Canvas;
 import org.terasology.nui.CoreWidget;
 import org.terasology.nui.UIWidget;
@@ -24,6 +19,11 @@ import org.terasology.nui.layouts.ColumnLayout;
 import org.terasology.workstation.component.WorkstationComponent;
 import org.terasology.workstation.process.WorkstationProcess;
 import org.terasology.workstation.system.WorkstationRegistry;
+import org.terasology.workstationCrafting.event.CraftingWorkstationProcessRequest;
+import org.terasology.workstationCrafting.system.CraftingWorkstationProcess;
+import org.terasology.workstationCrafting.system.recipe.workstation.CraftingStationRecipe;
+import org.terasology.workstationCrafting.ui.CraftRecipeWidget;
+import org.terasology.workstationCrafting.ui.CreationCallback;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -37,16 +37,13 @@ import java.util.TreeSet;
  * @author Marcin Sciesinski <marcins78@gmail.com>
  */
 public class StationAvailableRecipesWidget extends CoreWidget {
-    private Set<String> openCategories = new HashSet<>();
-    private Set<String> displayedOpenCategories = new HashSet<>();
-    private Multimap<String, List<String>> availableRecipes = HashMultimap.create();
-    private WorkstationRegistry registry;
-
-    private EntityRef station;
-
-    private ColumnLayout layout;
-
     private static final float WAIT_TIME_PER_TICK = 15f;
+    private final Set<String> openCategories = new HashSet<>();
+    private final Set<String> displayedOpenCategories = new HashSet<>();
+    private final Multimap<String, List<String>> availableRecipes = HashMultimap.create();
+    private final WorkstationRegistry registry;
+    private final ColumnLayout layout;
+    private EntityRef station;
     private float counter = 0f;
 
     public StationAvailableRecipesWidget() {
@@ -73,11 +70,14 @@ public class StationAvailableRecipesWidget extends CoreWidget {
             // TODO: Naive approach by comparing all the possible recipes to those currently displayed
             WorkstationComponent workstation = station.getComponent(WorkstationComponent.class);
             Multimap<String, List<String>> recipes = HashMultimap.create();
-            for (WorkstationProcess workstationProcess : registry.getWorkstationProcesses(workstation.supportedProcessTypes.keySet())) {
+            for (WorkstationProcess workstationProcess :
+                    registry.getWorkstationProcesses(workstation.supportedProcessTypes.keySet())) {
                 if (workstationProcess instanceof CraftingWorkstationProcess) {
-                    CraftingStationRecipe craftingStationRecipe = ((CraftingWorkstationProcess) workstationProcess).getCraftingWorkstationRecipe();
+                    CraftingStationRecipe craftingStationRecipe =
+                            ((CraftingWorkstationProcess) workstationProcess).getCraftingWorkstationRecipe();
                     String recipeId = workstationProcess.getId();
-                    List<? extends CraftingStationRecipe.CraftingStationResult> results = craftingStationRecipe.getMatchingRecipeResultsForDisplay(station);
+                    List<? extends CraftingStationRecipe.CraftingStationResult> results =
+                            craftingStationRecipe.getMatchingRecipeResultsForDisplay(station);
                     if (results != null) {
                         for (CraftingStationRecipe.CraftingStationResult result : results) {
                             List<String> parameters = result.getResultParameters();
@@ -131,7 +131,8 @@ public class StationAvailableRecipesWidget extends CoreWidget {
                 Maps.newHashMap();
 
         WorkstationComponent workstation = station.getComponent(WorkstationComponent.class);
-        for (WorkstationProcess workstationProcess : registry.getWorkstationProcesses(workstation.supportedProcessTypes.keySet())) {
+        for (WorkstationProcess workstationProcess :
+                registry.getWorkstationProcesses(workstation.supportedProcessTypes.keySet())) {
             if (workstationProcess instanceof CraftingWorkstationProcess) {
                 String recipeId = workstationProcess.getId();
                 List<? extends CraftingStationRecipe.CraftingStationResult> results =
@@ -144,7 +145,8 @@ public class StationAvailableRecipesWidget extends CoreWidget {
                         if (category == null) {
                             withoutCategory.put(recipeId, result);
                         } else {
-                            Multimap<String, CraftingStationRecipe.CraftingStationResult> categoryRecipes = categoryRecipesMap.get(category);
+                            Multimap<String, CraftingStationRecipe.CraftingStationResult> categoryRecipes =
+                                    categoryRecipesMap.get(category);
                             if (categoryRecipes == null) {
                                 categoryRecipes = LinkedHashMultimap.create();
                                 categoryRecipesMap.put(category, categoryRecipes);
@@ -181,7 +183,8 @@ public class StationAvailableRecipesWidget extends CoreWidget {
 
         boolean isOpen = openCategories.contains(category);
 
-        RecipeCategoryWidget categoryWidget = new RecipeCategoryWidget(isOpen, 25 * level, getCategoryName(category), count,
+        RecipeCategoryWidget categoryWidget = new RecipeCategoryWidget(isOpen, 25 * level, getCategoryName(category),
+                count,
                 new CategoryToggleCallbackImpl(category));
         layout.addWidget(categoryWidget);
 
@@ -196,7 +199,8 @@ public class StationAvailableRecipesWidget extends CoreWidget {
         }
     }
 
-    private void appendRecipes(int level, Collection<Map.Entry<String, CraftingStationRecipe.CraftingStationResult>> recipes) {
+    private void appendRecipes(int level,
+                               Collection<Map.Entry<String, CraftingStationRecipe.CraftingStationResult>> recipes) {
         for (Map.Entry<String, CraftingStationRecipe.CraftingStationResult> recipeResult : recipes) {
             final String recipeId = recipeResult.getKey();
             CraftingStationRecipe.CraftingStationResult result = recipeResult.getValue();
@@ -239,7 +243,7 @@ public class StationAvailableRecipesWidget extends CoreWidget {
     }
 
     private final class CategoryToggleCallbackImpl implements CategoryToggleCallback {
-        private String category;
+        private final String category;
 
         private CategoryToggleCallbackImpl(String category) {
             this.category = category;
