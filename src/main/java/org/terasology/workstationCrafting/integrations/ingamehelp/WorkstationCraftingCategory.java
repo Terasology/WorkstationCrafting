@@ -1,6 +1,6 @@
 // Copyright 2020 The Terasology Foundation
 // SPDX-License-Identifier: Apache-2.0
-package org.terasology.system;
+package org.terasology.workstationCrafting.integrations.ingamehelp;
 
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Maps;
