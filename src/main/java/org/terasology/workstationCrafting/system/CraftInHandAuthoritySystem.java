@@ -15,6 +15,7 @@
  */
 package org.terasology.workstationCrafting.system;
 
+import org.joml.Vector3f;
 import org.terasology.workstationCrafting.event.UserCraftInHandRequest;
 import org.terasology.workstationCrafting.system.recipe.hand.CraftInHandRecipe;
 import org.terasology.entitySystem.entity.EntityManager;
@@ -51,7 +52,7 @@ public class CraftInHandAuthoritySystem extends BaseComponentSystem {
                 if (result != null) {
                     EntityRef resultEntity = result.craft(character, event.getCount());
                     if (resultEntity.exists()) {
-                        resultEntity.send(new DropItemEvent(character.getComponent(LocationComponent.class).getWorldPosition()));
+                        resultEntity.send(new DropItemEvent(character.getComponent(LocationComponent.class).getWorldPosition(new Vector3f())));
                     }
                 }
             }
