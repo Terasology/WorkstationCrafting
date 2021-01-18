@@ -3,7 +3,7 @@
 package org.terasology.workstationCrafting.system.recipe.render;
 
 import com.google.common.base.Function;
-import org.joml.Rectanglei;
+import org.terasology.joml.geom.Rectanglei;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.logic.common.DisplayNameComponent;
 import org.terasology.logic.inventory.InventoryUtils;
