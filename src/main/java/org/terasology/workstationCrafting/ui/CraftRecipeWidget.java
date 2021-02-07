@@ -2,20 +2,20 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.terasology.workstationCrafting.ui;
 
-import org.terasology.math.JomlUtil;
-import org.terasology.workstationCrafting.system.recipe.render.CraftIngredientRenderer;
-import org.terasology.workstationCrafting.system.recipe.render.CraftProcessDisplay;
+import org.joml.Vector2i;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.input.Keyboard;
-import org.joml.Vector2i;
+import org.terasology.joml.geom.Rectanglei;
 import org.terasology.nui.Canvas;
 import org.terasology.nui.CoreWidget;
 import org.terasology.nui.UIWidget;
 import org.terasology.nui.databinding.Binding;
 import org.terasology.nui.events.NUIKeyEvent;
-import org.terasology.rendering.nui.layers.ingame.inventory.ItemIcon;
 import org.terasology.nui.widgets.ActivateEventListener;
 import org.terasology.nui.widgets.UIButton;
+import org.terasology.rendering.nui.layers.ingame.inventory.ItemIcon;
+import org.terasology.workstationCrafting.system.recipe.render.CraftIngredientRenderer;
+import org.terasology.workstationCrafting.system.recipe.render.CraftProcessDisplay;
 
 /**
  * @author Marcin Sciesinski <marcins78@gmail.com>
@@ -91,15 +91,16 @@ public class CraftRecipeWidget extends CoreWidget {
 
         for (CraftIngredientRenderer craftIngredientRenderer : processDisplay.getIngredientRenderers(entity)) {
             Vector2i preferredSize = craftIngredientRenderer.getPreferredSize(canvas, multiplier);
-            craftIngredientRenderer.render(canvas, JomlUtil.rectangleiFromMinAndSize(x, 0, preferredSize.x, size.y), multiplier);
+            craftIngredientRenderer.render(canvas, new Rectanglei(x, 0).setSize(preferredSize.x, size.y), multiplier);
             x += preferredSize.x;
         }
 
         Vector2i resultSize = canvas.calculatePreferredSize(result);
         Vector2i buttonSize = canvas.calculatePreferredSize(button);
 
-        canvas.drawWidget(button, JomlUtil.rectangleiFromMinAndSize(size.x - resultSize.x - buttonSize.x - 5, (size.y - buttonSize.y) / 2, buttonSize.x, buttonSize.y));
-        canvas.drawWidget(result, JomlUtil.rectangleiFromMinAndSize(size.x - resultSize.x, 0, resultSize.x, resultSize.y));
+        canvas.drawWidget(button, new Rectanglei(size.x - resultSize.x - buttonSize.x - 5,
+                (size.y - buttonSize.y) / 2).setSize(buttonSize.x, buttonSize.y));
+        canvas.drawWidget(result, new Rectanglei(size.x - resultSize.x, 0).setSize(resultSize.x, resultSize.y));
     }
 
 

@@ -3,7 +3,7 @@
 package org.terasology.heat.ui;
 
 import org.joml.Vector2i;
-import org.terasology.math.JomlUtil;
+import org.terasology.joml.geom.Rectanglei;
 import org.terasology.nui.BaseInteractionListener;
 import org.terasology.nui.Canvas;
 import org.terasology.nui.Color;
@@ -58,7 +58,7 @@ public class ThermometerWidget extends CoreWidget {
         float temperaturePerc = minHeightPerc - (current - min) / (max - min) * (minHeightPerc - maxHeightPerc);
 
         canvas.drawTextureRaw(foreground,
-                JomlUtil.rectangleiFromMinAndSize(0, Math.round(temperaturePerc * size.y), size.x,
+                new Rectanglei(0, Math.round(temperaturePerc * size.y)).setSize(size.x,
                         Math.round((1 - temperaturePerc) * size.y)),
                 ScaleMode.STRETCH, 0, temperaturePerc, 1, (1 - temperaturePerc));
 
