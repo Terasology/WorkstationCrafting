@@ -3,8 +3,8 @@
 package org.terasology.workstationCrafting.ui.workstation;
 
 import org.terasology.input.MouseInput;
-import org.terasology.math.JomlUtil;
 import org.joml.Vector2i;
+import org.terasology.joml.geom.Rectanglei;
 import org.terasology.nui.BaseInteractionListener;
 import org.terasology.nui.Canvas;
 import org.terasology.nui.CoreWidget;
@@ -47,7 +47,7 @@ public class RecipeCategoryWidget extends CoreWidget {
     @Override
     public void onDraw(Canvas canvas) {
         Vector2i size = canvas.size();
-        canvas.drawText(getText(), JomlUtil.rectangleiFromMinAndSize(leftIndent, 0, size.x, size.y));
+        canvas.drawText(getText(), new Rectanglei(leftIndent, 0).setSize(size.x, size.y));
         canvas.addInteractionRegion(interactionListener, "Toggle " + name);
     }
 
