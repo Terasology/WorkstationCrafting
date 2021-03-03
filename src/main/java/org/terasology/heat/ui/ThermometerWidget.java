@@ -1,26 +1,18 @@
-/*
- * Copyright 2016 MovingBlocks
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+// Copyright 2020 The Terasology Foundation
+// SPDX-License-Identifier: Apache-2.0
 package org.terasology.heat.ui;
 
-import org.terasology.math.geom.Rect2i;
-import org.terasology.math.geom.Vector2i;
-import org.terasology.rendering.assets.texture.TextureRegion;
-import org.terasology.rendering.nui.*;
-import org.terasology.rendering.nui.databinding.Binding;
-import org.terasology.rendering.nui.databinding.DefaultBinding;
+import org.joml.Vector2i;
+import org.terasology.joml.geom.Rectanglei;
+import org.terasology.nui.BaseInteractionListener;
+import org.terasology.nui.Canvas;
+import org.terasology.nui.Color;
+import org.terasology.nui.CoreWidget;
+import org.terasology.nui.InteractionListener;
+import org.terasology.nui.ScaleMode;
+import org.terasology.nui.UITextureRegion;
+import org.terasology.nui.databinding.Binding;
+import org.terasology.nui.databinding.DefaultBinding;
 
 /**
  * A UI widget which acts as a thermometer.
@@ -55,7 +47,7 @@ public class ThermometerWidget extends CoreWidget {
     @Override
     public void onDraw(Canvas canvas) {
         canvas.setPart("front");
-        TextureRegion foreground = canvas.getCurrentStyle().getBackground();
+        UITextureRegion foreground = canvas.getCurrentStyle().getBackground();
         float min = getMinTemperature();
         float max = getMaxTemperature();
 
@@ -66,7 +58,7 @@ public class ThermometerWidget extends CoreWidget {
         float temperaturePerc = minHeightPerc - (current - min) / (max - min) * (minHeightPerc - maxHeightPerc);
 
         canvas.drawTextureRaw(foreground,
-                Rect2i.createFromMinAndSize(0, Math.round(temperaturePerc * size.y), size.x,
+                new Rectanglei(0, Math.round(temperaturePerc * size.y)).setSize(size.x,
                         Math.round((1 - temperaturePerc) * size.y)),
                 ScaleMode.STRETCH, 0, temperaturePerc, 1, (1 - temperaturePerc));
 

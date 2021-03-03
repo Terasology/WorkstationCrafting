@@ -15,15 +15,14 @@
  */
 package org.terasology.processing.system;
 
+import org.joml.Vector3i;
 import org.terasology.durability.components.DurabilityComponent;
-import org.terasology.durability.events.DurabilityExhaustedEvent;
 import org.terasology.durability.components.OverTimeDurabilityReduceComponent;
+import org.terasology.durability.events.DurabilityExhaustedEvent;
 import org.terasology.entitySystem.entity.EntityRef;
 import org.terasology.entitySystem.event.ReceiveEvent;
 import org.terasology.entitySystem.systems.BaseComponentSystem;
 import org.terasology.entitySystem.systems.RegisterSystem;
-import org.terasology.math.geom.Vector3i;
-import org.terasology.registry.CoreRegistry;
 import org.terasology.registry.In;
 import org.terasology.world.WorldProvider;
 import org.terasology.world.block.BlockComponent;
@@ -38,6 +37,9 @@ import org.terasology.world.block.items.OnBlockToItem;
 public class LitTorchSystem extends BaseComponentSystem {
     @In
     private BlockManager blockManager;
+
+    @In
+    private WorldProvider worldProvider;
 
     /**
      * Defines what to do when an entity places a torch.
@@ -87,8 +89,8 @@ public class LitTorchSystem extends BaseComponentSystem {
     public void whenTorchAsBlockExpires(DurabilityExhaustedEvent event, EntityRef entity,
                                         OverTimeDurabilityReduceComponent overTimeDurabilityReduceComponent,
                                         BlockComponent block) {
-        Vector3i position = block.getPosition();
-        CoreRegistry.get(WorldProvider.class).setBlock(position, blockManager.getBlock(BlockManager.AIR_ID));
+        Vector3i position = block.getPosition(new Vector3i());
+        worldProvider.setBlock(position, blockManager.getBlock(BlockManager.AIR_ID));
         entity.removeComponent(DurabilityComponent.class);
         entity.removeComponent(OverTimeDurabilityReduceComponent.class);
         event.consume();

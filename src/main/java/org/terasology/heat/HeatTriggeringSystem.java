@@ -15,6 +15,7 @@
  */
 package org.terasology.heat;
 
+import org.joml.Vector3i;
 import org.terasology.workstationCrafting.component.PortableWorkstationComponent;
 import org.terasology.engine.Time;
 import org.terasology.entitySystem.entity.EntityManager;
@@ -28,7 +29,6 @@ import org.terasology.entitySystem.systems.UpdateSubscriberSystem;
 import org.terasology.heat.component.HeatConsumerComponent;
 import org.terasology.heat.component.HeatProducerComponent;
 import org.terasology.math.Side;
-import org.terasology.math.geom.Vector3i;
 import org.terasology.monitoring.PerformanceMonitor;
 import org.terasology.registry.In;
 import org.terasology.workstation.event.WorkstationStateChanged;
@@ -99,8 +99,8 @@ public class HeatTriggeringSystem extends BaseComponentSystem implements UpdateS
                         HeatProducerComponent.FuelSourceConsume fuelSourceConsume = fuelConsumedIterator.next();
                         // If the fuel no longer has any meaningful impact on the producer - remove it
                         if (fuelSourceConsume.startTime + fuelSourceConsume.burnLength < currentTime
-                                && HeatUtils.solveHeatEquation(fuelSourceConsume.heatProvided, 20, producer.temperatureLossRate,
-                                currentTime - (fuelSourceConsume.startTime + fuelSourceConsume.burnLength)) < REMOVE_FUEL_THRESHOLD) {
+                            && HeatUtils.solveHeatEquation(fuelSourceConsume.heatProvided, 20, producer.temperatureLossRate,
+                            currentTime - (fuelSourceConsume.startTime + fuelSourceConsume.burnLength)) < REMOVE_FUEL_THRESHOLD) {
                             fuelConsumedIterator.remove();
                             changed = true;
                         } else {
@@ -116,7 +116,6 @@ public class HeatTriggeringSystem extends BaseComponentSystem implements UpdateS
             } finally {
                 PerformanceMonitor.endActivity();
             }
-
 
 
             // TODO: TEST for PortableWorkstations.
@@ -154,8 +153,8 @@ public class HeatTriggeringSystem extends BaseComponentSystem implements UpdateS
                         HeatProducerComponent.FuelSourceConsume fuelSourceConsume = fuelConsumedIterator.next();
                         // If the fuel no longer has any meaningful impact on the producer - remove it
                         if (fuelSourceConsume.startTime + fuelSourceConsume.burnLength < currentTime
-                                && HeatUtils.solveHeatEquation(fuelSourceConsume.heatProvided, 20, producer.temperatureLossRate,
-                                currentTime - (fuelSourceConsume.startTime + fuelSourceConsume.burnLength)) < REMOVE_FUEL_THRESHOLD) {
+                            && HeatUtils.solveHeatEquation(fuelSourceConsume.heatProvided, 20, producer.temperatureLossRate,
+                            currentTime - (fuelSourceConsume.startTime + fuelSourceConsume.burnLength)) < REMOVE_FUEL_THRESHOLD) {
                             fuelConsumedIterator.remove();
                             changed = true;
                         } else {
@@ -177,8 +176,8 @@ public class HeatTriggeringSystem extends BaseComponentSystem implements UpdateS
     /**
      * Store residual heat from removed producers into consumers.
      *
-     * @param event    The event corresponding to the situation before the producer was removed
-     * @param entity   The heat producer being removed
+     * @param event The event corresponding to the situation before the producer was removed
+     * @param entity The heat producer being removed
      * @param producer The heat producer component on the heat producer being removed
      */
     @ReceiveEvent
@@ -188,8 +187,7 @@ public class HeatTriggeringSystem extends BaseComponentSystem implements UpdateS
         float heat = HeatUtils.calculateHeatForProducer(producer);
 
         // If this is a portable Workstation entity, this will have neither. So return.
-        if (!entity.hasComponent(BlockComponent.class) && !entity.hasComponent(BlockRegionComponent.class))
-        {
+        if (!entity.hasComponent(BlockComponent.class) && !entity.hasComponent(BlockRegionComponent.class)) {
             return;
         }
 

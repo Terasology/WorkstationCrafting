@@ -1,18 +1,5 @@
-/*
- * Copyright 2016 MovingBlocks
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+// Copyright 2020 The Terasology Foundation
+// SPDX-License-Identifier: Apache-2.0
 package org.terasology.workstationCrafting.ui.workstation;
 
 import org.terasology.workstationCrafting.component.CraftingStationComponent;
@@ -24,11 +11,11 @@ import org.terasology.logic.players.LocalPlayer;
 import org.terasology.registry.CoreRegistry;
 import org.terasology.rendering.nui.BaseInteractionScreen;
 import org.terasology.rendering.nui.NUIManager;
-import org.terasology.rendering.nui.UIWidget;
+import org.terasology.nui.UIWidget;
 import org.terasology.rendering.nui.layers.ingame.inventory.InventoryGrid;
-import org.terasology.rendering.nui.widgets.ActivateEventListener;
-import org.terasology.rendering.nui.widgets.UIButton;
-import org.terasology.rendering.nui.widgets.UIImage;
+import org.terasology.nui.widgets.ActivateEventListener;
+import org.terasology.nui.widgets.UIButton;
+import org.terasology.nui.widgets.UIImage;
 import org.terasology.workstationCrafting.ui.WorkstationScreenUtils;
 import org.terasology.workstation.event.WorkstationProcessRequest;
 import org.terasology.workstation.process.WorkstationProcess;
@@ -145,8 +132,7 @@ public class CraftingStationWindow extends BaseInteractionScreen {
 
                 // Before checking if the workstation has the necessary items in the upgrade slot, check to see if this
                 // upgrade process actually pertains to this workstation type.
-                if (upgradeProcess.getWorkstationType().equalsIgnoreCase(station.getParentPrefab().getName()))
-                {
+                if (upgradeProcess.getWorkstationType().equalsIgnoreCase(station.getParentPrefab().getName())) {
                     UpgradeRecipe upgradeRecipe = upgradeProcess.getUpgradeRecipe();
 
                     final UpgradeRecipe.UpgradeResult upgradeResult = upgradeRecipe.getMatchingUpgradeResult(station);
