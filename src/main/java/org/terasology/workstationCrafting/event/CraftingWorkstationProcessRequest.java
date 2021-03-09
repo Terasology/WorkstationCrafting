@@ -15,8 +15,8 @@
  */
 package org.terasology.workstationCrafting.event;
 
-import org.terasology.entitySystem.entity.EntityRef;
-import org.terasology.network.ServerEvent;
+import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.engine.network.ServerEvent;
 import org.terasology.workstation.event.WorkstationProcessRequest;
 
 import java.util.List;

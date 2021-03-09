@@ -15,16 +15,16 @@
  */
 package org.terasology.workstationCrafting.system;
 
-import org.terasology.workstationCrafting.component.CraftingStationComponent;
-import org.terasology.workstationCrafting.component.CraftingStationUpgradeRecipeComponent;
-import org.terasology.workstationCrafting.event.CraftingStationUpgraded;
-import org.terasology.workstationCrafting.system.recipe.workstation.UpgradeRecipe;
-import org.terasology.entitySystem.entity.EntityRef;
+import org.terasology.engine.entitySystem.entity.EntityRef;
 import org.terasology.workstation.event.WorkstationProcessRequest;
 import org.terasology.workstation.process.InvalidProcessException;
 import org.terasology.workstation.process.WorkstationInventoryUtils;
 import org.terasology.workstation.process.WorkstationProcess;
 import org.terasology.workstation.system.ValidateInventoryItem;
+import org.terasology.workstationCrafting.component.CraftingStationComponent;
+import org.terasology.workstationCrafting.component.CraftingStationUpgradeRecipeComponent;
+import org.terasology.workstationCrafting.event.CraftingStationUpgraded;
+import org.terasology.workstationCrafting.system.recipe.workstation.UpgradeRecipe;
 
 public class CraftingWorkstationUpgradeProcess implements WorkstationProcess, ValidateInventoryItem {
     private String workstationType;

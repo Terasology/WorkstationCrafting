@@ -2,16 +2,16 @@
 // SPDX-License-Identifier: Apache-2.0
 package org.terasology.processing.ui;
 
-import org.terasology.entitySystem.entity.EntityRef;
+import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.engine.registry.CoreRegistry;
+import org.terasology.engine.rendering.nui.layers.ingame.inventory.InventoryGrid;
+import org.terasology.engine.world.BlockEntityRegistry;
 import org.terasology.heat.HeatUtils;
 import org.terasology.heat.component.HeatProducerComponent;
 import org.terasology.heat.ui.ThermometerWidget;
-import org.terasology.registry.CoreRegistry;
 import org.terasology.nui.databinding.Binding;
 import org.terasology.nui.databinding.ReadOnlyBinding;
-import org.terasology.rendering.nui.layers.ingame.inventory.InventoryGrid;
 import org.terasology.workstation.component.WorkstationInventoryComponent;
-import org.terasology.world.BlockEntityRegistry;
 
 /**
  * A utility class containing methods used while setting up the workstation interaction screen.

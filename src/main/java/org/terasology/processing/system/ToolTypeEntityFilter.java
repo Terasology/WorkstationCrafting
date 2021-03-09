@@ -16,8 +16,8 @@
 package org.terasology.processing.system;
 
 import com.google.common.base.Predicate;
+import org.terasology.engine.entitySystem.entity.EntityRef;
 import org.terasology.workstationCrafting.component.CraftingStationToolComponent;
-import org.terasology.entitySystem.entity.EntityRef;
 
 /**
  * An entity filter that returns true only when an item with a specific tool type is passed.

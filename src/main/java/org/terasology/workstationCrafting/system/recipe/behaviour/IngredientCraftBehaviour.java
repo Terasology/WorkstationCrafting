@@ -15,8 +15,8 @@
  */
 package org.terasology.workstationCrafting.system.recipe.behaviour;
 
+import org.terasology.engine.entitySystem.entity.EntityRef;
 import org.terasology.workstationCrafting.system.recipe.render.CraftIngredientRenderer;
-import org.terasology.entitySystem.entity.EntityRef;
 
 import java.util.List;
 

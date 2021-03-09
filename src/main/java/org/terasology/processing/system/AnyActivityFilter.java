@@ -16,7 +16,7 @@
 package org.terasology.processing.system;
 
 import com.google.common.base.Predicate;
-import org.terasology.logic.common.ActivateEvent;
+import org.terasology.engine.logic.common.ActivateEvent;
 
 /**
  * An activity filter that returns true for any passed ActivateEvent object.

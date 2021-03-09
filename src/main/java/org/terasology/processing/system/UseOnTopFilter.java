@@ -16,8 +16,8 @@
 package org.terasology.processing.system;
 
 import com.google.common.base.Predicate;
-import org.terasology.logic.common.ActivateEvent;
-import org.terasology.math.Side;
+import org.terasology.engine.logic.common.ActivateEvent;
+import org.terasology.engine.math.Side;
 
 /**
  * A filter that returns true only when an event is passed where the concerned item is activated from the top.

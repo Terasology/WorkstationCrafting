@@ -15,19 +15,19 @@
  */
 package org.terasology.workstationCrafting.system;
 
-import org.terasology.entitySystem.entity.EntityManager;
-import org.terasology.registry.In;
+import org.terasology.engine.entitySystem.entity.EntityManager;
+import org.terasology.engine.entitySystem.prefab.Prefab;
+import org.terasology.engine.entitySystem.prefab.PrefabManager;
+import org.terasology.engine.registry.CoreRegistry;
+import org.terasology.engine.registry.In;
+import org.terasology.engine.world.block.BlockManager;
+import org.terasology.workstation.component.ProcessDefinitionComponent;
+import org.terasology.workstation.process.WorkstationProcess;
+import org.terasology.workstation.system.WorkstationProcessFactory;
 import org.terasology.workstationCrafting.component.CraftingStationRecipeComponent;
 import org.terasology.workstationCrafting.system.recipe.render.result.BlockRecipeResultFactory;
 import org.terasology.workstationCrafting.system.recipe.render.result.ItemRecipeResultFactory;
 import org.terasology.workstationCrafting.system.recipe.workstation.DefaultWorkstationRecipe;
-import org.terasology.entitySystem.prefab.Prefab;
-import org.terasology.entitySystem.prefab.PrefabManager;
-import org.terasology.registry.CoreRegistry;
-import org.terasology.workstation.component.ProcessDefinitionComponent;
-import org.terasology.workstation.process.WorkstationProcess;
-import org.terasology.workstation.system.WorkstationProcessFactory;
-import org.terasology.world.block.BlockManager;
 
 /**
  * @author Marcin Sciesinski <marcins78@gmail.com>

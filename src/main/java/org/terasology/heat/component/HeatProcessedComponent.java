@@ -15,7 +15,7 @@
  */
 package org.terasology.heat.component;
 
-import org.terasology.entitySystem.Component;
+import org.terasology.engine.entitySystem.Component;
 
 /**
  * Indicates that an entity can be 'processed' using heat to be turned into another entity.

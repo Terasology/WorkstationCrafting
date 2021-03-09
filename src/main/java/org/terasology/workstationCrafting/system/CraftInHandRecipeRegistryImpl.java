@@ -15,10 +15,10 @@
  */
 package org.terasology.workstationCrafting.system;
 
+import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
+import org.terasology.engine.entitySystem.systems.RegisterSystem;
+import org.terasology.engine.registry.Share;
 import org.terasology.workstationCrafting.system.recipe.hand.CraftInHandRecipe;
-import org.terasology.entitySystem.systems.BaseComponentSystem;
-import org.terasology.entitySystem.systems.RegisterSystem;
-import org.terasology.registry.Share;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

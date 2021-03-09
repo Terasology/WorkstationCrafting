@@ -15,8 +15,8 @@
  */
 package org.terasology.heat.processPart;
 
-import org.terasology.entitySystem.Component;
-import org.terasology.network.Replicate;
+import org.terasology.engine.entitySystem.Component;
+import org.terasology.engine.network.Replicate;
 
 @Replicate
 public class HeatProcessingComponent implements Component {

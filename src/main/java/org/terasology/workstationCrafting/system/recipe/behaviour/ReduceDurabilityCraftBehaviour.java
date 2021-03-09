@@ -16,13 +16,13 @@
 package org.terasology.workstationCrafting.system.recipe.behaviour;
 
 import com.google.common.base.Predicate;
+import org.terasology.durability.components.DurabilityComponent;
+import org.terasology.durability.events.ReduceDurabilityEvent;
+import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.engine.logic.inventory.InventoryUtils;
 import org.terasology.workstationCrafting.system.recipe.render.CraftIngredientRenderer;
 import org.terasology.workstationCrafting.system.recipe.render.FixedFunction;
 import org.terasology.workstationCrafting.system.recipe.render.ItemSlotIngredientRenderer;
-import org.terasology.durability.components.DurabilityComponent;
-import org.terasology.durability.events.ReduceDurabilityEvent;
-import org.terasology.entitySystem.entity.EntityRef;
-import org.terasology.logic.inventory.InventoryUtils;
 
 import java.util.LinkedList;
 import java.util.List;

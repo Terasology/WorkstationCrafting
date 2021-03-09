@@ -15,9 +15,9 @@
  */
 package org.terasology.heat.component;
 
-import org.terasology.entitySystem.Component;
-import org.terasology.network.Replicate;
-import org.terasology.world.block.items.AddToBlockBasedItem;
+import org.terasology.engine.entitySystem.Component;
+import org.terasology.engine.network.Replicate;
+import org.terasology.engine.world.block.items.AddToBlockBasedItem;
 
 /**
  * Indicates that an entity can be used as fuel to generate heat.

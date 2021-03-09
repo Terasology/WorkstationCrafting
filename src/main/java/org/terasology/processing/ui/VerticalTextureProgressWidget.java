@@ -3,6 +3,7 @@
 package org.terasology.processing.ui;
 
 import org.joml.Vector2i;
+import org.terasology.engine.rendering.assets.texture.TextureRegion;
 import org.terasology.joml.geom.Rectanglei;
 import org.terasology.math.TeraMath;
 import org.terasology.nui.Canvas;
@@ -12,7 +13,6 @@ import org.terasology.nui.LayoutConfig;
 import org.terasology.nui.ScaleMode;
 import org.terasology.nui.databinding.Binding;
 import org.terasology.nui.databinding.DefaultBinding;
-import org.terasology.rendering.assets.texture.TextureRegion;
 
 /**
  * A UI widget that represents a vertical progress bar.

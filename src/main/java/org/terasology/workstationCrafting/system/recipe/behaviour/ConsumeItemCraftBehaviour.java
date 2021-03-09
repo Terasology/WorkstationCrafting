@@ -16,16 +16,21 @@
 package org.terasology.workstationCrafting.system.recipe.behaviour;
 
 import com.google.common.base.Predicate;
+import org.terasology.engine.entitySystem.entity.EntityRef;
+import org.terasology.engine.logic.inventory.InventoryManager;
+import org.terasology.engine.logic.inventory.InventoryUtils;
+import org.terasology.engine.logic.inventory.ItemComponent;
+import org.terasology.engine.registry.CoreRegistry;
 import org.terasology.workstationCrafting.system.recipe.render.CraftIngredientRenderer;
 import org.terasology.workstationCrafting.system.recipe.render.ItemSlotIngredientRenderer;
 import org.terasology.workstationCrafting.system.recipe.render.MultiplyFunction;
-import org.terasology.entitySystem.entity.EntityRef;
-import org.terasology.logic.inventory.InventoryManager;
-import org.terasology.logic.inventory.InventoryUtils;
-import org.terasology.logic.inventory.ItemComponent;
-import org.terasology.registry.CoreRegistry;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedHashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @author Marcin Sciesinski <marcins78@gmail.com>

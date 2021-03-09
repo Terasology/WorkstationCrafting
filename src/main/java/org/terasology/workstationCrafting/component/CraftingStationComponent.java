@@ -15,9 +15,9 @@
  */
 package org.terasology.workstationCrafting.component;
 
-import org.terasology.entitySystem.Component;
-import org.terasology.network.Replicate;
-import org.terasology.rendering.assets.texture.Texture;
+import org.terasology.engine.entitySystem.Component;
+import org.terasology.engine.network.Replicate;
+import org.terasology.engine.rendering.assets.texture.Texture;
 
 public class CraftingStationComponent implements Component {
     @Replicate

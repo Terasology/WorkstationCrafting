@@ -15,8 +15,8 @@
  */
 package org.terasology.workstationCrafting.component;
 
-import org.terasology.entitySystem.Component;
-import org.terasology.network.Replicate;
+import org.terasology.engine.entitySystem.Component;
+import org.terasology.engine.network.Replicate;
 
 // Used to distinguish that a workstation is in fact portable and should not be treated as a block.
 @Replicate

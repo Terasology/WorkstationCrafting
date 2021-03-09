@@ -15,8 +15,8 @@
  */
 package org.terasology.processing.component;
 
-import org.terasology.entitySystem.Component;
-import org.terasology.network.Replicate;
+import org.terasology.engine.entitySystem.Component;
+import org.terasology.engine.network.Replicate;
 
 /**
  * Indicates that a block is tillable.
