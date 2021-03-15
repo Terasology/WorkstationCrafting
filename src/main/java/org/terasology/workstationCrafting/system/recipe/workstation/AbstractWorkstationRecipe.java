@@ -16,10 +16,10 @@
 package org.terasology.workstationCrafting.system.recipe.workstation;
 
 import org.terasology.engine.entitySystem.entity.EntityRef;
-import org.terasology.engine.logic.inventory.InventoryUtils;
+import org.terasology.logic.inventory.InventoryUtils;
 import org.terasology.engine.logic.inventory.ItemComponent;
 import org.terasology.engine.registry.CoreRegistry;
-import org.terasology.engine.rendering.nui.layers.ingame.inventory.ItemIcon;
+import org.terasology.rendering.nui.layers.ingame.inventory.ItemIcon;
 import org.terasology.engine.world.BlockEntityRegistry;
 import org.terasology.heat.HeatUtils;
 import org.terasology.math.TeraMath;

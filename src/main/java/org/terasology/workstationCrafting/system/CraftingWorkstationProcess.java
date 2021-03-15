@@ -20,7 +20,7 @@ import org.terasology.engine.entitySystem.entity.EntityBuilder;
 import org.terasology.engine.entitySystem.entity.EntityManager;
 import org.terasology.engine.entitySystem.entity.EntityRef;
 import org.terasology.engine.entitySystem.prefab.Prefab;
-import org.terasology.engine.logic.inventory.InventoryManager;
+import org.terasology.logic.inventory.InventoryManager;
 import org.terasology.engine.registry.CoreRegistry;
 import org.terasology.workstation.event.WorkstationProcessRequest;
 import org.terasology.workstation.process.DescribeProcess;

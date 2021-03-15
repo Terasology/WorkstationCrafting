@@ -4,7 +4,7 @@ package org.terasology.workstationCrafting.ui;
 
 import org.terasology.engine.entitySystem.entity.EntityRef;
 import org.terasology.engine.registry.CoreRegistry;
-import org.terasology.engine.rendering.nui.layers.ingame.inventory.InventoryGrid;
+import org.terasology.rendering.nui.layers.ingame.inventory.InventoryGrid;
 import org.terasology.engine.world.BlockEntityRegistry;
 import org.terasology.heat.HeatUtils;
 import org.terasology.heat.component.HeatProducerComponent;
