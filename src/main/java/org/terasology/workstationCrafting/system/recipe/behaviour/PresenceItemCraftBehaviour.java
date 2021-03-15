@@ -17,7 +17,7 @@ package org.terasology.workstationCrafting.system.recipe.behaviour;
 
 import com.google.common.base.Predicate;
 import org.terasology.engine.entitySystem.entity.EntityRef;
-import org.terasology.logic.inventory.InventoryUtils;
+import org.terasology.module.inventory.systems.InventoryUtils;
 import org.terasology.engine.logic.inventory.ItemComponent;
 import org.terasology.workstationCrafting.system.recipe.render.CraftIngredientRenderer;
 import org.terasology.workstationCrafting.system.recipe.render.FixedFunction;

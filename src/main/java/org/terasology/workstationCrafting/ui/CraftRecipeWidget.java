@@ -4,7 +4,7 @@ package org.terasology.workstationCrafting.ui;
 
 import org.joml.Vector2i;
 import org.terasology.engine.entitySystem.entity.EntityRef;
-import org.terasology.rendering.nui.layers.ingame.inventory.ItemIcon;
+import org.terasology.module.inventory.ui.ItemIcon;
 import org.terasology.input.Keyboard;
 import org.terasology.joml.geom.Rectanglei;
 import org.terasology.nui.Canvas;
