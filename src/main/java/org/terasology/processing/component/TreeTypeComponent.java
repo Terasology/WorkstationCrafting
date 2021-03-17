@@ -16,7 +16,7 @@
 package org.terasology.processing.component;
 
 import org.terasology.engine.entitySystem.Component;
-import org.terasology.engine.logic.inventory.ItemDifferentiating;
+import org.terasology.module.inventory.components.ItemDifferentiating;
 import org.terasology.engine.network.Replicate;
 import org.terasology.engine.world.block.items.AddToBlockBasedItem;
 
