@@ -1,17 +1,38 @@
 {
     "id": "WorkstationCrafting",
-    "version": "2.0.0-SNAPSHOT",
+    "version": "2.0.0",
     "author": "XTariq, Marcin Sciesinski <marcins78@gmail.com>, Mandar Juvekar, Isaac (iojw)",
     "displayName": "Workstation Crafting",
     "description": "An extended version of crafting to allow for more advanced methods and items.",
     "dependencies": [
-        { "id": "CoreAssets", "minVersion": "2.0.0" },
-        { "id": "Durability", "minVersion": "1.1.0" },
-        { "id": "Fluid", "minVersion": "2.0.0" },
-        { "id": "InGameHelpAPI", "minVersion": "1.0.0" },
-        { "id": "Inventory", "minVersion": "1.1.0" },
-        { "id": "MultiBlock", "minVersion": "1.1.0" },
-        { "id": "Workstation", "minVersion": "1.1.0" }
+        {
+            "id": "CoreAssets",
+            "minVersion": "2.0.0"
+        },
+        {
+            "id": "Durability",
+            "minVersion": "1.1.0"
+        },
+        {
+            "id": "Fluid",
+            "minVersion": "2.0.0"
+        },
+        {
+            "id": "InGameHelpAPI",
+            "minVersion": "1.0.0"
+        },
+        {
+            "id": "Inventory",
+            "minVersion": "1.1.0"
+        },
+        {
+            "id": "MultiBlock",
+            "minVersion": "1.1.0"
+        },
+        {
+            "id": "Workstation",
+            "minVersion": "1.1.0"
+        }
     ],
     "serverSideOnly": false,
     "isLibrary": true
