@@ -1,24 +1,11 @@
-/*
- * Copyright 2016 MovingBlocks
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+// Copyright 2021 The Terasology Foundation
+// SPDX-License-Identifier: Apache-2.0
 package org.terasology.processing.component;
 
-import org.terasology.engine.entitySystem.Component;
-import org.terasology.module.inventory.components.ItemDifferentiating;
 import org.terasology.engine.network.Replicate;
 import org.terasology.engine.world.block.items.AddToBlockBasedItem;
+import org.terasology.gestalt.entitysystem.component.Component;
+import org.terasology.module.inventory.components.ItemDifferentiating;
 
 import java.util.Objects;
 
@@ -26,7 +13,7 @@ import java.util.Objects;
  * A component generally attached to tree blocks which indicates the tree type.
  */
 @AddToBlockBasedItem
-public class TreeTypeComponent implements Component, ItemDifferentiating {
+public class TreeTypeComponent implements Component<TreeTypeComponent>, ItemDifferentiating {
     /** The type of the tree. */
     @Replicate
     public String treeType;
@@ -63,5 +50,10 @@ public class TreeTypeComponent implements Component, ItemDifferentiating {
     @Override
     public int hashCode() {
         return Objects.hashCode(treeType);
+    }
+
+    @Override
+    public void copy(TreeTypeComponent other) {
+        this.treeType = other.treeType;
     }
 }

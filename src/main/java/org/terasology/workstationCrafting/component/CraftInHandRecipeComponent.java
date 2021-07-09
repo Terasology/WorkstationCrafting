@@ -1,25 +1,13 @@
-/*
- * Copyright 2016 MovingBlocks
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
+// Copyright 2021 The Terasology Foundation
+// SPDX-License-Identifier: Apache-2.0
 package org.terasology.workstationCrafting.component;
 
-import org.terasology.engine.entitySystem.Component;
+import com.google.common.collect.Lists;
+import org.terasology.gestalt.entitysystem.component.Component;
 
 import java.util.List;
 
-public class CraftInHandRecipeComponent implements Component {
+public class CraftInHandRecipeComponent implements Component<CraftInHandRecipeComponent> {
     public String recipeId;
     public List<String> recipeComponents;
     public List<String> recipeTools;
@@ -27,4 +15,14 @@ public class CraftInHandRecipeComponent implements Component {
 
     public String itemResult;
     public String blockResult;
+
+    @Override
+    public void copy(CraftInHandRecipeComponent other) {
+        this.recipeId = other.recipeId;
+        this.recipeComponents = Lists.newArrayList(other.recipeComponents);
+        this.recipeTools = Lists.newArrayList(this.recipeTools);
+        this.recipeActivators = Lists.newArrayList(other.recipeActivators);
+        this.itemResult = other.itemResult;
+        this.blockResult = other.blockResult;
+    }
 }
