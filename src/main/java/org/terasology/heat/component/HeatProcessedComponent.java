@@ -21,7 +21,7 @@ public class HeatProcessedComponent implements Component<HeatProcessedComponent>
     public String itemResult;
 
     @Override
-    public void copy(HeatProcessedComponent other) {
+    public void copyFrom(HeatProcessedComponent other) {
         this.heatRequired = other.heatRequired;
         this.processingTime = other.processingTime;
         this.blockResult = other.blockResult;

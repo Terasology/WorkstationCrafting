@@ -15,7 +15,7 @@ public class CraftingProcessComponent implements Component<CraftingProcessCompon
     public int count;
 
     @Override
-    public void copy(CraftingProcessComponent other) {
+    public void copyFrom(CraftingProcessComponent other) {
         this.parameters = Lists.newArrayList(other.parameters);
         this.count = other.count;
     }

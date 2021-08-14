@@ -21,7 +21,7 @@ public class CraftingStationRecipeComponent implements Component<CraftingStation
     public String blockResult;
 
     @Override
-    public void copy(CraftingStationRecipeComponent other) {
+    public void copyFrom(CraftingStationRecipeComponent other) {
         this.recipeId = other.recipeId;
         this.recipeComponents = Lists.newArrayList(other.recipeComponents);
         this.optionalRecipeComponents = Lists.newArrayList(other.optionalRecipeComponents);

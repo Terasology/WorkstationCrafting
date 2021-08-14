@@ -19,7 +19,7 @@ public class HeatFuelComponent implements Component<HeatFuelComponent> {
     public long consumeTime;
 
     @Override
-    public void copy(HeatFuelComponent other) {
+    public void copyFrom(HeatFuelComponent other) {
         this.heatProvided = other.heatProvided;
         this.consumeTime = other.consumeTime;
     }

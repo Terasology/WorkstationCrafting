@@ -13,7 +13,7 @@ public class CraftingStationComponent implements Component<CraftingStationCompon
     public Texture workstationUITexture;
 
     @Override
-    public void copy(CraftingStationComponent other) {
+    public void copyFrom(CraftingStationComponent other) {
         this.type = other.type;
         this.workstationUITexture = other.workstationUITexture;
     }

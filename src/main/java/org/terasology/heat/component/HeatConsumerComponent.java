@@ -33,7 +33,7 @@ public class HeatConsumerComponent implements Component<HeatConsumerComponent> {
     public List<ResidualHeat> residualHeat = Lists.newArrayList();
 
     @Override
-    public void copy(HeatConsumerComponent other) {
+    public void copyFrom(HeatConsumerComponent other) {
         this.heatDirections = Sets.newHashSet(heatDirections);
         this.heatConsumptionEfficiency = other.heatConsumptionEfficiency;
         this.residualHeat = other.residualHeat.stream()

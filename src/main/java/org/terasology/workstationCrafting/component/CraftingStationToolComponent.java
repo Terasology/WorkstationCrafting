@@ -13,7 +13,7 @@ public class CraftingStationToolComponent implements Component<CraftingStationTo
     public List<String> type;
 
     @Override
-    public void copy(CraftingStationToolComponent other) {
+    public void copyFrom(CraftingStationToolComponent other) {
         this.type = Lists.newArrayList(other.type);
     }
 }

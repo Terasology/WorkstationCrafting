@@ -10,7 +10,7 @@ public class CraftInHandIngredientComponent implements Component<CraftInHandIngr
     public String componentType;
 
     @Override
-    public void copy(CraftInHandIngredientComponent other) {
+    public void copyFrom(CraftInHandIngredientComponent other) {
         this.componentType = other.componentType;
     }
 }

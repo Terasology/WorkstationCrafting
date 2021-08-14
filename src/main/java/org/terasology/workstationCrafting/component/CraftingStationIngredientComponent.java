@@ -12,7 +12,7 @@ public class CraftingStationIngredientComponent implements Component<CraftingSta
     public String type;
 
     @Override
-    public void copy(CraftingStationIngredientComponent other) {
+    public void copyFrom(CraftingStationIngredientComponent other) {
         this.type = other.type;
     }
 }

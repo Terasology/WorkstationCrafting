@@ -53,7 +53,7 @@ public class TreeTypeComponent implements Component<TreeTypeComponent>, ItemDiff
     }
 
     @Override
-    public void copy(TreeTypeComponent other) {
+    public void copyFrom(TreeTypeComponent other) {
         this.treeType = other.treeType;
     }
 }

@@ -17,7 +17,7 @@ public class CraftingStationUpgradeRecipeComponent implements Component<Crafting
     public String resultBlockUri;
 
     @Override
-    public void copy(CraftingStationUpgradeRecipeComponent other) {
+    public void copyFrom(CraftingStationUpgradeRecipeComponent other) {
         this.stationType = other.stationType;
         this.targetStationType = other.targetStationType;
         this.targetStationPrefab = other.targetStationPrefab;

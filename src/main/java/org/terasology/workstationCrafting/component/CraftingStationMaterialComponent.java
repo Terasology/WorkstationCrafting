@@ -10,7 +10,7 @@ public class CraftingStationMaterialComponent implements Component<CraftingStati
     public String stationType;
 
     @Override
-    public void copy(CraftingStationMaterialComponent other) {
+    public void copyFrom(CraftingStationMaterialComponent other) {
         this.stationType = other.stationType;
     }
 }

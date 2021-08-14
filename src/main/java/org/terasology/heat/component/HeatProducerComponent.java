@@ -40,7 +40,7 @@ public class HeatProducerComponent implements Component<HeatProducerComponent> {
     public Set<Side> heatDirections = Sets.newHashSet();
 
     @Override
-    public void copy(HeatProducerComponent other) {
+    public void copyFrom(HeatProducerComponent other) {
         this.fuelConsumed = other.fuelConsumed.stream()
                     .map(FuelSourceConsume::copy)
         .collect(Collectors.toList());

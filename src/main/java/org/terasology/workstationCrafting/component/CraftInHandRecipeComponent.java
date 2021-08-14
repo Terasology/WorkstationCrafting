@@ -17,7 +17,7 @@ public class CraftInHandRecipeComponent implements Component<CraftInHandRecipeCo
     public String blockResult;
 
     @Override
-    public void copy(CraftInHandRecipeComponent other) {
+    public void copyFrom(CraftInHandRecipeComponent other) {
         this.recipeId = other.recipeId;
         this.recipeComponents = Lists.newArrayList(other.recipeComponents);
         this.recipeTools = Lists.newArrayList(this.recipeTools);
