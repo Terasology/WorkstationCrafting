@@ -17,7 +17,6 @@ package org.terasology.heat.processPart;
 
 import org.terasology.engine.entitySystem.entity.EntityManager;
 import org.terasology.engine.entitySystem.entity.EntityRef;
-import org.terasology.engine.entitySystem.event.ReceiveEvent;
 import org.terasology.engine.entitySystem.prefab.Prefab;
 import org.terasology.engine.entitySystem.prefab.PrefabManager;
 import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
@@ -28,6 +27,7 @@ import org.terasology.engine.world.BlockEntityRegistry;
 import org.terasology.engine.world.block.BlockManager;
 import org.terasology.engine.world.block.family.BlockFamily;
 import org.terasology.engine.world.block.items.BlockItemFactory;
+import org.terasology.gestalt.entitysystem.event.ReceiveEvent;
 import org.terasology.heat.HeatUtils;
 import org.terasology.heat.component.HeatProcessedComponent;
 import org.terasology.module.inventory.systems.InventoryManager;

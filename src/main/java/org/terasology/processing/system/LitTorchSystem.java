@@ -20,7 +20,6 @@ import org.terasology.durability.components.DurabilityComponent;
 import org.terasology.durability.components.OverTimeDurabilityReduceComponent;
 import org.terasology.durability.events.DurabilityExhaustedEvent;
 import org.terasology.engine.entitySystem.entity.EntityRef;
-import org.terasology.engine.entitySystem.event.ReceiveEvent;
 import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
 import org.terasology.engine.entitySystem.systems.RegisterSystem;
 import org.terasology.engine.registry.In;
@@ -29,6 +28,7 @@ import org.terasology.engine.world.block.BlockComponent;
 import org.terasology.engine.world.block.BlockManager;
 import org.terasology.engine.world.block.items.OnBlockItemPlaced;
 import org.terasology.engine.world.block.items.OnBlockToItem;
+import org.terasology.gestalt.entitysystem.event.ReceiveEvent;
 
 /**
  * This system defines the workings of torches in the game.
