@@ -18,14 +18,15 @@ package org.terasology.processing.system;
 import org.terasology.engine.entitySystem.entity.EntityManager;
 import org.terasology.engine.entitySystem.entity.EntityRef;
 import org.terasology.engine.entitySystem.event.EventPriority;
+import org.terasology.engine.entitySystem.event.Priority;
 import org.terasology.engine.entitySystem.event.ReceiveEvent;
 import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
 import org.terasology.engine.entitySystem.systems.RegisterSystem;
 import org.terasology.engine.logic.characters.CharacterComponent;
-import org.terasology.module.inventory.components.InventoryComponent;
-import org.terasology.module.inventory.systems.InventoryManager;
 import org.terasology.engine.logic.players.event.OnPlayerSpawnedEvent;
 import org.terasology.engine.registry.In;
+import org.terasology.module.inventory.components.InventoryComponent;
+import org.terasology.module.inventory.systems.InventoryManager;
 
 /**
  * @author Marcin Sciesinski <marcins78@gmail.com>
@@ -41,8 +42,9 @@ public class ResetStartingInventorySystem extends BaseComponentSystem {
     @In
     public EntityRef player;
 
-    @ReceiveEvent(components = {InventoryComponent.class, CharacterComponent.class}, priority = EventPriority.PRIORITY_TRIVIAL)
-    //@ReceiveEvent()
+    @Priority(EventPriority.PRIORITY_TRIVIAL)
+    @ReceiveEvent(components = {InventoryComponent.class, CharacterComponent.class})
+    //@ReceiveEvent
     public void resetStartingInventory(OnPlayerSpawnedEvent event, EntityRef character) {
         for (int i = 0; i < manager.getNumSlots(character); i++) {
             // TODO: Temporarily removed.

@@ -22,10 +22,10 @@ import org.terasology.engine.entitySystem.event.ReceiveEvent;
 import org.terasology.engine.entitySystem.systems.BaseComponentSystem;
 import org.terasology.engine.entitySystem.systems.RegisterMode;
 import org.terasology.engine.entitySystem.systems.RegisterSystem;
-import org.terasology.module.inventory.systems.InventoryManager;
 import org.terasology.engine.logic.inventory.events.DropItemEvent;
 import org.terasology.engine.logic.location.LocationComponent;
 import org.terasology.engine.registry.In;
+import org.terasology.module.inventory.systems.InventoryManager;
 import org.terasology.workstationCrafting.event.UserCraftInHandRequest;
 import org.terasology.workstationCrafting.system.recipe.hand.CraftInHandRecipe;
 
