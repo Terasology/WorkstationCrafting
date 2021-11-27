@@ -65,7 +65,7 @@ public class BlockRecipeResultFactory implements RecipeResultFactory {
     @Override
     public void setupDisplay(List<String> parameters, ItemIcon itemIcon) {
         Block blockToDisplay = getBlock(parameters);
-        itemIcon.setMesh(blockToDisplay.getMesh());
+        itemIcon.setMesh(blockToDisplay.getMeshGenerator().getStandaloneMesh());
         itemIcon.setMeshTexture(Assets.getTexture("engine:terrain").get());
         itemIcon.setTooltip(blockToDisplay.getDisplayName());
     }
