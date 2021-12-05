@@ -32,7 +32,7 @@ public class ItemSlotIngredientRenderer implements CraftIngredientRenderer {
         if (itemComp != null && itemComp.icon != null) {
             itemIcon.setIcon(itemComp.icon);
         } else if (blockItemComp != null) {
-            itemIcon.setMesh(blockItemComp.blockFamily.getArchetypeBlock().getMesh());
+            itemIcon.setMesh(blockItemComp.blockFamily.getArchetypeBlock().getMeshGenerator().getStandaloneMesh());
             itemIcon.setMeshTexture(Assets.getTexture("engine:terrain").get());
         }
         GetItemTooltip tooltipEvent;
